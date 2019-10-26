@@ -39,7 +39,9 @@ Varga Mátyás    | szoftverfejlesztő
 ### Mérföldkövek
 
 A program elkészítésének fő mérföldkövei:  
-####Sprint I.
+
+#### Sprint I.
+
 - A Trelloban való regisztráció illetve a használatának elkezdése  
 - A git repository elkészítése  
 - A tagok git-re való regisztrációja illetve a projekthez felvétele  
@@ -47,12 +49,16 @@ A program elkészítésének fő mérföldkövei:
 - A funckionális specifikáció elkészítése  
 - A rendszerterv elkészítése
 - A program prototípus UI-jának elkészítése
-####Sprint II.  
+
+#### Sprint II.
+  
 - A rendszer tesztjeinek felállítása  
 - A program adatbázisának elkészítése  
 - A program controllerének elkészítése  
 - A program tesztelése a minimális funkciókkal
+
 #### További sprintek
+
 - A program biztonságának növelése, felkészítés az internetes használatra
 - A felhasználó visszajelzések beletervezése a projektbe
 - A kisebb üzleti értékkel rendelkező kényelmi feature-ök fejlesztése
