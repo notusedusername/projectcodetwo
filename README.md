@@ -25,4 +25,5 @@
  
  [Rendszerterv](/docs/rendszerterv.md)
  
+ [Prototípus](/proto/proto.html)
  

@@ -1,0 +1,47 @@
+
+.menu {
+    margin-top: 1em;
+
+}
+
+.stricky{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+}
+.logo {
+    color: blue;
+}
+
+.row {
+    height: 100%;
+}
+
+.page-background{
+    background-image:  linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+    ),url("https://source.unsplash.com/random");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%
+}
+
+.page-content {
+    padding: 1em;
+    position: relative;
+    z-index: 1;
+}
+
+h1, h4, label  {
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
