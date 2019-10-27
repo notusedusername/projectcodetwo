@@ -77,6 +77,13 @@ function bindMenu(){
     $("#addMember").on("click", function () {
         $('#addMemberModal').modal();
     });
+
+    $("#addMemberToDB").on("click", function () {
+        $("#fakeMemberSubmit").click();
+    });
+    $("#addBookToDB").on("click", function () {
+        $("#fakeBookSubmit").click();
+    });
 }
 
 

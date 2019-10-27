@@ -272,27 +272,28 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form id="bookForm">
                     <div class="form-group">
-                        <input type="text" class="col-sm-12" id="newBookID" placeholder="Könyv azonosító" disabled>
+                        <input type="text" class="col-sm-12" name="newBookID" placeholder="Könyv azonosító" disabled>
                     </div>
                     <div class="form-group">
-                        <input type="text"  class="col-sm-12" id="newAuthor" placeholder="Szerző">
+                        <input type="text"  class="col-sm-12" name="newAuthor" placeholder="Szerző" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="col-sm-12"  id="newTitle" placeholder="Cím">
+                        <input type="text" class="col-sm-12"  name="newTitle" placeholder="Cím" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="col-sm-12"  id="newPublisher" placeholder="Kiadó">
+                        <input type="text" class="col-sm-12"  name="newPublisher" placeholder="Kiadó" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="col-sm-12"  id="newPublishingDate" placeholder="Kiadás Dátuma">
+                        <input type="number" class="col-sm-12"  name="newPublishingDate" placeholder="Kiadás Dátuma" required>
                     </div>
+                    <input type="submit" style="display: none" id="fakeBookSubmit">
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-dismiss="modal">Bezár</button>
-                <button type="button" class="btn btn-success">Hozzáadás</button>
+                <button type="button" id="addBookToDB" class="btn btn-success">Hozzáadás</button>
             </div>
         </div>
     </div>
@@ -311,30 +312,34 @@
 
             <!-- Modal body -->
             <div class="modal-body">
-                <div class="form-group">
-                    <input type="text" class="col-sm-12"  id="newMemberID" placeholder="Olvasói szám" disabled>
-                </div>
-                <div class="form-group">
-                    <input type="text"  class="col-sm-12" id="newMemberFirstName" placeholder="Vezetéknév">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="col-sm-12"  id="newMemberLastName" placeholder="Keresztnév">
-                </div>
-                <div class="form-group">
-                    <input type="email"  class="col-sm-12" id="newEmail" placeholder="Email">
-                </div>
-                <div class="form-group">
-                    <input type="tel"  class="col-sm-12" id="newPhone" placeholder="Telefonszám">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="col-sm-12"  id="newAddress" placeholder="Cím">
-                </div>
+                <form id="memberForm">
+
+                    <div class="form-group">
+                        <input type="text" class="col-sm-12"  name="newMemberID" placeholder="Olvasói szám" disabled>
+                    </div>
+                    <div class="form-group">
+                        <input type="text"  class="col-sm-12" name="newMemberFirstName" placeholder="Vezetéknév" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="col-sm-12"  name="newMemberLastName" placeholder="Keresztnév" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email"  class="col-sm-12" name="newEmail" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number"  class="col-sm-12" name="newPhone" placeholder="Telefonszám" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="col-sm-12"  name="newAddress" placeholder="Cím" required>
+                    </div>
+                    <input type="submit" style="display: none" id="fakeMemberSubmit">
+                </form>
             </div>
 
             <!-- Modal footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-dismiss="modal">Bezár</button>
-                <button type="button" class="btn btn-success">Hozzáadás</button>
+                <button type="button" id="addMemberToDB" class="btn btn-success">Hozzáadás</button>
             </div>
 
         </div>
