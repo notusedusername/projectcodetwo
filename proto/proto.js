@@ -1,8 +1,19 @@
 var active = "rgb(0, 123, 255)";
 var passive = "rgb(251, 252, 252)";
 
+var selectedBookCount = 0;
+var selectedMemberCount = 0;
+
 var allBooksColor = active;
 var allMembersColor = active;
+
+var oneSelectedBook = ["#selectAllBook", "#startRentFromBook", "#addBook", "#editSelectedBook", "#deleteSelectedBook" ];
+var nullSelectedBook = ["#selectAllBook",  "#addBook"];
+var moreSelectedBook = ["#selectAllBook", "#addBook", "#deleteSelectedBook"];
+
+var oneSelectedMember = ["#selectAllMember", "#startRentFromMember", "#addMember", "#editSelectedMember", "#deleteSelectedMember" ];
+var nullSelectedMember = ["#selectAllMember",  "#addMember"];
+var moreSelectedMember = ["#selectAllMember", "#addMember", "#deleteSelectedMember"];
 
 $( document ).ready(function() {
     hideAll();
@@ -26,6 +37,7 @@ function bindMenu(){
     $("#membermenu").parent().on("click", function () {
         hideAll();
         $("#members").show();
+        showMemberActions();
 
     });
 
@@ -38,15 +50,33 @@ function bindMenu(){
     $("#bookmenu").parent().on("click", function () {
         hideAll();
         $("#books").show();
+        showBookActions();
 
     });
 
     $("#books tbody tr, #members tbody tr").on("click", function () {
+        var thisID = $(this).parent().parent().parent().attr("id");
         if($(this).css("background-color") == active){
             $(this).css("background-color", passive);
+            if(thisID == "books"){
+                selectedBookCount--;
+                showBookActions();
+            }
+            else {
+                selectedMemberCount--;
+                showMemberActions();
+            }
         }
         else{
             $(this).css("background-color", active);
+            if(thisID == "books"){
+                selectedBookCount++;
+                showBookActions();
+            }
+            else {
+                selectedMemberCount++;
+                showMemberActions();
+            }
         }
     });
 
@@ -54,9 +84,13 @@ function bindMenu(){
         $("#books tbody tr").css("background-color", allBooksColor);
         if(allBooksColor == active){
             allBooksColor = passive;
+            selectedBookCount = -1;
+            showBookActions();
         }
         else {
             allBooksColor = active;
+            selectedBookCount = 0;
+            showBookActions();
         }
     });
 
@@ -64,9 +98,13 @@ function bindMenu(){
         $("#members tbody tr").css("background-color", allMembersColor);
         if(allMembersColor == active){
             allMembersColor = passive;
+            selectedMemberCount = -1;
+            showMemberActions();
         }
         else {
             allMembersColor = active;
+            selectedMemberCount = 0;
+            showMemberActions();
         }
     });
 
@@ -86,5 +124,44 @@ function bindMenu(){
     });
 }
 
+function showMemberActions(){
+    $.each(oneSelectedMember, function (index, value) {
+        $(value).hide();
+    });
+    if(selectedMemberCount == 0){
+        $.each(nullSelectedMember, function (index, value) {
+           $(value).show();
+        });
+    }
+    else if (selectedMemberCount == 1){
+        $.each(oneSelectedMember, function (index, value) {
+            $(value).show();
+        });
+    }
+    else {
+        $.each(moreSelectedMember, function (index, value) {
+            $(value).show();
+        });
+    }
+}
 
-
+function showBookActions() {
+    $.each(oneSelectedBook, function (index, value) {
+        $(value).hide();
+    });
+    if(selectedBookCount == 0){
+        $.each(nullSelectedBook, function (index, value) {
+            $(value).show();
+        });
+    }
+    else if (selectedBookCount == 1){
+        $.each(oneSelectedBook, function (index, value) {
+            $(value).show();
+        });
+    }
+    else {
+        $.each(moreSelectedBook, function (index, value) {
+            $(value).show();
+        });
+    }
+}
