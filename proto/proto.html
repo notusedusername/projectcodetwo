@@ -345,5 +345,147 @@
         </div>
     </div>
 </div>
+
+<!-- The Modal -->
+<div class="modal fade" id="selectMemberModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title">Kölcsönző tag kiválasztása</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+               <p>Tag választó (csak 1, filter).</p>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">Bezár</button>
+                <button type="button" id="" class="btn btn-success">Kiválaszt</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal fade" id="selectBookModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title">Kölcsönzött könyv(ek) kiválasztása</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <p>Könyvválasztó (egyszerre több is, filterrel)</p>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">Bezár</button>
+                <button type="button" class="btn btn-success">Kiválaszt</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal fade" id="editMemberModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title">Kiválasztott tag adatainak módosítása</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form id="memberEditForm">
+
+                    <div class="form-group">
+                        <input type="text" class="col-sm-12"  name="newMemberID" placeholder="Olvasói szám" disabled>
+                    </div>
+                    <div class="form-group">
+                        <input type="text"  class="col-sm-12" name="newMemberFirstName" placeholder="Vezetéknév" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="col-sm-12"  name="newMemberLastName" placeholder="Keresztnév" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email"  class="col-sm-12" name="newEmail" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number"  class="col-sm-12" name="newPhone" placeholder="Telefonszám" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="col-sm-12"  name="newAddress" placeholder="Cím" required>
+                    </div>
+                    <input type="submit" style="display: none" id="fakeEditMemberSubmit">
+                </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">Bezár</button>
+                <button type="button"  class="btn btn-primary" id="editMemberSubmit">Módosít</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal fade" id="editBookModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title">Könyv adatainak módosítása</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form id="bookeditForm">
+                    <div class="form-group">
+                        <input type="text" class="col-sm-12" name="newBookID" placeholder="Könyv azonosító" disabled>
+                    </div>
+                    <div class="form-group">
+                        <input type="text"  class="col-sm-12" name="newAuthor" placeholder="Szerző" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="col-sm-12"  name="newTitle" placeholder="Cím" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="col-sm-12"  name="newPublisher" placeholder="Kiadó" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="col-sm-12"  name="newPublishingDate" placeholder="Kiadás Dátuma" required>
+                    </div>
+                    <input type="submit" style="display: none" id="fakeEditBookSubmit">
+                </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">Bezár</button>
+                <button type="button" class="btn btn-primary" id="editBookSubmit">Módosít</button>
+            </div>
+
+        </div>
+    </div>
+</div>
 </body>
 </html>

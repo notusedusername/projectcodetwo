@@ -122,6 +122,49 @@ function bindMenu(){
     $("#addBookToDB").on("click", function () {
         $("#fakeBookSubmit").click();
     });
+
+    $("#editSelectedMember").on("click", function () {
+       $("#editMemberModal").modal();
+    });
+
+    $("#editMemberSubmit").on("click", function () {
+        $("#fakeEditMemberSubmit").click();
+    });
+
+    $("#editSelectedBook").on("click", function () {
+        $("#editBookModal").modal();
+    });
+
+    $("#editBookSubmit").on("click", function () {
+        $("#fakeEditBookSubmit").click();
+    });
+
+    $("#deleteSelectedMember").on("click", function () {
+        alert("Törlöm a kiválasztott tagot!");
+    });
+
+    $("#deleteSelectedBook").on("click", function () {
+       alert("Törlöm a kiválasztott könyvet!");
+    });
+
+    $("#startRentFromMember").on("click", function () {
+        $("#rentmenu").click();
+        alert("Autokiegészítés a választott taggal");
+    });
+
+    $("#startRentFromBook").on("click", function () {
+        $("#rentmenu").click();
+        alert("Autokiegészítés a választott könyvvel/könyvekkel");
+    });
+
+    $("#selectBook").on("click", function () {
+        $("#selectBookModal").modal();
+    });
+
+    $("#selectMember").on("click", function () {
+       $("#selectMemberModal").modal();
+    });
+
 }
 
 function showMemberActions(){
