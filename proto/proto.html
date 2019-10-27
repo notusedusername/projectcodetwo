@@ -21,13 +21,15 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
+<body>             
+<div class="page-background"></div>
+
 <div class="container-fluid">
     <div class="row">
 
-
         <div class="col-sm-2 menu">
-            <table class="table table-hover stricky">
+            <div class="menuDarkener"></div>
+            <table class="table table-hover sticky">
                 <tr>
                     <td>
                         <div class="logo btn-md btn-block" id="logomenu">
@@ -72,35 +74,88 @@
             </table>
         </div>
         <div class="col-sm-10 page-content">
-            <div class="page-background"></div>
             <div id="home">
-                <h1>Főoldal</h1>
-                <h4>A material design-t követve érdemes kibővíteni a dinamikus style guide-t.</h4>
-                <h4>A gördülékeny, felhasználóbarát működés miatt kívánatos indexelni a szintaktikailag megfelelő
-                    többdimenziós tömböket.</h4>
-                <h4>A megtervezett architektúra szerint érdemes beégetni a platformfüggetlen szálkezelést.</h4>
-                <h4>Az agilitás jegyében elengedhetetlen implementálni a parallel interfészt.</h4>
+                <h1>Próbáld ki új alkalmazásunk prototípusát!</h1>
+                <h4>A Tryhard által készített újabb zseniális szoftver demójának részese lehetsz!</h4>
+                <h4>Próbáld ki az egyes funkciókat most!</h4>
+                <br>
+                <br>
+                <h4>Az egyszerűen kezelhető menünkről elérheted a főbb funkciókat:</h4>
+                <ul class="list-group list-group-flush col-sm-9">
+                    <li class="list-group-item list-group-item-dark">
+                        <h5>
+                            Kölcsönzés
+                            <i class="fas fa-hard-hat"></i>
+                            <i class="fas fa-code"></i>
+                        </h5>
+                        <ul>
+                            <li>Válaszd ki a kölcsönző tagot a tagválasztó ablakunk segítségével!</li>
+                            <li>Válaszd ki a kölcsönző könyveket a könyvválasztó ablakunk segítségével!</li>
+
+                        </ul>
+                    </li>
+                    <li class="list-group-item list-group-item-dark">
+                        <h5>Könyvek</h5>
+                        <ul>
+                            <li>Könyvek listája táblázatos megjelenéssel</li>
+                            <li>Tömeges akciógombok, egyszerű, felhasználó-barát, többszörös kijelölés, hozzáadás, módosítás, törlés</li>
+                            <li>
+                                Gyors elérés a kölcsönzés menüre
+                                <i class="fas fa-hard-hat"></i>
+                                <i class="fas fa-code"></i>
+                            </li>
+                            <li>
+                                Gyors elérés a kölcsönző tagra
+                                <i class="fas fa-hard-hat"></i>
+                                <i class="fas fa-code"></i>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item list-group-item-dark">
+                        <h5>Tagok</h5>
+                        <ul>
+                            <li>Tagok listája táblázatos megjelenéssel</li>
+                            <li>Tömeges akciógombok, egyszerű, felhasználó-barát, többszörös kijelölés, hozzáadás, módosítás, törlés</li>
+                            <li>
+                                Gyors elérés a kölcsönzés menüre
+                                <i class="fas fa-hard-hat"></i>
+                                <i class="fas fa-code"></i>
+                            </li>
+                            <li>
+                                Gyors elérés a tag kölcsönzéseire
+                                <i class="fas fa-hard-hat"></i>
+                                <i class="fas fa-code"></i>
+                            </li>
+                        </ul>
+                        <br>
+                        <p><i class="fas fa-hard-hat"></i>
+                            <i class="fas fa-code"></i>
+                            : a prototípusban még nincs implementálva.
+                        </p>
+                    </li>
+                </ul>
+
             </div>
             <div id="members" class="table-responsive">
                 <h1>Tagjaink</h1>
                 <form class="form-control controls">
-                    <button class="btn btn-light selectAll" type="button" id="selectAllMember" data-toggle="tooltip" data-placement="top" title="Összes kijelölése">
+                    <button class="btn btn-dark selectAll" type="button" id="selectAllMember" data-toggle="tooltip" data-placement="top" title="Összes kijelölése">
                         <i class="fas fa-check-double" aria-hidden="true"></i>
                     </button>
-                    <button class="btn btn-light rent" type="button" id="startRentFromMember" data-toggle="tooltip" data-placement="top" title="Kölcsönzés indítása">
+                    <button class="btn btn-dark rent" type="button" id="startRentFromMember" data-toggle="tooltip" data-placement="top" title="Kölcsönzés indítása">
                         <i class="fas fa-exchange-alt" aria-hidden="true"></i>
                     </button>
-                    <button class="btn btn-light add" type="button" id="addMember" data-toggle="tooltip" data-placement="top" title="Új tag hozzáadása">
+                    <button class="btn btn-dark add" type="button" id="addMember" data-toggle="tooltip" data-placement="top" title="Új tag hozzáadása">
                         <i class="fas fa-user-plus" aria-hidden="true"></i>
                     </button>
-                    <button class="btn btn-light edit" type="button" id="editSelectedMember" data-toggle="tooltip" data-placement="top" title="Kiválasztott tag módosítása">
+                    <button class="btn btn-dark edit" type="button" id="editSelectedMember" data-toggle="tooltip" data-placement="top" title="Kiválasztott tag módosítása">
                         <i class="fas fa-edit" aria-hidden="true"></i>
                     </button>
-                    <button class="btn btn-light delete" type="button" id="deleteSelectedMember" data-toggle="tooltip" data-placement="top" title="Kiválasztott tag(ok) törlése ">
+                    <button class="btn btn-dark delete" type="button" id="deleteSelectedMember" data-toggle="tooltip" data-placement="top" title="Kiválasztott tag(ok) törlése ">
                         <i class="fas fa-trash-alt" aria-hidden="true"></i>
                     </button>
                 </form>
-                <table class="table table-md table-light">
+                <table class="table table-md table-dark">
                     <thead>
                     <tr>
                         <th>Olvasói szám</th>
@@ -165,23 +220,23 @@
             <div id="books" class="table-responsive">
                 <h1>Könyveink</h1>
                 <form class="form-control controls">
-                    <button class="btn btn-light selectAll" type="button" id="selectAllBook" data-toggle="tooltip" data-placement="top" title="Összes kijelölése">
+                    <button class="btn btn-dark selectAll" type="button" id="selectAllBook" data-toggle="tooltip" data-placement="top" title="Összes kijelölése">
                         <i class="fas fa-check-double" aria-hidden="true"></i>
                     </button>
-                    <button class="btn btn-light rent" type="button" id="startRentFromBook" data-toggle="tooltip" data-placement="top" title="Kiválasztott(ak) kölcsözése" >
+                    <button class="btn btn-dark rent" type="button" id="startRentFromBook" data-toggle="tooltip" data-placement="top" title="Kiválasztott(ak) kölcsözése" >
                         <i class="fas fa-exchange-alt" aria-hidden="true"></i>
                     </button>
-                    <button class="btn btn-light add" type="button" id="addBook" data-toggle="tooltip" data-placement="top" title="Új könyv hozzáadása" >
+                    <button class="btn btn-dark add" type="button" id="addBook" data-toggle="tooltip" data-placement="top" title="Új könyv hozzáadása" >
                         <i class="fas fa-book-medical" aria-hidden="true"></i>
                     </button>
-                    <button class="btn btn-light edit" type="button" id="editSelectedBook" data-toggle="tooltip" data-placement="top" title="Módosítás" >
+                    <button class="btn btn-dark edit" type="button" id="editSelectedBook" data-toggle="tooltip" data-placement="top" title="Módosítás" >
                         <i class="fas fa-edit" aria-hidden="true"></i>
                     </button>
-                    <button class="btn btn-light delete" type="button" id="deleteSelectedBook" data-toggle="tooltip" data-placement="top" title="Kiválasztott(ak) törlése">
+                    <button class="btn btn-dark delete" type="button" id="deleteSelectedBook" data-toggle="tooltip" data-placement="top" title="Kiválasztott(ak) törlése">
                         <i class="fas fa-trash-alt" aria-hidden="true"></i>
                     </button>
                 </form>
-                <table class="table table-md table-light">
+                <table class="table table-md table-dark">
                     <thead>
                     <tr>
                         <th>Könyv azonosító</th>
@@ -239,17 +294,17 @@
             <form id="rent">
                 <h1>Kölcsönzés</h1>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Kölcsönző tag" required>
+                    <input type="text" class="form-control light" placeholder="Kölcsönző tag" required>
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button" id="selectMember">
+                        <button class="btn btn-light" type="button" id="selectMember">
                             <i class="fas fa-users" aria-hidden="true"></i>
                         </button>
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Kölcsönzött könyv" required>
+                    <input type="text" class="form-control light" placeholder="Kölcsönzött könyv" required>
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button" id="selectBook">
+                        <button class="btn btn-light" type="button" id="selectBook">
                             <i class="fa fa-book" aria-hidden="true"></i>
                         </button>
                     </div>
@@ -292,7 +347,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-dismiss="modal">Bezár</button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal">Bezár</button>
                 <button type="button" id="addBookToDB" class="btn btn-success">Hozzáadás</button>
             </div>
         </div>
@@ -338,7 +393,7 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-dismiss="modal">Bezár</button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal">Bezár</button>
                 <button type="button" id="addMemberToDB" class="btn btn-success">Hozzáadás</button>
             </div>
 
@@ -364,7 +419,7 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-dismiss="modal">Bezár</button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal">Bezár</button>
                 <button type="button" id="" class="btn btn-success">Kiválaszt</button>
             </div>
 
@@ -390,7 +445,7 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-dismiss="modal">Bezár</button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal">Bezár</button>
                 <button type="button" class="btn btn-success">Kiválaszt</button>
             </div>
 
@@ -437,7 +492,7 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-dismiss="modal">Bezár</button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal">Bezár</button>
                 <button type="button"  class="btn btn-primary" id="editMemberSubmit">Módosít</button>
             </div>
 
@@ -480,7 +535,7 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-dismiss="modal">Bezár</button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal">Bezár</button>
                 <button type="button" class="btn btn-primary" id="editBookSubmit">Módosít</button>
             </div>
 

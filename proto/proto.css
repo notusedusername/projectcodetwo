@@ -1,20 +1,84 @@
+body{
+    overflow: hidden;
+}
 
-.menu {
-    margin-top: 1em;
+.list-group-item {
+    border-radius: 5px !important;
+    margin: 0.1em;
+}
+
+.table-md{
+    border-radius: 5px !important;
 
 }
 
-.stricky{
+.table-md thead th {
+    border: unset;
+}
+
+.table-md tbody td:first-child{
+    border-radius: 5px 0px 0px 5px;
+}
+
+.table-md tbody td:last-child{
+ border-radius: 0px 5px 5px 0px;
+}
+.container-fluid {
+    overflow: auto;
+}
+.menu {
+    padding: unset;
+    font-weight: bold;
+    text-shadow:0 0 5px  rgba(0, 55, 255, 0.81);
+}
+
+.form-control.light{
+    background-color: white;
+}
+
+.menuDarkener{
+    height: 100%;
+    opacity: 0.4;
+    background-color: #303331;
+
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px burlywood;
+}
+
+.sticky div{
+    color: lightgoldenrodyellow;
+}
+
+.sticky td {
+    border: unset;
+    padding-left: 1em;
+}
+
+.sticky{
     position: -webkit-sticky;
-    position: sticky;
+    position: fixed;
     top: 0;
     cursor: pointer;
+    width: fit-content;
 }
 .logo {
 }
 
 .row {
     height: 100%;
+}
+
+.fa-hard-hat{
+    color: orange;
+}
+
+.fa-code{
+    color: darkcyan;
+}
+
+.form-control{
+    background-color: #343a40;
+    border: unset;
 }
 
 .page-background{
@@ -46,7 +110,7 @@ h1 {
 
 h1, h4, label  {
     color: white;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow:0 0 5px rgba(0, 55, 255, 0.81)
 }
 .controls {
     padding: 0.2em;

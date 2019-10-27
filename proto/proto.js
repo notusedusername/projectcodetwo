@@ -1,5 +1,5 @@
 var active = "rgb(0, 123, 255)";
-var passive = "rgb(251, 252, 252)";
+var passive = "rgb(52,58,64)";
 
 var selectedBookCount = 0;
 var selectedMemberCount = 0;
@@ -28,6 +28,10 @@ function hideAll(){
     $("#rent").hide();
 }
 function bindMenu(){
+    $("#logomenu").parent().on("click", function () {
+        window.location = "https://notusedusername.github.io/projectcodetwo/";
+    });
+
     $("#homemenu").parent().on("click", function () {
         hideAll();
         $("#home").show();
