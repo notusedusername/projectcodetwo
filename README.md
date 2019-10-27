@@ -4,6 +4,8 @@
 
 (Under construction)
 
+###[ITT KIPRÓBÁLHATOD A DEMÓNKAT!](/proto/proto.html)
+
 ----
 
 ### A csapat
@@ -25,5 +27,4 @@
  
  [Rendszerterv](/docs/rendszerterv.md)
  
- [Prototípus](/proto/proto.html)
  
