@@ -4,7 +4,7 @@
 
 (Under construction)
 
-###[ITT KIPRÓBÁLHATOD A DEMÓNKAT!](/proto/proto.html)
+[ITT KIPRÓBÁLHATOD A DEMÓNKAT!](/proto/proto.html)
 
 ----
 
