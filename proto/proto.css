@@ -30,6 +30,8 @@ body{
     padding: unset;
     font-weight: bold;
     text-shadow:0 0 5px  rgba(0, 55, 255, 0.81);
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 5px;
 }
 
 .form-control.light{
@@ -38,11 +40,12 @@ body{
 
 .menuDarkener{
     height: 100%;
+    min-height: 40%;
     opacity: 0.4;
     background-color: #303331;
 
     border-radius: 5px;
-    box-shadow: 0px 0px 5px burlywood;
+    box-shadow: 0px 0px 5px black;
 }
 
 .sticky div{
@@ -56,10 +59,9 @@ body{
 
 .sticky{
     position: -webkit-sticky;
-    position: fixed;
+    position: sticky;
     top: 0;
     cursor: pointer;
-    width: fit-content;
 }
 .logo {
 }
