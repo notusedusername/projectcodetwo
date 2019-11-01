@@ -20,6 +20,26 @@ a kölcsönzésüket vagy regisztrációjukat is akár.
 ## Használati esetek
 
 
+A Követelmény specifikáció 'Követelménylista' című bekezdése alapján az
+egyes pontok kifejtésére kerül sor ebben a fejezetben.
+
+
+
+* A programmal lehetőséget szeretnénk nyújtani a felhasználók
+   kölcsönzéseinek nyilvántartására. Továbbá a kölcsönzőben dolgozó
+   személyzet számára szeretnénk átláthatóbbá tenni az adminisztrációt.
+   Mivel weben elérhető a könyvtár így  a tagoknak nem szükséges a személyesen
+    megjelelniük ,hogy beregisztrálhassanak a könyvtárba vagy meglévő tagságukat
+     módosíthassák .Hanem most már könnyen és egyszerűen képesek lesznek rá .
+
+* Az egyes tételekről (melyek a mi esetünkben a kölcsönözhető könyvek)
+   szeretnénk a lehető legtöbb információt eltárolni. A könyvek címét,
+   szerzőjet, megjelenésének dátumát, kölcsönzési státuszát (ki van-e
+   kölcsönözve vagy sem), a kivétel időpontját és a kölcsön lejáratának
+   dátumát.A tagok regisztrációjának dátumát ,születési dátumát, nevét, 
+   lakcimét tagsági ID számát.
+   
+* 
 ## Jelenlegi helyzet
 
 ## A rendszernek NEM célja
