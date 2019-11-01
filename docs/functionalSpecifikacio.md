@@ -15,7 +15,7 @@ hatékony számítógépes rendszert vezet be. Erre az igényre alapozva
 terveztük meg a programot, hogy a felvetett problémákra gyors és praktikus
 megoldást nyújthasson, és hasznos eszköz legyen a kölcsönző mindennapjaiban.
 A könyvtári tagok most már képesek legyenek online webes kereten belül is elintézni
-a kölcsézésüket vagy regisztráciojúkat is akkár.
+a kölcsönzésüket vagy regisztrációjukat is akár.
 
 ## Használati esetek
 
