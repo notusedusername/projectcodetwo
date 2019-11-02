@@ -11,6 +11,13 @@ az a nagy hátulütője ,hogy az adminiszráció mértéke is jelentősen megugr
 papír alapon kell megoldani. Ilyen feladatok például: 
 * Egy újonnan a könytárunkba érkező és tagsággal nem rendelkező ember felvétele a könyvtári rendszerünkbe.
 * Egy a könyvtári könyvek listájában még nem szereplő könyv felvétele a rendszerünkbe.
+* Egy a könytárunkban tagsággal rendelkező ember adatainak módosítása a könyvtári rendszerünkben.
+* Egy a könytárunkban már szereplő könyv adatainak módosítása a könyvtári rendszerünkben.
+* Egy a könytárunkban tagsággal rendelkező ember törlése a rendszerből.
+* Egy a könytárunkban már szereplő könyv törlése a rendszerből.
+* Egy könyvtári tag álatal kért és a könyvtári dolgozó által kivitelezett 
+könyv kikölcsönzés.
+
 
 ## Vágyálom rendszer
 
