@@ -18,6 +18,8 @@ papír alapon kell megoldani. Ilyen feladatok például:
 * Egy könyvtári tag álatal kért és a könyvtári dolgozó által kivitelezett 
 könyv kikölcsönzés.
 
+Ezek a feladatok a klasszikus papír ceruza módszerrel kivitelezhetőek kis
+létszám esetén, viszont nagy létszám esetén nem.
 
 ## Vágyálom rendszer
 
