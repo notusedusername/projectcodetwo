@@ -5,6 +5,13 @@
 
 ## Jelenlegi helyzet
 
+A könyvtárunk több száz taggal rendelkezik és a látszám folyamatosan növekszik. Emellett
+a kikölcsönözhető könyveink száma is hétről-hétre gyarapodik. A gyors növekedésnek viszont
+az a nagy hátulütője ,hogy az adminiszráció mértéke is jelentősen megugrik, mivel számos feladatot
+papír alapon kell megoldani. Ilyen feladatok például: 
+* Egy újonnan a könytárunkba érkező és tagsággal nem rendelkező ember felvétele a könyvtári rendszerünkbe.
+* Egy a könyvtári könyvek listájában még nem szereplő könyv felvétele a rendszerünkbe.
+
 ## Vágyálom rendszer
 
 ## Jelenlegi üzleti folyamatok
