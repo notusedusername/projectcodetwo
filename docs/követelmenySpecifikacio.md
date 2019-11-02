@@ -23,6 +23,12 @@ létszám esetén, viszont nagy létszám esetén nem.
 
 ## Vágyálom rendszer
 
+Amikor rájöttünk arra ,hogy az elavult papír, ceruza alapú adminisztráció nem a
+legjobb megoldás a könyvtárunk részére elkezdtünk gondolkodni ,hogy mi lehetne a
+legmegfelelőbb alternetíva. Hosszas gondolkozás után egy webes alkalmazás mellett
+döntöttünk. Szeretnénk egy olyan webes alkalmazást amellyel el tudjuk látni ugyanazokat
+a feladatokat amiket a Jelenlegi helyzet bekezdés alatt felsoroltunk és szeretnénk
+ha ezeknek a feladatoknak a végrehajtásának az ideje jelentősen csökkenne. 
 ## Jelenlegi üzleti folyamatok
 
 ## Igényelt üzleti folyamatok modellje
