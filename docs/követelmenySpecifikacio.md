@@ -5,8 +5,30 @@
 
 ## Jelenlegi helyzet
 
+A könyvtárunk több száz taggal rendelkezik és a látszám folyamatosan növekszik. Emellett
+a kikölcsönözhető könyveink száma is hétről-hétre gyarapodik. A gyors növekedésnek viszont
+az a nagy hátulütője ,hogy az adminiszráció mértéke is jelentősen megugrik, mivel számos feladatot
+papír alapon kell megoldani. Ilyen feladatok például: 
+* Egy újonnan a könytárunkba érkező és tagsággal nem rendelkező ember felvétele a könyvtári rendszerünkbe.
+* Egy a könyvtári könyvek listájában még nem szereplő könyv felvétele a rendszerünkbe.
+* Egy a könytárunkban tagsággal rendelkező ember adatainak módosítása a könyvtári rendszerünkben.
+* Egy a könytárunkban már szereplő könyv adatainak módosítása a könyvtári rendszerünkben.
+* Egy a könytárunkban tagsággal rendelkező ember törlése a rendszerből.
+* Egy a könytárunkban már szereplő könyv törlése a rendszerből.
+* Egy könyvtári tag álatal kért és a könyvtári dolgozó által kivitelezett 
+könyv kikölcsönzés.
+
+Ezek a feladatok a klasszikus papír ceruza módszerrel kivitelezhetőek kis
+létszám esetén, viszont nagy létszám esetén nem.
+
 ## Vágyálom rendszer
 
+Amikor rájöttünk arra ,hogy az elavult papír, ceruza alapú adminisztráció nem a
+legjobb megoldás a könyvtárunk részére elkezdtünk gondolkodni ,hogy mi lehetne a
+legmegfelelőbb alternetíva. Hosszas gondolkozás után egy webes alkalmazás mellett
+döntöttünk. Szeretnénk egy olyan webes alkalmazást amellyel el tudjuk látni ugyanazokat
+a feladatokat amiket a Jelenlegi helyzet bekezdés alatt felsoroltunk és szeretnénk
+ha ezeknek a feladatoknak a végrehajtásának az ideje jelentősen csökkenne. 
 ## Jelenlegi üzleti folyamatok
 
 ## Igényelt üzleti folyamatok modellje
