@@ -4,7 +4,9 @@
 
 (Under construction)
 
-[ITT KIPRÓBÁLHATOD A DEMÓNKAT!](/proto/proto.html)
+[Home](https://notusedusername.github.io/projectcodetwo/)
+
+[ITT KIPRÓBÁLHATOD A DEMÓNKAT!](https://notusedusername.github.io/projectcodetwo/proto/proto.html)
 
 ----
 
