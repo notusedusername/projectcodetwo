@@ -68,6 +68,16 @@ egyes pontok kifejtésére kerül sor ebben a fejezetben.
      könnyen kezelhető és átlátható legyen a felhasználók számára.
 ## Jelenlegi helyzet
 
+A mostani analóg, vagyis papír és ceruzán alapuló könyvtár megérett arra a szintre,
+hogy modernizálja magát és belépjen a huszadik századba. Ez által meggyorsítva
+a mostani rendszert. Így a későbbiekben képes lehet tartani a versenyt és kiszolgálni a 
+könyvtárba járó közönséget. Mert így képesek lesznek a könyvtárban dolgozók villám
+gyorsan lekérdezni az adatbázisból, hogy az adott könny része-e a könyvtárnak. Bent 
+van-e a könyv, illetve ha kint van egy tagnál akkor az illetőnek mikor esedékes a könyv 
+vissza hozatala. Ezek a folyamatok eddig hosszú perceket vettek el mind a könyvtáros
+és mind a tag idejéből. Ami a mostani világban már tarthatatlan. Így kényszerből is
+muszáj megváltozni a könyvtárnak a jelenlegi rendszert.
+
 ## A rendszernek NEM célja
 
  * A tagok számára felületet biztosítani a kölcsönzéseik listázására, vagy
