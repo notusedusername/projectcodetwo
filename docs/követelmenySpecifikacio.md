@@ -37,7 +37,13 @@ igénybe venni a könyvtárunk szolgáltatásait. Ha egy új személy tag szeret
 könyvtárunkban akkor a könyvtári tagjaink kézzel írott listájának a végére vesszük fel
 az adatait, illetve ha később az adat felvételkor elkövetett hiba miatt egy vagy több
 adatot meg kell változtatni akkor a módosítást szintén ebben a hosszú listában hajtjuk
-végre.
+végre. Be kell látni ,hogy ez a módszer a tagok nagy létszáma mellett nem hatékony és
+egy esetleges hiba esetén pedig a módosítás sok keresésbe és időbe telik.
+A könyvek esetében a helyzet nagyon hasonló. Ha egy új könyv érkezik a könyvtárba
+akkor a könyv felvétele a rendszerbe ugyanúgy működik mint a tagok felvétele esetében,
+illetve a módosítás folyamata is ugyanaz, vagyis mindent papír segítségvel kell
+adminisztrálni a könyvek esetén is.
+
 ## Igényelt üzleti folyamatok modellje
 
 Könyvtár szeretné kiküszöbölni a jelenlegi analóg rendszer általi nehézségeket
