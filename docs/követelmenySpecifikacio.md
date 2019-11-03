@@ -3,6 +3,20 @@
 
 ## Bevezetés
 
+Egy kisvárosi könyvkölcsönző viszonylag nagy forgalommal jár, a helyiek inkább 
+kölcsönzik a könyveiket vásárlás helyett. A hely kifejezetten könyvtár hangulatú,
+ a könyveket is könyvekben tartják nyilván. Napjainkban azonban a jól bevált módszerek új 
+ kihívásokkal és vetélytársakkal néznek szembe a számítógépek személyében. Éppen ezért a 
+ kölcsönző vezetése is úgy döntött, hogy alkalmazkodik az új követelményekhez, és egy gyors és hatékony számítógépes rendszert vezet be
+A kölcsönző részére szükség lenne egy rendszerre, mely akár több munkaállomáson is futhat, 
+mégis egy adattömeget használ. Ehhez tudnak biztosítani egy központi gépet, amelyhez a munkaállomásoknak 
+hozzáférése van. Így növelhetik a hatékonyságot, mivel a egyszerre akár több könyvtáros is kiszolgálhatja
+a tagokat, valamint a rendszer továbbfejlesztetősége szinte korlátlan, többfelhasználós, változatos jogokkal
+rendelkező felhasználók, saját domain és tagregisztráció, kölcsönzések online nyomonkövetése, naprakész könyvnyilvántartás
+akár otthonról is elérve és még sok más hasznos funkció, a kliensek megrendelései alapján. Mivel a projekt kezdeti stádiumban van
+elsőnek a legfontosabb funkciók fejlesztése fog megtörténni, majd a visszajelzések alapján 
+priorizáljuk a további featureöket a felhasználói igények alapján.
+
 ## Jelenlegi helyzet
 
 A könyvtárunk több száz taggal rendelkezik és a látszám folyamatosan növekszik. Emellett
