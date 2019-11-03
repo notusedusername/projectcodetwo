@@ -93,6 +93,11 @@ A program elkészítésének fő mérföldkövei:
 
 ###  Üzleti entitások  
 
+Az üzletben résztvevő entitások:  
+- A programot használó könyvtári alkalmazott  
+- A könyvtárban regisztrált tagok  
+- A könyvtárban még nem regisztrált, de majd regisztráló tagok
+
 ### Követelmények
 
 ### Funkcionális követelmények 
@@ -122,8 +127,6 @@ A program elkészítésének fő mérföldkövei:
 A felhasználói gépeknek el kell érniük a szerverként üzemelő központi gépet,
 amely kiszolgálja a kéréseket, így a szoftver telepítése csak itt szükséges.
 A rendszer internethez való csatolását nem javasoljuk 
-
-#### Fizikai alrendszerek 
 
 #### Fizikai alrendszerek  
 
@@ -174,6 +177,7 @@ Architektúra elemek:
    - pl. ISO OSI architektúra  
    
 ### Az alkalmazás rétegei, fő komponensei, ezek kapcsolatai
+
 
 ### Rendszer bővíthetősége  
 
