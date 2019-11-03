@@ -182,6 +182,8 @@ vagyis a rendszer bizonyos szinten bővítésre alkalmas lesz.
 
 ### Biztonsági funkciók 
 
+A programunkba nem tervezünk biztonsági funkciókat implementálni.
+
 ### Adatbázis terv  
 
 A program adatbázisát 3 fő táblára osztottuk:
