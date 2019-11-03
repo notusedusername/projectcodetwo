@@ -88,3 +88,7 @@ könnyű kezelhetőség és egyben átláthatóság a felhasználók számára.
 * A rendszer képes legyen kiválogatni a tételeket különböző szempontok alapján.
 * Legyen lehetősége az alap felhasználónak is lekérdezést végrehajtani.
 * A program egyszerűen kezelhető és letisztult képi világgal rendelkezzen.
+
+* A rendszer fontos eleme, hogy többfelhasználós szolgáltatást biztosít,
+  a fejlesztés későbbi szakaszaiban akár internetes eléréssel is.
+   
