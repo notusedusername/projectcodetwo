@@ -29,6 +29,7 @@ legmegfelelőbb alternetíva. Hosszas gondolkozás után egy webes alkalmazás m
 döntöttünk. Szeretnénk egy olyan webes alkalmazást amellyel el tudjuk látni ugyanazokat
 a feladatokat amiket a Jelenlegi helyzet bekezdés alatt felsoroltunk és szeretnénk
 ha ezeknek a feladatoknak a végrehajtásának az ideje jelentősen csökkenne. 
+
 ## Jelenlegi üzleti folyamatok
 
 A könyvtárunkban jelenleg minden üzleti folyamatot papír segítségével adminisztrálunk.
@@ -43,6 +44,14 @@ A könyvek esetében a helyzet nagyon hasonló. Ha egy új könyv érkezik a kö
 akkor a könyv felvétele a rendszerbe ugyanúgy működik mint a tagok felvétele esetében,
 illetve a módosítás folyamata is ugyanaz, vagyis mindent papír segítségvel kell
 adminisztrálni a könyvek esetén is.
+Ha egy könyvtári tag azzal az igénnyel érkezik a könyvtárba ,hogy könyvet szeretni
+kikölcsönözni akkor az üzelti folyamat azzal kezdődik ,hogy a könyvtáros megnézni, hogy
+a könyv megtalálható-e a könyvtári könyvek listájában és ha igen akkor megnézni a
+könyvespolcon ,hogy jelenleg van-e a választott könyvből kikölcsönzésre alkalmas. Ha
+van akkor egy füzetbe feljegyzi a könyvtáros ,hogy ki és milyen könyvet, valamint mennyi
+időre kölcsönzött ki és ad egy lapot a könyvtári tagnak is amelyen a visszahozás határideje
+szerepel. Amikor a könyvtári tag visszahozza a könyvet, a könyvtáros feljegyzi ,hogy a
+könyvet határidő előtt visszahozta az a ki kikölcsönözte majd visszarakja a könyvespolcra.
 
 ## Igényelt üzleti folyamatok modellje
 
@@ -57,6 +66,7 @@ hogy mikor esedékes a könyvtárba való vissza hozatala. Emellett igen fontos 
 könnyű kezelhetőség és egyben átláthatóság a felhasználók számára.
 
 ## Követelménylista
+
 * Egy rendszer mely nyílvántartja a forgalomban lévő könyveket.
 * A rendszer képes legyen egy adott elemről több adatot is tárolni.
 * A nyilvántartásba lehtővé kell tenni a meglévő elemek módosítását, törlését
