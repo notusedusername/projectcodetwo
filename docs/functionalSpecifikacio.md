@@ -70,6 +70,16 @@ egyes pontok kifejtésére kerül sor ebben a fejezetben.
 
 ## A rendszernek NEM célja
 
+ * A tagok számára felületet biztosítani a kölcsönzéseik listázására, vagy
+    bármilyen kölcsönzőbeli adatuk elérésére.
+    
+ * Figyelmeztetést küldeni annak a tagnak akinek lejárt a kölcsönzési ideje vagy
+   közelít a határidő végéhez.
+   
+ * A legmodernebb biztonsági előírásoknak megfelelni.
+ 
+ * A GDPR előírásainak megfelelni.
+
 ## Jelenlegi üzleti folyamatok modellje
 
 ## Igényelt üzleti folyamatok
