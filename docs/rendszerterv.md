@@ -214,6 +214,16 @@ Tag:
 - Születési dátum
 
 #### Logikai adatmodell  
+
+Könyv           | Kölcsönzés                            |Tag  
+   ----------------|---------------------------------------|---------  
+   ID Primary key  |KolcsonzesID PRIMARY KEY, UNIQUE       |unique INTEGER           
+   LibID VARCHAR   |KonyvID FOREIGN KEY(KONYV.ID) INTEGER  |Vezeteknev VARCHAR                         
+   Szerzo VARCHAR  |TagID FOREIGN KEY(TAG.ID) INTEGER      |Keresztnev VARCHAR                     
+   Cim  VARCHAR    | KolcsonzesDatum  DATE                 |Születési datum  DATE                     
+   Kiado VARCHAR   |Hatarido DATE                          |   Lakcim VARCHAR                    
+   KiadasEve DATE  |VisszahozasDatum DATE                  |            
+
 ### Implementációs terv
 ### Perzisztencia-osztályok 
 
