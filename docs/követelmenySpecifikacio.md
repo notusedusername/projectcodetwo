@@ -31,6 +31,13 @@ a feladatokat amiket a Jelenlegi helyzet bekezdés alatt felsoroltunk és szeret
 ha ezeknek a feladatoknak a végrehajtásának az ideje jelentősen csökkenne. 
 ## Jelenlegi üzleti folyamatok
 
+A könyvtárunkban jelenleg minden üzleti folyamatot papír segítségével adminisztrálunk.
+A könyvtárban tagsággal rendelkező ügyfeleink könyvtári tag kártya segítségével tudja
+igénybe venni a könyvtárunk szolgáltatásait. Ha egy új személy tag szeretne lenni a 
+könyvtárunkban akkor a könyvtári tagjaink kézzel írott listájának a végére vesszük fel
+az adatait, illetve ha később az adat felvételkor elkövetett hiba miatt egy vagy több
+adatot meg kell változtatni akkor a módosítást szintén ebben a hosszú listában hajtjuk
+végre.
 ## Igényelt üzleti folyamatok modellje
 
 Könyvtár szeretné kiküszöbölni a jelenlegi analóg rendszer általi nehézségeket
