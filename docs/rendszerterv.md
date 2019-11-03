@@ -177,6 +177,9 @@ Architektúra elemek:
 
 ### Rendszer bővíthetősége  
 
+A rendszert teljesen objektum orientált szemlélet szerint fogjuk megírni
+vagyis a rendszer bizonyos szinten bővítésre alkalmas lesz.
+
 ### Biztonsági funkciók 
 
 ### Adatbázis terv  
