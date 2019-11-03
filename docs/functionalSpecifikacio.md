@@ -95,3 +95,33 @@ muszáj megváltozni a könyvtárnak a jelenlegi rendszert.
 ## Igényelt üzleti folyamatok
 
 ## Képernyőtervek
+
+A prototípus alapján a kliens számára is megfelelő designt próbáltunk
+megalkotni, amely megkönnyíti a használatot, de a megjelenése igényes,
+modern hatást kelt, mégis egyszerű. Ehhez a Bootstrap 4 eszközeit
+használtuk fel, mely letisztult designt biztosít, de rengeteg fontos és 
+hasznos felhasználói eszköz megvalósítását egyszerűsíti. Az oldal alapját
+egy főmenü alkotja, illetve a menü mellett helyezkedik el a fő tartalom, 
+a választott menüpontnak megfelelően. Jelenleg 4 fő képernyő és menüpont
+van a közvetlen tervbe véve, ezek:
+- Főoldal:
+Ide egyénileg testreszabható tartalmat helyezhet el a kliens.
+
+- Kölcsönzés:
+Választható könyv(ek) adott felhasználóhoz, a felhasználó és a könyv is kiválasztható,
+de kölcsönzés indítható a további (lásd lentebb) screenekről is.
+
+- Könyvek:
+A könyvek listája, és a könyveken végezhető műveletek végezhetőek innen, 
+a táblából választott rekordok száma alapján kínálja fel a módosítást (1) , törlést (több),
+hozzáadást. 1 vagy több kiválasztott könyvvel is indíthatunk kölcsönzési folyamatot.
+
+- Tagok:
+A tagok listája, adatokkal együtt, választható rekordok, többféle felajánlott művelettel, 
+hozzáadás, módosítás, törlés. Egy kiválasztott tag esetén indíthatunk kölcsönzési folyamatot.
+
+A képernyők háttere véletlen kép az unsplash.com oldalról. Az oldal reszponzív megjelenésű
+kis képernyő esetén a menü a képernyő tetején helyezkedik el, a táblák pedig oldalirányban 
+is scrollozhatóak. Az adatmódosításhoz felugró modal ablakokat használunk, így a felhasználó
+szeme előtt mindig csak a fontos információ található, mégis gyorsan visszatérhet az eredeti oldalra, 
+nincsenek meglepetésszerű redirektálgatások.
