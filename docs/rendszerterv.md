@@ -1,4 +1,4 @@
-# TRYHARD  
+﻿# TRYHARD  
 ## Rendszerterv  
 
 ### Bevezetés 
@@ -225,6 +225,17 @@ Könyv           | Kölcsönzés                            |Tag
    KiadasEve DATE  |VisszahozasDatum DATE                  |            
 
 ### Implementációs terv
+
+A tervezési folyamatban célszerű az általános logikai felépítést mindig valamilyen 
+grafikus reprezentációval
+modellezni, mert az emberi agy vizualizált objektumokkal könnyebben dolgozik.
+Az UML (=Unified Modeling Language), modellező nyelv segítségével a specifikációt és 
+a tervezést is grafikus
+formában, diagramok segítségével tudjuk dokumentálni. A követelményspecifikációban a használati
+esetdiagramokat (use case), az adatbázis tervezésnél az adatbázis diagramot, az OOP 
+tervezésnél az
+osztálydiagramot és objektumdiagramot valamint a szekvenciadiagramot, aktivitásdiagramot
+használhatjuk.
 ### Perzisztencia-osztályok 
 
 A perzisztencia megvalósításáért a Hibernate objektum-relációs leképezést
