@@ -30,6 +30,12 @@ az új rendszer a régihez képest.
    
 ### A rendszer célja 
 
+A rendszer célja ,hogy a könyvtár elavult adminisztrációs módszereit felváltsa
+ez a 21. századi, webes felületen futó és adatbázissal rendelkező alkalmazás
+amivel a könyvtár adminisztrációs munkája gyorsabb, hatékonyabb és átláthatóbb
+lesz. A programot használó könyvtári dolgozónak nagyon sok ideje fel fog szabadulni
+a program gyorsasága miatt ,így foglalkozhat más teendőkkel is.
+
 ### A projekt tervezete 
 
 ### A rendszer felépítése 
