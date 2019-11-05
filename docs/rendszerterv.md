@@ -267,4 +267,18 @@ A felhasználói interfész feladata az ügyviteli logika által küldött adato
 megjelenítése. Biztosítja a felhasználó hozzáférését az ügyviteli logika szolgáltatásaihoz. 
 Sohasem kerül közvetlen kapcsolatba az adatbázissal, és nem végez semmilyen műveletet az 
 adatokon.
+
 ### Tesztterv  
+
+Kód|Leírás|  
+----|---  
+T01:| A program elindítása  
+T02: |Az adatbázisból egy létező könyvre való rákeresés  
+T03: |Az adatbázisból egy nem létező könyvre való rákeresés  
+T04: |Egy könyv hozzáadása az adatbázishoz  
+T05: |Egy könyv állapotának kikölcsönzöttről való átállítása elérhetőre  
+T06: |Egy könyv állapotának elérhetőről való átállítása kikölcsönzöttre  
+T07: |Egy tag felvétele a tagok adatbázisába  
+T08: |Egy tag eltávolítása a tagok adatbázisából
+T09: |Egy könyv kikölcsönzése
+T10: |Több könyv kikölcsönzése
