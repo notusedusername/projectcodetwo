@@ -111,6 +111,7 @@ Az üzletben résztvevő entitások:
 
 - Esztétikus felhasználói felület.
 - Látás károsultak számára is megfelelő színvilág és betűméretek használata.
+- Clean code-nak való megfelelés.
 
 ### Funkcionális terv   
 
