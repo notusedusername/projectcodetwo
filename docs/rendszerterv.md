@@ -123,6 +123,20 @@ Az üzletben résztvevő entitások:
 
 ### Rendszerszereplők  
 
+A rendszerben két féle entitás csoportot külömböztetünk meg.
+
+
+A két csoport:
+- Könyvtárosok csoportja
+- Tagok csoportja
+
+A programot a könyvtárosok csoportja fogja használni és egyfajta szolgáltatást
+nyújt ezzel a tagok csoportjának.
+
+A Könyvtárosok csoportjának sokkal több joga lesz, sőt a tagok nem is használhatják
+a programot. Nekik kell lebonyolítani a kapcsolattartást is a tagokkal.
+Feladatuk kiterjed a tagok értesítésére elmaradás esetén.
+
 ### Rendszerhasználati esetek és lefutásai
 
 ### Menü-hierarchiák 
