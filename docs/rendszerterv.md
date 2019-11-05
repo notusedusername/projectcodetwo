@@ -122,25 +122,20 @@ Az üzletben résztvevő entitások:
 ### Menü-hierarchiák 
 
 ### Fizikai környezet  
+#### Hardver és hálózati topológia
 
-A cél platformunk a kölcsönző tulajdonában lévő számítógépek melyeken Linux alapú
-operációs rendszer futtatnak (Ubuntu 18.04-et). A megvalósítás miatt a program 
-alkalmas más operációs rendszer alatti futtatásra is.
+A felhasználói gépeknek el kell érniük a szerverként üzemelő központi gépet,
+amely kiszolgálja a kéréseket, így a szoftver telepítése csak itt szükséges.
+A rendszer internethez való csatolását nem javasoljuk.
 
 A gépek hardvere:
 - 8 GB DDR4-es RAM
 - Intel Core i7-8750H 2.20GHz típusú processzor
 - NVIDIA GeForce GTX 1060 videokártya
 
-
-A számítógépek számára biztosítva van a stabil 10Mb/s sávszélességű internet elérés.
-
-
-#### Hardver és hálózati topológia
-
-A felhasználói gépeknek el kell érniük a szerverként üzemelő központi gépet,
-amely kiszolgálja a kéréseket, így a szoftver telepítése csak itt szükséges.
-A rendszer internethez való csatolását nem javasoljuk 
+A cél platformunk a kölcsönző tulajdonában lévő számítógépek melyeken Linux alapú
+operációs rendszer futtatnak (Ubuntu 18.04-et).
+A megvalósítás miatt a program alkalmas más operációs rendszer alatti futtatásra is.
 
 #### Fizikai alrendszerek  
 
