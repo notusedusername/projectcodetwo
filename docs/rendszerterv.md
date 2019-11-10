@@ -153,6 +153,10 @@ Feladatuk kiterjed a tagok értesítésére elmaradás esetén.
 
 ### Rendszerhasználati esetek és lefutásai
 
+![Kolcsonzes](kolcsonzes.png)
+
+![Folyamatok](folyamatok.png)
+
 ### Menü-hierarchiák 
 
 ### Fizikai környezet  
