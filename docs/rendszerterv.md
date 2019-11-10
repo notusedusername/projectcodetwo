@@ -97,6 +97,11 @@ A program elkészítésének fő mérföldkövei:
 
 ###  Üzleti szereplők  
 
+A programot az éppen munkaidőben jelenlévő könyvtáros fogja használni.  
+A könyvtár összes alkalmazottjának, akik ebben a munkakörben dolgoznak  
+megvan a végzettsége és a tudása ahoz ,hogy TRYHARD csapat által készített  
+programot magabiztosan képes legyen használni.  
+
 ###  Üzleti entitások  
 
 Az üzletben résztvevő entitások:  
