@@ -92,6 +92,29 @@ muszáj megváltozni a könyvtárnak a jelenlegi rendszert.
 
 ## Jelenlegi üzleti folyamatok modellje
 
+A tagok és a könyvek listáját egy relációs adatbázis váltja ki, amelyben ezek az
+adatok tökéletesen tárolhatóak, és különböző szűrőkkel gyorsan lekérdezhetőek.
+ A menüből választhatóak ki az alapvető tevékenységek.
+
+ - A Könyvtáros felhasználó menüje:
+    * Kölcsönzés
+    * Új tag
+    * Új könyv
+    * Tag adatainak szerkesztése
+    * Könyv adatainak szerkesztése
+    * Tag törlése
+    * Könyv törlése
+    * Kilépés
+    
+ A kölcsönzési folyamat megkezdésekor a 'Kölcsönzés' menüponot választva a könyvtáros megadja
+a kölcsönző nevét és a könyv azonosítóját, ezt a rendszer eltárolja, majd megjeleníti a
+ kölcsönzési határidőt, amit a könyvtáros így megadhat a tagnak. Ugyan ez a menüpont 
+ használható a vissza hozott könyvek adminisztrálására is. Az 'Új tag' és az 'Új könyv' menüpontokon
+ keresztül tud a felhasználó új "elemeket" felvenni az adatbázisba. A 'Tag adatainak szerkesztése'
+ és a 'Könyv adatainak szerkesztése' menüpontok használhatóak az "elemek" adatinak módosítására az
+ adatbázisban. A 'Tag törlése' és a 'Könyv törlése' menüpontok használhatók tételek törlésére az
+ adatbázisból. A 'Kilépés' menüponttal zárható be a program.
+
 ## Igényelt üzleti folyamatok
 
 ## Képernyőtervek
