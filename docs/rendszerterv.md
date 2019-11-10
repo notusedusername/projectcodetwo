@@ -126,6 +126,11 @@ Az üzletben résztvevő entitások:
 
 ### Funkcionális terv   
 
+- Könnyen és egyszerűen kezelhető rendszer.
+- Jól átlátható adatbázis kezelés.
+- Egyszerű adatbázis lekérdezések lebonyolítása.
+- Könnyed adatfelvétel és módosítás.
+
 ### Rendszerszereplők  
 
 A rendszerben két féle entitás csoportot külömböztetünk meg.
