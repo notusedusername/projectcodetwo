@@ -125,6 +125,15 @@ Az üzletben résztvevő entitások:
 - Clean code-nak való megfelelés.
 
 ### Funkcionális terv   
+A progrem célja a könyvtári munka felgyorsítása. A könyvtárban dolgozó személyzet
+munkájának megkönnyebbítése. A jelenlegi analóg adminisztrációs módszer teljes felcserélése
+digitális formára. A korábbi módszer minden 'funkciójának' átültetése számítógépes környezetbe.
+Ezek a 'funkciók' nem mások, mint:
+ - Könyvtár könyvjeinek nyílvántartása.
+ - A könyvtár tagjainak nyílvántartása.
+ - A kölcsönzési tranzakciók feljegyzése.
+ - Bizonyos esetekben tagság megvonása.
+ - Amortizáció esetén könyvek kivonása a nyílvántartésból.
 
 ### Rendszerszereplők  
 
