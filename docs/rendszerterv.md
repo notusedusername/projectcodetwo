@@ -160,6 +160,7 @@ Feladatuk kiterjed a tagok értesítésére elmaradás esetén.
 ### Menü-hierarchiák 
 
 ### Fizikai környezet  
+
 #### Hardver és hálózati topológia
 
 A felhasználói gépeknek el kell érniük a szerverként üzemelő központi gépet,
@@ -261,6 +262,9 @@ Tag:
 - Születési dátum
 
 #### Logikai adatmodell  
+
+![DBdiagram](dbdiagram.png)
+
 
 Könyv           | Kölcsönzés                            |Tag  
    ----------------|---------------------------------------|---------  
