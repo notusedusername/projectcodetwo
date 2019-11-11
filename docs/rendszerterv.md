@@ -1,4 +1,4 @@
-# TRYHARD  
+﻿# TRYHARD  
 ## Rendszerterv  
 
 ### Bevezetés 
@@ -29,6 +29,12 @@ A digitalizálás hatására sokall átláthatóbb kezelhetőbb és biztonságo
 az új rendszer a régihez képest.
    
 ### A rendszer célja 
+
+A rendszer célja ,hogy a könyvtár elavult adminisztrációs módszereit felváltsa
+ez a 21. századi, webes felületen futó és adatbázissal rendelkező alkalmazás
+amivel a könyvtár adminisztrációs munkája gyorsabb, hatékonyabb és átláthatóbb
+lesz. A programot használó könyvtári dolgozónak nagyon sok ideje fel fog szabadulni
+a program gyorsasága miatt ,így foglalkozhat más teendőkkel is.
 
 ### A projekt tervezete 
 
@@ -91,6 +97,11 @@ A program elkészítésének fő mérföldkövei:
 
 ###  Üzleti szereplők  
 
+A programot az éppen munkaidőben jelenlévő könyvtáros fogja használni.  
+A könyvtár összes alkalmazottjának, akik ebben a munkakörben dolgoznak  
+megvan a végzettsége és a tudása ahoz ,hogy TRYHARD csapat által készített  
+programot magabiztosan képes legyen használni.  
+
 ###  Üzleti entitások  
 
 Az üzletben résztvevő entitások:  
@@ -111,22 +122,59 @@ Az üzletben résztvevő entitások:
 
 - Esztétikus felhasználói felület.
 - Látás károsultak számára is megfelelő színvilág és betűméretek használata.
+- Clean code-nak való megfelelés.
 
 ### Funkcionális terv   
+A progrem célja a könyvtári munka felgyorsítása. A könyvtárban dolgozó személyzet
+munkájának megkönnyebbítése. A jelenlegi analóg adminisztrációs módszer teljes felcserélése
+digitális formára. A korábbi módszer minden 'funkciójának' átültetése számítógépes környezetbe.
+Ezek a 'funkciók' nem mások, mint:
+ - Könyvtár könyvjeinek nyílvántartása.
+ - A könyvtár tagjainak nyílvántartása.
+ - A kölcsönzési tranzakciók feljegyzése.
+ - Bizonyos esetekben tagság megvonása.
+ - Amortizáció esetén könyvek kivonása a nyílvántartésból.
 
 ### Rendszerszereplők  
 
+A rendszerben két féle entitás csoportot külömböztetünk meg.
+
+
+A két csoport:
+- Könyvtárosok csoportja
+- Tagok csoportja
+
+A programot a könyvtárosok csoportja fogja használni és egyfajta szolgáltatást
+nyújt ezzel a tagok csoportjának.
+
+A Könyvtárosok csoportjának sokkal több joga lesz, sőt a tagok nem is használhatják
+a programot. Nekik kell lebonyolítani a kapcsolattartást is a tagokkal.
+Feladatuk kiterjed a tagok értesítésére elmaradás esetén.
+
 ### Rendszerhasználati esetek és lefutásai
+
+![Kolcsonzes](kolcsonzes.png)
+
+![Folyamatok](folyamatok.png)
 
 ### Menü-hierarchiák 
 
 ### Fizikai környezet  
-  
+
 #### Hardver és hálózati topológia
 
 A felhasználói gépeknek el kell érniük a szerverként üzemelő központi gépet,
 amely kiszolgálja a kéréseket, így a szoftver telepítése csak itt szükséges.
-A rendszer internethez való csatolását nem javasoljuk 
+A rendszer internethez való csatolását nem javasoljuk.
+
+A gépek hardvere:
+- 8 GB DDR4-es RAM
+- Intel Core i7-8750H 2.20GHz típusú processzor
+- NVIDIA GeForce GTX 1060 videokártya
+
+A cél platformunk a kölcsönző tulajdonában lévő számítógépek melyeken Linux alapú
+operációs rendszer futtatnak (Ubuntu 18.04-et).
+A megvalósítás miatt a program alkalmas más operációs rendszer alatti futtatásra is.
 
 #### Fizikai alrendszerek  
 
@@ -215,6 +263,9 @@ Tag:
 
 #### Logikai adatmodell  
 
+![DBdiagram](dbdiagram.png)
+
+
 Könyv           | Kölcsönzés                            |Tag  
    ----------------|---------------------------------------|---------  
    ID Primary key  |KolcsonzesID PRIMARY KEY, UNIQUE       |unique INTEGER           
@@ -225,6 +276,17 @@ Könyv           | Kölcsönzés                            |Tag
    KiadasEve DATE  |VisszahozasDatum DATE                  |            
 
 ### Implementációs terv
+
+A tervezési folyamatban célszerű az általános logikai felépítést mindig valamilyen 
+grafikus reprezentációval
+modellezni, mert az emberi agy vizualizált objektumokkal könnyebben dolgozik.
+Az UML (=Unified Modeling Language), modellező nyelv segítségével a specifikációt és 
+a tervezést is grafikus
+formában, diagramok segítségével tudjuk dokumentálni. A követelményspecifikációban a használati
+esetdiagramokat (use case), az adatbázis tervezésnél az adatbázis diagramot, az OOP 
+tervezésnél az
+osztálydiagramot és objektumdiagramot valamint a szekvenciadiagramot, aktivitásdiagramot
+használhatjuk.
 ### Perzisztencia-osztályok 
 
 A perzisztencia megvalósításáért a Hibernate objektum-relációs leképezést
@@ -247,4 +309,18 @@ A felhasználói interfész feladata az ügyviteli logika által küldött adato
 megjelenítése. Biztosítja a felhasználó hozzáférését az ügyviteli logika szolgáltatásaihoz. 
 Sohasem kerül közvetlen kapcsolatba az adatbázissal, és nem végez semmilyen műveletet az 
 adatokon.
+
 ### Tesztterv  
+
+Kód|Leírás|  
+----|---  
+T01:| A program elindítása  
+T02: |Az adatbázisból egy létező könyvre való rákeresés  
+T03: |Az adatbázisból egy nem létező könyvre való rákeresés  
+T04: |Egy könyv hozzáadása az adatbázishoz  
+T05: |Egy könyv állapotának kikölcsönzöttről való átállítása elérhetőre  
+T06: |Egy könyv állapotának elérhetőről való átállítása kikölcsönzöttre  
+T07: |Egy tag felvétele a tagok adatbázisába  
+T08: |Egy tag eltávolítása a tagok adatbázisából
+T09: |Egy könyv kikölcsönzése
+T10: |Több könyv kikölcsönzése

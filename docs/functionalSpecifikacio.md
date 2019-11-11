@@ -92,8 +92,55 @@ muszáj megváltozni a könyvtárnak a jelenlegi rendszert.
 
 ## Jelenlegi üzleti folyamatok modellje
 
+A tagok és a könyvek listáját egy relációs adatbázis váltja ki, amelyben ezek az
+adatok tökéletesen tárolhatóak, és különböző szűrőkkel gyorsan lekérdezhetőek.
+ A menüből választhatóak ki az alapvető tevékenységek.
+
+ - A Könyvtáros felhasználó menüje:
+    * Kölcsönzés
+    * Új tag
+    * Új könyv
+    * Tag adatainak szerkesztése
+    * Könyv adatainak szerkesztése
+    * Tag törlése
+    * Könyv törlése
+    * Kilépés
+    
+ A kölcsönzési folyamat megkezdésekor a 'Kölcsönzés' menüponot választva a könyvtáros megadja
+a kölcsönző nevét és a könyv azonosítóját, ezt a rendszer eltárolja, majd megjeleníti a
+ kölcsönzési határidőt, amit a könyvtáros így megadhat a tagnak. Ugyan ez a menüpont 
+ használható a vissza hozott könyvek adminisztrálására is. Az 'Új tag' és az 'Új könyv' menüpontokon
+ keresztül tud a felhasználó új "elemeket" felvenni az adatbázisba. A 'Tag adatainak szerkesztése'
+ és a 'Könyv adatainak szerkesztése' menüpontok használhatóak az "elemek" adatinak módosítására az
+ adatbázisban. A 'Tag törlése' és a 'Könyv törlése' menüpontok használhatók tételek törlésére az
+ adatbázisból. A 'Kilépés' menüponttal zárható be a program.
+
 ## Igényelt üzleti folyamatok
 
+A program alapvetően egy főmenűből, és a menüből nyitható funkció képernyőkből
+áll. A főmenüből elérhető az összes funkció, valamint a kilépési lehetőség.
+A program célja, hogy gyakorlatilag egy adatbázis előnyeit SQL utasítások
+használata nélkül élvezhessük. Így a fontosabb funkciók használatára kell lehetőséget
+biztosítanunk a userek számára.
+
+A következő funkciók a fontosabbak:
+   - lekérdezés
+   - létrehozás
+   - módosítás
+   - törlés
+
+Ezen funkciókat kivezetjük a grafikus felhasználói interfacere, így
+egyszerűen a használat a felhasználók számára.
+ Mivel az adott folyamat megszabja melyik táblának az elemeit használjuk,
+így csak a szűréssel kell törődnünk.
+A lekérdezés esetén gyakorlatilag a könyv kölcsönzés funkciót értjük, ekkor
+a kapcsoló táblába helyezünk el érték párokat.
+A létrehozás az új könyv/új tag regisztrálásának felel meg, ekkor a megfelelő
+táblába illesztünk be új rekordokat, tehát a mezők kitöltésére biztosítunk lehetőséget.
+A módosítás papíron sokkal körülményesebb, de a rendszerben csak ki kell választani a
+módosítandó rekordot, és átírni a módosítani kívánt értéket.
+A törlés nagyon hasonló folyamat a módosításhoz, viszont itt a kijelölt rekord minden
+értékét nullra állítjuk, az azonosítóján kívül.
 ## Képernyőtervek
 
 A prototípus alapján a kliens számára is megfelelő designt próbáltunk
