@@ -15,16 +15,24 @@ public class HibernateUtils {
     private static Configuration conf;
 
 
-    private static  SessionFactory buildSessionFancotry(){
+    public static  SessionFactory getSessionFactory(){
+        if(factory ==null ){
+            factory = buildSessionFactory();
+        }
+
+        return factory;
+    }
+
+    private static  SessionFactory buildSessionFactory(){
         try {
             conf = new Configuration(); {
 
                 conf.configure("hibernate.cfg.xml").addProperties(getPropertyFile());
 
-                System.out.println("Configuration Load Socces...");
+                System.out.println("Configuration Load Success...");
                 factory = conf.buildSessionFactory();
 
-                System.out.println("Sessionfactory Load Socces.. ");
+                System.out.println("Sessionfactory Load Success.. ");
                 return factory;
             }
 
@@ -37,17 +45,10 @@ public class HibernateUtils {
     }
 
 
-    public static  SessionFactory getSessionFactory(){
-        if(factory ==null )
-
-            factory = buildSessionFancotry();
-        return factory;
-    }
-
 
     private static Properties getPropertyFile() throws IOException {
         java.util.Properties properties = new Properties();
-        properties.load(new FileInputStream(System.getProperty("user.home") + "/try-hard-fx/db.properties"));
+        properties.load(new FileInputStream(System.getProperty("user.home") + "/try-hard/db.properties"));
 
         return properties;
 
