@@ -1,4 +1,4 @@
-package hu.inf.unideb.projectcodetwo;
+package hu.inf.unideb.projectcodetwo.main;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
