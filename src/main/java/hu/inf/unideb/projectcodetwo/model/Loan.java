@@ -8,6 +8,7 @@ import java.sql.Date;
 public class Loan {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+
     @Column
     private Long id;
 
