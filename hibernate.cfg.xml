@@ -15,7 +15,6 @@
         <property name="show_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
         <mapping class="hu.inf.unideb.projectcodetwo.model.Book"/>
-        <mapping class="hu.inf.unideb.projectcodetwo.model.Loan"/>
         <mapping class="hu.inf.unideb.projectcodetwo.model.Person"/>
     </session-factory>
 </hibernate-configuration>

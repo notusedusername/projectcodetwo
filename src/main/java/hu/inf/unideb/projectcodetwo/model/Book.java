@@ -1,13 +1,22 @@
 package hu.inf.unideb.projectcodetwo.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
+@Table(name = "Book")
 public class Book {
+
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "Loan",
+            joinColumns = { @JoinColumn(name = "bookId") },
+            inverseJoinColumns = { @JoinColumn(name = "personId") }
+    )
+    Set<Person> persons = new HashSet<>();
     @Id
-    private Long id;
+    private Long bookId;
 
     @Column
     private String author;
@@ -25,11 +34,11 @@ public class Book {
     }
 
     public Long getId() {
-        return id;
+        return bookId;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.bookId = id;
     }
 
     public String getAuthor() {
@@ -65,7 +74,7 @@ public class Book {
     }
 
     public Book(Long id, String author, String title, String publisher, Long yearOfPublication) {
-        this.id = id;
+        this.bookId = id;
         this.author = author;
         this.title = title;
         this.publisher = publisher;

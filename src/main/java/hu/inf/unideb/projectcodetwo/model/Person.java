@@ -1,16 +1,21 @@
 package hu.inf.unideb.projectcodetwo.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+
+import javax.persistence.*;
 import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
+@Table(name = "Person")
 public class Person {
+
+    @ManyToMany(mappedBy = "Book")
+    private Set<Book> books = new HashSet<>();
 
     @Id
     @Column
-    private Long id;
+    private Long personId;
 
     @Column
     private String firstName;
@@ -25,7 +30,7 @@ public class Person {
     private String adress;
 
     public Person(Long id, String firstName, String lastName, Date birthDate, String adress) {
-        this.id = id;
+        this.personId = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
@@ -36,11 +41,11 @@ public class Person {
     }
 
     public Long getId() {
-        return id;
+        return personId;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.personId = id;
     }
 
     public String getFirstName() {
