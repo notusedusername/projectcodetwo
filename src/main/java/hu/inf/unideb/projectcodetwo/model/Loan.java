@@ -8,9 +8,8 @@ import java.sql.Date;
 public class Loan {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-
     @Column
-    private Long id;
+    private Long loanId;
 
     @Column
     private Long bookID;
@@ -31,11 +30,11 @@ public class Loan {
     }
 
     public Long getId() {
-        return id;
+        return loanId;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.loanId = id;
     }
 
     public Long getBookID() {
@@ -79,7 +78,7 @@ public class Loan {
     }
 
     public Loan(Long id, Long bookID, Long personID, Date loanDate, Date deadLine, Date backDate) {
-        this.id = id;
+        this.loanId = id;
         this.bookID = bookID;
         this.personID = personID;
         this.loanDate = loanDate;

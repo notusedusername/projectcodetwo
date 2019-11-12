@@ -10,11 +10,9 @@ import java.util.Set;
 @Table(name = "Person")
 public class Person {
 
-    @ManyToMany(mappedBy = "Book")
-    private Set<Book> books = new HashSet<>();
-
     @Id
     @Column
+    @GeneratedValue
     private Long personId;
 
     @Column

@@ -16,5 +16,6 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
         <mapping class="hu.inf.unideb.projectcodetwo.model.Book"/>
         <mapping class="hu.inf.unideb.projectcodetwo.model.Person"/>
+        <mapping class="hu.inf.unideb.projectcodetwo.model.Loan"/>
     </session-factory>
 </hibernate-configuration>

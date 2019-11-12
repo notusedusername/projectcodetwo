@@ -1,5 +1,6 @@
 package hu.inf.unideb.projectcodetwo.utils;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -11,9 +12,17 @@ import java.util.Properties;
 
 public class HibernateUtils {
 
+    private static Session session = null;
     private static SessionFactory factory= null;
-    private static Configuration conf;
 
+    public static Session getSession(){
+        if (session == null){
+            return HibernateUtils.getSessionFactory().openSession().getSession();
+        }
+        else {
+            return session;
+        }
+    }
 
     public static  SessionFactory getSessionFactory(){
         if(factory ==null ){
@@ -25,7 +34,8 @@ public class HibernateUtils {
 
     private static  SessionFactory buildSessionFactory(){
         try {
-            conf = new Configuration(); {
+            Configuration conf = new Configuration();
+            {
 
                 conf.configure("hibernate.cfg.xml").addProperties(getPropertyFile());
 

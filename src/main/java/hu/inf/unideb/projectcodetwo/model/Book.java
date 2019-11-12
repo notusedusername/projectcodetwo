@@ -8,14 +8,8 @@ import java.util.Set;
 @Table(name = "Book")
 public class Book {
 
-    @ManyToMany(cascade = { CascadeType.ALL })
-    @JoinTable(
-            name = "Loan",
-            joinColumns = { @JoinColumn(name = "bookId") },
-            inverseJoinColumns = { @JoinColumn(name = "personId") }
-    )
-    Set<Person> persons = new HashSet<>();
     @Id
+    @GeneratedValue
     private Long bookId;
 
     @Column
