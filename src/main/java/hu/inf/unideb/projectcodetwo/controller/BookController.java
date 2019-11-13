@@ -21,7 +21,7 @@ public class BookController {
     private ModelMapper modelMapper;
 
     @GetMapping(value ="/books")
-    public List<Book> fetchAll(){
+    public @ResponseBody List<Book> fetchAll(){
         return bookService.getBooks();
     }
 
