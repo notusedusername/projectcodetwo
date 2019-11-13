@@ -1,8 +1,6 @@
 package hu.inf.unideb.projectcodetwo.model;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "Book")

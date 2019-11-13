@@ -10,7 +10,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/codetwo")
+@RequestMapping(value = "/codetwo", produces="application/json")
 public class BookController {
 
     @Autowired
@@ -19,12 +19,12 @@ public class BookController {
     @Autowired
     private ModelMapper modelMapper;
 
-    @GetMapping("/books")
+    @GetMapping(value ="/books")
     public List<Book> fetchAll(){
         return bookService.getBooks();
     }
 
-    @PostMapping("/books")
+    @PostMapping(value = "/books")
     @ResponseStatus(HttpStatus.CREATED)
     public int addNewBook(@RequestBody String resource) {
         System.out.println("\n\n\n"+resource.toString());

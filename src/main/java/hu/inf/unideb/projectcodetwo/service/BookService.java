@@ -1,7 +1,8 @@
 package hu.inf.unideb.projectcodetwo.service;
 
 import hu.inf.unideb.projectcodetwo.model.Book;
-import hu.inf.unideb.projectcodetwo.service.crud.BookFetcher;
+import hu.inf.unideb.projectcodetwo.repository.BookRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,9 +10,11 @@ import java.util.List;
 @Service
 public class BookService {
 
-    public List<Book> getBooks() {
+    @Autowired
+    BookRepository bookRepository;
 
-        return BookFetcher.fetchData();
+    public List<Book> getBooks() {
+        return bookRepository.fetchAll();
     }
 
     public int addBook(Book resource) {
