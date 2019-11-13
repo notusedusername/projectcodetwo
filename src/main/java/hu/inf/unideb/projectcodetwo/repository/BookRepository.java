@@ -11,12 +11,9 @@ import java.util.List;
 
 @Repository
 @Transactional
-public interface BookRepository extends JpaRepository<Book, Integer> {
+public interface BookRepository extends JpaRepository<Book, Long> {
 
   @Query("SELECT b FROM Book b WHERE b.bookId = (:bId)")
   List<Book> findByBookId(@Param("bId") String bookId);
-
-  @Query("from Book ")
-  List<Book> fetchAll();
 
 }

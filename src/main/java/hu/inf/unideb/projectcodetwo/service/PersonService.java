@@ -1,7 +1,6 @@
 package hu.inf.unideb.projectcodetwo.service;
 
 import hu.inf.unideb.projectcodetwo.model.Person;
-import hu.inf.unideb.projectcodetwo.service.crud.PersonFetcher;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,8 +9,7 @@ import java.util.List;
 public class PersonService {
 
     public List<Person> getBooks() {
-
-        return PersonFetcher.fetchData();
+        return null;
     }
 
     public int addPerson(Person resource) {

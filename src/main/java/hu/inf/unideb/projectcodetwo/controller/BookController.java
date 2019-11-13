@@ -24,10 +24,9 @@ public class BookController {
         return bookService.getBooks();
     }
 
-    @PostMapping(value = "/books")
+    @PostMapping(value = "/books", consumes = "application/json", produces = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
-    public int addNewBook(@RequestBody String resource) {
-        System.out.println("\n\n\n"+resource.toString());
+    public Book addNewBook(@RequestBody String resource) {
         return bookService.addBook(modelMapper.map(resource, Book.class));
     }
 

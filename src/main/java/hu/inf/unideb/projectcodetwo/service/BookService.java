@@ -14,11 +14,11 @@ public class BookService {
     BookRepository bookRepository;
 
     public List<Book> getBooks() {
-        return bookRepository.fetchAll();
+        return bookRepository.findAll();
     }
 
-    public int addBook(Book resource) {
-        return 0;
+    public Book addBook(Book resource) {
+        return bookRepository.save(resource);
     }
 
     public int updateBook(Long id, Book resource) {
