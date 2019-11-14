@@ -51,3 +51,41 @@ function fetchBooks() {
             $.growl.error({message: "Valami nem jó! "+ err, location: "br"});
         });
 }
+
+
+function performAddBook() {
+    var defered = jQuery.Deferred();
+    var jqxhr = $.ajax( {
+        url: host+context+"/books",
+        processData: false,
+        contentType: 'application/json',
+        data: JSON.stringify({
+            "title": $("input[name=newTitle]").val(),
+            "author": $("input[name=newAuthor]").val(),
+            "publisher": $("input[name=newPublisher]").val(),
+            "yearOfPublication": $("input[name=newPublishingDate]").val()
+        }),
+        method: "POST"
+    } )
+        .done(function(data) {
+            defered.resolve(data);
+        })
+        .fail(function(err) {
+            defered.reject(err)
+        });
+    return defered.promise();
+}
+
+function addBook() {
+    performAddBook()
+        .done(function (data) {
+            $.growl.notice({message: "Új könyv hozzáadva!", location: "br"});
+            book = data;
+            fetchBooks();
+            //todo close the modal
+        })
+        .fail(function (err) {
+            $.growl.error({message: "Valami nem jó! "+ err, location: "br"});
+        });
+}
+

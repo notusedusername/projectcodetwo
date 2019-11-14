@@ -74,6 +74,11 @@ function bindMenu(){
         $("#fakeBookSubmit").click();
     });
 
+    $("#fakeBookSubmit").on("click", function (e) {
+       e.preventDefault();
+        addBook();
+    });
+
     $("#editSelectedMember").on("click", function () {
        $("#editMemberModal").modal();
     });
