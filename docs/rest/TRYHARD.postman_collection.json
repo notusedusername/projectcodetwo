@@ -1,21 +1,35 @@
 {
 	"info": {
-		"_postman_id": "b01dab65-353c-4d50-aab5-e7a185586bc9",
+		"_postman_id": "116530e4-45be-41e5-98f9-0350918ba5b8",
 		"name": "TRYHARD",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Fetch all books",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c4e5c24-6f80-457c-9076-849e17a3c616",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/codetwo/books",
+					"raw": "{{app_host}}/codetwo/books",
 					"host": [
-						"localhost"
+						"{{app_host}}"
 					],
-					"port": "8080",
 					"path": [
 						"codetwo",
 						"books"
@@ -25,29 +39,120 @@
 			"response": []
 		},
 		{
-			"name": "Fetch all person",
+			"name": "Fetch all member",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b61fd047-18aa-4761-8696-5e1265164cec",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "{{app_host}}/codetwo/member",
+					"host": [
+						"{{app_host}}"
+					],
+					"path": [
+						"codetwo",
+						"member"
+					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Add new person",
+			"name": "Add new member",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25874e22-7cc9-4a18-a2de-3110ea3b1c37",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Check the response\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.result.firstName).to.eql(\"test_firstName\");",
+							"    pm.expect(jsonData.result.lastName).to.eql(\"test_lastName\");",
+							"    pm.expect(jsonData.result.birthDate).to.eql(\"1234.12.22\");",
+							"    pm.expect(jsonData.result.adress).to.eql(\"test_adress\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"test_firstname\",\n    \"lastName\": \"test_lastname\",\n    \"birthDate\": \"1234.12.22\",\n    \"adress\": \"test_adress\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": ""
+					"raw": "{{app_host}}/codetwo/member",
+					"host": [
+						"{{app_host}}"
+					],
+					"path": [
+						"codetwo",
+						"member"
+					]
 				}
 			},
 			"response": []
 		},
 		{
 			"name": "Create new book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d8dbbcd6-5d2d-42a1-b897-0d2c6bad9fb4",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Check the response\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.result.title).to.eql(\"a\");",
+							"    pm.expect(jsonData.result.author).to.eql(\"a\");",
+							"    pm.expect(jsonData.result.publisher).to.eql(\"b\");",
+							"    pm.expect(jsonData.result.yearOfPublication).to.eql(1);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -91,8 +196,19 @@
 			"request": {
 				"method": "POST",
 				"header": [],
-				"url": {
+				"body": {
+					"mode": "raw",
 					"raw": ""
+				},
+				"url": {
+					"raw": "{{app_host}}/codetwo/getbook",
+					"host": [
+						"{{app_host}}"
+					],
+					"path": [
+						"codetwo",
+						"getbook"
+					]
 				}
 			},
 			"response": []
@@ -103,69 +219,414 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "{{app_host}}/codetwo/putback",
+					"host": [
+						"{{app_host}}"
+					],
+					"path": [
+						"codetwo",
+						"putback"
+					]
 				}
 			},
 			"response": []
 		},
 		{
 			"name": "Update book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "688e66a0-64b6-4cfe-9e53-e44774eb36f4",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Check the response\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.result.title).to.eql(\"b\");",
+							"    pm.expect(jsonData.result.author).to.eql(\"b\");",
+							"    pm.expect(jsonData.result.publisher).to.eql(\"c\");",
+							"    pm.expect(jsonData.result.yearOfPublication).to.eql(2);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"b\",\n    \"author\": \"b\",\n    \"publisher\": \"c\",\n    \"yearOfPublication\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "localhost:8080/codetwo/books/{id}",
+					"raw": "{{app_host}}/codetwo/books/{{existing_id}}",
 					"host": [
-						"localhost"
+						"{{app_host}}"
 					],
-					"port": "8080",
 					"path": [
 						"codetwo",
 						"books",
-						"{id}"
+						"{{existing_id}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Update person",
+			"name": "Update unexisting book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "688e66a0-64b6-4cfe-9e53-e44774eb36f4",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Check the response\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.result.code).to.eql(pm.environment.get(\"unexisting_id\"));",
+							"    pm.expect(jsonData.result.count).to.eql(pm.environment.get(0));",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"b\",\n    \"author\": \"b\",\n    \"publisher\": \"c\",\n    \"yearOfPublication\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": ""
+					"raw": "{{app_host}}/codetwo/books/{{unexisting_id}}",
+					"host": [
+						"{{app_host}}"
+					],
+					"path": [
+						"codetwo",
+						"books",
+						"{{unexisting_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update member",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "de95b6c1-6eae-42f1-ba97-e11431bc54af",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Check the response\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.result.code).to.eql(pm.environment.get(\"existing_id\"));",
+							"    pm.expect(jsonData.result.count).to.eql(pm.environment.get(1));",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"test_firstname2\",\n    \"lastName\": \"test_lastname2\",\n    \"birthDate\": \"1234.12.23\",\n    \"adress\": \"test_adress2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{app_host}}/codetwo/members/{{existing_id}}",
+					"host": [
+						"{{app_host}}"
+					],
+					"path": [
+						"codetwo",
+						"members",
+						"{{existing_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update unexisting member",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "de95b6c1-6eae-42f1-ba97-e11431bc54af",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Check the response\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.result.code).to.eql(pm.environment.get(\"unexisting_id\"));",
+							"    pm.expect(jsonData.result.count).to.eql(pm.environment.get(0));",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"test_firstname2\",\n    \"lastName\": \"test_lastname2\",\n    \"birthDate\": \"1234.12.23\",\n    \"adress\": \"test_adress2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{app_host}}/codetwo/members/{{unexisting_id}}",
+					"host": [
+						"{{app_host}}"
+					],
+					"path": [
+						"codetwo",
+						"members",
+						"{{unexisting_id}}"
+					]
 				}
 			},
 			"response": []
 		},
 		{
 			"name": "Delete book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9e04efb7-1717-4486-be3a-2e487072194d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Check the response\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.result.code).to.eql(pm.environment.get(\"existing_id\"));",
+							"    pm.expect(jsonData.result.count).to.eql(pm.environment.get(1));",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "DELETE",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "localhost:8080/codetwo/books/{id}",
+					"raw": "{{app_host}}/codetwo/books/{{existing_id}}",
 					"host": [
-						"localhost"
+						"{{app_host}}"
 					],
-					"port": "8080",
 					"path": [
 						"codetwo",
 						"books",
-						"{id}"
+						"{{existing_id}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Delete person",
+			"name": "Delete unexisting book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9e04efb7-1717-4486-be3a-2e487072194d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Check the response\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.result.code).to.eql(pm.environment.get(\"unexisting_id\"));",
+							"    pm.expect(jsonData.result.count).to.eql(pm.environment.get(0));",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{app_host}}/codetwo/books/{{existing_id}}",
+					"host": [
+						"{{app_host}}"
+					],
+					"path": [
+						"codetwo",
+						"books",
+						"{{existing_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete member",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8dfbf9e0-a9ae-4a19-a264-b71653aa3524",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Check the response\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.result.code).to.eql(pm.environment.get(\"existing_id\"));",
+							"    pm.expect(jsonData.result.count).to.eql(pm.environment.get(1));",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "{{app_host}}/codetwo/member/{{existing_id}}",
+					"host": [
+						"{{app_host}}"
+					],
+					"path": [
+						"codetwo",
+						"member",
+						"{{existing_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete unexisting member",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8dfbf9e0-a9ae-4a19-a264-b71653aa3524",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Check the response\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.result.code).to.eql(pm.environment.get(\"unexisting_id\"));",
+							"    pm.expect(jsonData.result.count).to.eql(pm.environment.get(0));",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{app_host}}/codetwo/member/{{unexisting_id}}",
+					"host": [
+						"{{app_host}}"
+					],
+					"path": [
+						"codetwo",
+						"member",
+						"{{unexisting_id}}"
+					]
 				}
 			},
 			"response": []
