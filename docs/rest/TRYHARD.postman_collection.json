@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "116530e4-45be-41e5-98f9-0350918ba5b8",
+		"_postman_id": "215646fb-5160-47c1-bb1e-c27d51a29c4d",
 		"name": "TRYHARD",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -85,10 +85,10 @@
 							"",
 							"pm.test(\"Check the response\", function() {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.result.firstName).to.eql(\"test_firstName\");",
-							"    pm.expect(jsonData.result.lastName).to.eql(\"test_lastName\");",
-							"    pm.expect(jsonData.result.birthDate).to.eql(\"1234.12.22\");",
-							"    pm.expect(jsonData.result.adress).to.eql(\"test_adress\");",
+							"    pm.expect(jsonData.firstName).to.eql(\"test_firstName\");",
+							"    pm.expect(jsonData.lastName).to.eql(\"test_lastName\");",
+							"    pm.expect(jsonData.birthDate).to.eql(\"1234.12.22\");",
+							"    pm.expect(jsonData.adress).to.eql(\"test_adress\");",
 							"});",
 							""
 						],
@@ -136,16 +136,13 @@
 					"script": {
 						"id": "d8dbbcd6-5d2d-42a1-b897-0d2c6bad9fb4",
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
 							"});",
 							"",
 							"pm.test(\"Check the response\", function() {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.result.title).to.eql(\"a\");",
-							"    pm.expect(jsonData.result.author).to.eql(\"a\");",
-							"    pm.expect(jsonData.result.publisher).to.eql(\"b\");",
-							"    pm.expect(jsonData.result.yearOfPublication).to.eql(1);",
+							"    pm.expect(jsonData.message).to.eql(\"Könyv sikeresen hozzáadva.\");",
 							"});",
 							""
 						],
@@ -245,10 +242,7 @@
 							"",
 							"pm.test(\"Check the response\", function() {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.result.title).to.eql(\"b\");",
-							"    pm.expect(jsonData.result.author).to.eql(\"b\");",
-							"    pm.expect(jsonData.result.publisher).to.eql(\"c\");",
-							"    pm.expect(jsonData.result.yearOfPublication).to.eql(2);",
+							"    pm.expect(jsonData.message).to.eql(\"Könyv sikeresen frissítve.\");",
 							"});",
 							""
 						],
@@ -303,8 +297,7 @@
 							"",
 							"pm.test(\"Check the response\", function() {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.result.code).to.eql(pm.environment.get(\"unexisting_id\"));",
-							"    pm.expect(jsonData.result.count).to.eql(pm.environment.get(0));",
+							"    pm.expect(jsonData.message).to.eql(\"Nincs könyv ilyen azonosítóval!\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -358,8 +351,7 @@
 							"",
 							"pm.test(\"Check the response\", function() {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.result.code).to.eql(pm.environment.get(\"existing_id\"));",
-							"    pm.expect(jsonData.result.count).to.eql(pm.environment.get(1));",
+							"    pm.expect(jsonData.result.code).to.eql(\"Tag sikeresen frissítve.\");",
 							"});",
 							""
 						],
@@ -414,8 +406,7 @@
 							"",
 							"pm.test(\"Check the response\", function() {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.result.code).to.eql(pm.environment.get(\"unexisting_id\"));",
-							"    pm.expect(jsonData.result.count).to.eql(pm.environment.get(0));",
+							"    pm.expect(jsonData.code).to.eql(\"Nincs tag ilyen azonosítóval!\");",
 							"});",
 							""
 						],
@@ -470,8 +461,7 @@
 							"",
 							"pm.test(\"Check the response\", function() {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.result.code).to.eql(pm.environment.get(\"existing_id\"));",
-							"    pm.expect(jsonData.result.count).to.eql(pm.environment.get(1));",
+							"    pm.expect(jsonData.message).to.eql(\"Könyv sikeresen törölve\");",
 							"});",
 							""
 						],
@@ -518,8 +508,7 @@
 							"",
 							"pm.test(\"Check the response\", function() {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.result.code).to.eql(pm.environment.get(\"unexisting_id\"));",
-							"    pm.expect(jsonData.result.count).to.eql(pm.environment.get(0));",
+							"    pm.expect(jsonData.message).to.eql(\"Nincs könyv ilyen azonosítóval!\");",
 							"});",
 							""
 						],
@@ -565,8 +554,7 @@
 							"",
 							"pm.test(\"Check the response\", function() {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.result.code).to.eql(pm.environment.get(\"existing_id\"));",
-							"    pm.expect(jsonData.result.count).to.eql(pm.environment.get(1));",
+							"    pm.expect(jsonData.message).to.eql(\"Tag sikeresen törölve.\");",
 							"});",
 							""
 						],
@@ -605,8 +593,7 @@
 							"",
 							"pm.test(\"Check the response\", function() {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.result.code).to.eql(pm.environment.get(\"unexisting_id\"));",
-							"    pm.expect(jsonData.result.count).to.eql(pm.environment.get(0));",
+							"    pm.expect(jsonData.message).to.eql(\"Nincs tag ilyen azonosítóval!\");",
 							"});",
 							""
 						],
