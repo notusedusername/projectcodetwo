@@ -1,6 +1,7 @@
 package hu.inf.unideb.projectcodetwo.controller;
 
 import hu.inf.unideb.projectcodetwo.dto.BookDTO;
+import hu.inf.unideb.projectcodetwo.dto.ResponseDTO;
 import hu.inf.unideb.projectcodetwo.model.Book;
 import hu.inf.unideb.projectcodetwo.service.BookService;
 import org.modelmapper.ModelMapper;
@@ -27,19 +28,19 @@ public class BookController {
 
     @PostMapping(value = "/books", consumes = "application/json", produces = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
-    public Book addNewBook(@RequestBody BookDTO resource) {
+    public ResponseDTO addNewBook(@RequestBody BookDTO resource) {
         return bookService.addBook(modelMapper.map(resource, Book.class));
     }
 
     @PutMapping(value = "books/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public int update(@PathVariable( "id" ) Long id, @RequestBody BookDTO resource) {
+    public ResponseDTO update(@PathVariable( "id" ) Long id, @RequestBody BookDTO resource) {
         return bookService.updateBook(id, modelMapper.map(resource, Book.class));
     }
 
     @DeleteMapping(value = "books/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public int delete(@PathVariable("id") Long id) {
+    public ResponseDTO delete(@PathVariable("id") Long id) {
         return bookService.deleteBook(id);
     }
 }
