@@ -82,7 +82,7 @@ function addBook() {
             $.growl.notice({message: "Új könyv hozzáadva!", location: "br"});
             book = data;
             fetchBooks();
-            //todo close the modal
+            $("#addBookModal").modal("hide");
         })
         .fail(function (err) {
             $.growl.error({message: "Valami nem jó! "+ err, location: "br"});
