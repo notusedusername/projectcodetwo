@@ -1,33 +1,18 @@
-package hu.inf.unideb.projectcodetwo.model;
+package hu.inf.unideb.projectcodetwo.dto;
 
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.HashSet;
-import java.util.Set;
 
-@Entity
-@Table(name = "Person")
-public class Person {
+public class PersonDTO {
 
-    @Id
-    @Column
-    @GeneratedValue
     private Long personId;
-
-    @Column
     private String firstName;
-
-    @Column
     private String lastName;
-
-    @Column
     private Date birthDate;
-
-    @Column
     private String adress;
 
-    public Person(Long id, String firstName, String lastName, Date birthDate, String adress) {
+    public PersonDTO(Long id, String firstName, String lastName, Date birthDate, String adress) {
         this.personId = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -35,7 +20,7 @@ public class Person {
         this.adress = adress;
     }
 
-    public Person() {
+    public PersonDTO() {
     }
 
     public Long getId() {

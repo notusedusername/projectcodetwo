@@ -1,28 +1,15 @@
-package hu.inf.unideb.projectcodetwo.model;
+package hu.inf.unideb.projectcodetwo.dto;
 
-import javax.persistence.*;
 
-@Entity
-@Table(name = "Book")
-public class Book {
+public class BookDTO {
 
-    @Id
-    @GeneratedValue
     private Long bookId;
-
-    @Column
     private String author;
-
-    @Column
     private String title;
-
-    @Column
     private String publisher;
-
-    @Column
     private Long yearOfPublication;
 
-    public Book() {
+    public BookDTO() {
     }
 
     public Long getId() {
@@ -65,7 +52,7 @@ public class Book {
         this.yearOfPublication = yearOfPublication;
     }
 
-    public Book(Long id, String author, String title, String publisher, Long yearOfPublication) {
+    public BookDTO(Long id, String author, String title, String publisher, Long yearOfPublication) {
         this.bookId = id;
         this.author = author;
         this.title = title;

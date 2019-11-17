@@ -54,10 +54,76 @@ function bindMenu(){
     $("#bookmenu").parent().on("click", function () {
         hideAll();
         $("#books").show();
+        fetchBooks();
         showBookActions();
 
     });
 
+    $("#addBook").on("click", function () {
+        $('#addBookModal').modal();
+    });
+
+    $("#addMember").on("click", function () {
+        $('#addMemberModal').modal();
+    });
+
+    $("#addMemberToDB").on("click", function () {
+        $("#fakeMemberSubmit").click();
+    });
+    $("#addBookToDB").on("click", function () {
+        $("#fakeBookSubmit").click();
+    });
+
+    $("#fakeBookSubmit").on("click", function (e) {
+       e.preventDefault();
+        addBook();
+    });
+
+    $("#editSelectedMember").on("click", function () {
+       $("#editMemberModal").modal();
+    });
+
+    $("#editMemberSubmit").on("click", function () {
+        $("#fakeEditMemberSubmit").click();
+    });
+
+    $("#editSelectedBook").on("click", function () {
+        $("#editBookModal").modal();
+    });
+
+    $("#editBookSubmit").on("click", function () {
+        $("#fakeEditBookSubmit").click();
+    });
+
+    $("#deleteSelectedMember").on("click", function () {
+        alert("Törlöm a kiválasztott tagot!");
+    });
+
+    $("#deleteSelectedBook").on("click", function () {
+       alert("Törlöm a kiválasztott könyvet!");
+    });
+
+    $("#startRentFromMember").on("click", function () {
+        $("#rentmenu").click();
+        alert("Autokiegészítés a választott taggal");
+    });
+
+    $("#startRentFromBook").on("click", function () {
+        $("#rentmenu").click();
+        alert("Autokiegészítés a választott könyvvel/könyvekkel");
+    });
+
+    $("#selectBook").on("click", function () {
+        $("#selectBookModal").modal();
+    });
+
+    $("#selectMember").on("click", function () {
+       $("#selectMemberModal").modal();
+    });
+
+}
+
+function bindSelections() {
     $("#books tbody tr, #members tbody tr").on("click", function () {
         var thisID = $(this).parent().parent().parent().attr("id");
         if($(this).css("background-color") == active){
@@ -111,64 +177,6 @@ function bindMenu(){
             showMemberActions();
         }
     });
-
-    $("#addBook").on("click", function () {
-        $('#addBookModal').modal();
-    });
-
-    $("#addMember").on("click", function () {
-        $('#addMemberModal').modal();
-    });
-
-    $("#addMemberToDB").on("click", function () {
-        $("#fakeMemberSubmit").click();
-    });
-    $("#addBookToDB").on("click", function () {
-        $("#fakeBookSubmit").click();
-    });
-
-    $("#editSelectedMember").on("click", function () {
-       $("#editMemberModal").modal();
-    });
-
-    $("#editMemberSubmit").on("click", function () {
-        $("#fakeEditMemberSubmit").click();
-    });
-
-    $("#editSelectedBook").on("click", function () {
-        $("#editBookModal").modal();
-    });
-
-    $("#editBookSubmit").on("click", function () {
-        $("#fakeEditBookSubmit").click();
-    });
-
-    $("#deleteSelectedMember").on("click", function () {
-        alert("Törlöm a kiválasztott tagot!");
-    });
-
-    $("#deleteSelectedBook").on("click", function () {
-       alert("Törlöm a kiválasztott könyvet!");
-    });
-
-    $("#startRentFromMember").on("click", function () {
-        $("#rentmenu").click();
-        alert("Autokiegészítés a választott taggal");
-    });
-
-    $("#startRentFromBook").on("click", function () {
-        $("#rentmenu").click();
-        alert("Autokiegészítés a választott könyvvel/könyvekkel");
-    });
-
-    $("#selectBook").on("click", function () {
-        $("#selectBookModal").modal();
-    });
-
-    $("#selectMember").on("click", function () {
-       $("#selectMemberModal").modal();
-    });
-
 }
 
 function showMemberActions(){
@@ -212,3 +220,4 @@ function showBookActions() {
         });
     }
 }
+

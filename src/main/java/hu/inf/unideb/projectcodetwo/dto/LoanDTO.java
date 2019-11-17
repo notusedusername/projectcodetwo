@@ -1,32 +1,18 @@
-package hu.inf.unideb.projectcodetwo.model;
+package hu.inf.unideb.projectcodetwo.dto;
 
 import javax.persistence.*;
 import java.sql.Date;
 
+public class LoanDTO {
 
-@Entity
-public class Loan {
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column
     private Long loanId;
-
-    @Column
     private Long bookID;
-
-    @Column
     private Long personID;
-
-    @Column
     private Date loanDate;
-
-    @Column
     private Date deadLine;
-
-    @Column
     private Date backDate;
 
-    public Loan() {
+    public LoanDTO() {
     }
 
     public Long getId() {
@@ -77,7 +63,7 @@ public class Loan {
         this.backDate = backDate;
     }
 
-    public Loan(Long id, Long bookID, Long personID, Date loanDate, Date deadLine, Date backDate) {
+    public LoanDTO(Long id, Long bookID, Long personID, Date loanDate, Date deadLine, Date backDate) {
         this.loanId = id;
         this.bookID = bookID;
         this.personID = personID;
