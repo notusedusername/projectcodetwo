@@ -138,3 +138,38 @@ function addBook() {
         });
 }
 
+function performAddPerson() {
+    var defered = jQuery.Deferred();
+    var jqxhr = $.ajax( {
+        url: host+context+"/member",
+        processData: false,
+        contentType: 'application/json',
+        data: JSON.stringify({
+            "firstName": $("input[name=newFirstName]").val(),
+            "lastName": $("input[name=newLastName]").val(),
+            "birthDate": $("input[name=newBirthDate]").val(),
+            "adress": $("input[name=newAdress]").val()
+        }),
+        method: "POST"
+    } )
+        .done(function(data) {
+            defered.resolve(data);
+        })
+        .fail(function(err) {
+            defered.reject(err)
+        });
+    return defered.promise();
+}
+
+function addPerson() {
+    performAddPerson()
+        .done(function (data) {
+            $.growl.notice({message: data.message, location: "br"});
+            book = data;
+            fetchMembers();
+            $("#addMemberModal").modal("hide");
+        })
+        .fail(function (err) {
+            $.growl.error({message: "Valami nem jó! ", location: "br"});
+        });
+}
