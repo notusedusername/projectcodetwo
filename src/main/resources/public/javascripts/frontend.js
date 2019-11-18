@@ -60,7 +60,7 @@ function updateMemberTable($table){
         $tableBody
             .append($("<tr>")
                 .append($("<td>")
-                    .text(value.personId))
+                    .text(value.id))
                 .append($("<td>")
                     .text(value.firstName))
                 .append($("<td>")
