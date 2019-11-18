@@ -145,10 +145,10 @@ function performAddPerson() {
         processData: false,
         contentType: 'application/json',
         data: JSON.stringify({
-            "firstName": $("input[name=newFirstName]").val(),
-            "lastName": $("input[name=newLastName]").val(),
-            "birthDate": $("input[name=newBirthDate]").val(),
-            "adress": $("input[name=newAdress]").val()
+            "firstName": $("input[name=newMemberFirstName]").val(),
+            "lastName": $("input[name=newMemberLastName]").val(),
+            "birthDate": $("input[name=newMemberBirthDate]").val(),
+            "adress": $("input[name=newMemberAddress]").val()
         }),
         method: "POST"
     } )
