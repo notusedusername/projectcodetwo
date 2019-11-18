@@ -41,6 +41,7 @@ function bindMenu(){
     $("#membermenu").parent().on("click", function () {
         hideAll();
         $("#members").show();
+        fetchMembers();
         showMemberActions();
 
     });
