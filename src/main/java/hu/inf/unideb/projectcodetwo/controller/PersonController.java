@@ -1,13 +1,15 @@
 package hu.inf.unideb.projectcodetwo.controller;
 
+import hu.inf.unideb.projectcodetwo.dto.BookDTO;
+import hu.inf.unideb.projectcodetwo.dto.PersonDTO;
+import hu.inf.unideb.projectcodetwo.dto.ResponseDTO;
+import hu.inf.unideb.projectcodetwo.model.Book;
 import hu.inf.unideb.projectcodetwo.model.Person;
 import hu.inf.unideb.projectcodetwo.service.PersonService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.Member;
 import java.util.List;
@@ -25,5 +27,11 @@ public class PersonController {
     @GetMapping("/member")
     public @ResponseBody List<Person> fetchAll(){
         return personService.getPersons();
+    }
+
+    @PostMapping(value = "/member", consumes = "application/json", produces = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseDTO addNewPerson(@RequestBody PersonDTO resource) {
+        return personService.addPerson(modelMapper.map(resource, Person.class));
     }
 }
