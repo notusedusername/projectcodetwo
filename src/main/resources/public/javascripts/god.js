@@ -75,14 +75,14 @@ function bindMenu(){
         $("#fakeBookSubmit").click();
     });
 
-    $("#fakeBookSubmit").on("click", function (e) {
-       e.preventDefault();
+    $("#bookForm").on("click", function (e) {
         addBook();
+        return false;
     });
 
-    $("#fakeMemberSubmit").on("click", function (e) {
-        e.preventDefault();
+    $("#memberForm").on("submit", function (e) {
         addPerson();
+        return false;
     });
 
     $("#editSelectedMember").on("click", function () {
@@ -99,6 +99,10 @@ function bindMenu(){
 
     $("#editBookSubmit").on("click", function () {
         $("#fakeEditBookSubmit").click();
+    });
+
+    $("#bookeditForm").on("submit", function () {
+       return false;
     });
 
     $("#deleteSelectedMember").on("click", function () {
