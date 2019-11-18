@@ -161,65 +161,18 @@
                         <i class="fas fa-trash-alt" aria-hidden="true"></i>
                     </button>
                 </form>
-                <table class="table table-md table-dark">
+                <table id="membersTable" class="table table-md table-dark">
                     <thead>
                     <tr>
                         <th>Olvasói szám</th>
                         <th>Vezetéknév</th>
                         <th>Keresztnév</th>
-                        <th>Email</th>
-                        <th>Telefon</th>
+                        <th>Születési dátum</th>
                         <th>Lakcím</th>
                         <th>Kölcsönzések</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>
-                            Lorem
-                        </td>
-                        <td>
-                            ipsum
-                        </td>
-                        <td>
-                            dolor
-                        </td>
-                        <td>
-                            sit
-                        </td>
-                        <td>
-                            amet
-                        </td>
-                        <td>
-                            dk
-                        </td>
-                        <td>
-                            link
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Lorem
-                        </td>
-                        <td>
-                            ipsum
-                        </td>
-                        <td>
-                            dolor
-                        </td>
-                        <td>
-                            sit
-                        </td>
-                        <td>
-                            amet
-                        </td>
-                        <td>
-                            dk
-                        </td>
-                        <td>
-                            link
-                        </td>
-                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -254,46 +207,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>
-                            Lorem
-                        </td>
-                        <td>
-                            ipsum
-                        </td>
-                        <td>
-                            dolor
-                        </td>
-                        <td>
-                            sit
-                        </td>
-                        <td>
-                            amet
-                        </td>
-                        <td>
-                            link
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Lorem
-                        </td>
-                        <td>
-                            ipsum
-                        </td>
-                        <td>
-                            dolor
-                        </td>
-                        <td>
-                            sit
-                        </td>
-                        <td>
-                            amet
-                        </td>
-                        <td>
-                            link
-                        </td>
-                    </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -382,13 +296,10 @@
                         <input type="text" class="col-sm-12"  name="newMemberLastName" placeholder="Keresztnév" required>
                     </div>
                     <div class="form-group">
-                        <input type="email"  class="col-sm-12" name="newEmail" placeholder="Email" required>
+                        <input type="date"  class="col-sm-12" name="newMemberBirthDate" placeholder="Szül dátum" required>
                     </div>
                     <div class="form-group">
-                        <input type="number"  class="col-sm-12" name="newPhone" placeholder="Telefonszám" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="col-sm-12"  name="newAddress" placeholder="Cím" required>
+                        <input type="text" class="col-sm-12"  name="newMemberAddress" placeholder="Cím" required>
                     </div>
                     <input type="submit" style="display: none" id="fakeMemberSubmit">
                 </form>
