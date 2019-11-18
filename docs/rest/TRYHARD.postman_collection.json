@@ -85,10 +85,7 @@
 							"",
 							"pm.test(\"Check the response\", function() {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.firstName).to.eql(\"test_firstName\");",
-							"    pm.expect(jsonData.lastName).to.eql(\"test_lastName\");",
-							"    pm.expect(jsonData.birthDate).to.eql(\"1234.12.22\");",
-							"    pm.expect(jsonData.adress).to.eql(\"test_adress\");",
+							"    pm.expect(jsonData.message).to.eql(\"Tag sikeresen hozzáadva.\");",
 							"});",
 							""
 						],
