@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "547f1d6b-8e12-45a8-a57a-a4b01ac12577",
+		"_postman_id": "686b776a-ce32-49a3-bd44-9f02bec86adb",
 		"name": "TRYHARD",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -79,8 +79,8 @@
 					"script": {
 						"id": "25874e22-7cc9-4a18-a2de-3110ea3b1c37",
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
 							"});",
 							"",
 							"pm.test(\"Check the response\", function() {",
@@ -105,7 +105,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstName\": \"test_firstname\",\n    \"lastName\": \"test_lastname\",\n    \"birthDate\": \"1234.12.22\",\n    \"adress\": \"test_adress\"\n}"
+					"raw": "{\n    \"firstName\": \"test_firstname\",\n    \"lastName\": \"test_lastname\",\n    \"birthDate\": \"1234-12-22\",\n    \"adress\": \"test_adress\"\n}"
 				},
 				"url": {
 					"raw": "{{app_host}}/codetwo/member",
