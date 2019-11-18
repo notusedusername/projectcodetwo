@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public class PersonService {
 
-    public List<Person> getBooks() {
+    public List<Person> getPersons() {
         return null;
     }
 
