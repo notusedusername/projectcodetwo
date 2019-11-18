@@ -322,8 +322,8 @@
 					"script": {
 						"id": "de95b6c1-6eae-42f1-ba97-e11431bc54af",
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
 							"});",
 							"",
 							"pm.test(\"Check the response\", function() {",
@@ -348,16 +348,16 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstName\": \"test_firstname2\",\n    \"lastName\": \"test_lastname2\",\n    \"birthDate\": \"1234.12.23\",\n    \"adress\": \"test_adress2\"\n}"
+					"raw": "{\n    \"firstName\": \"test_firstname2\",\n    \"lastName\": \"test_lastname2\",\n    \"birthDate\": \"1234-12-23\",\n    \"adress\": \"test_adress2\"\n}"
 				},
 				"url": {
-					"raw": "{{app_host}}/codetwo/members/{{existing_id}}",
+					"raw": "{{app_host}}/codetwo/member/{{existing_id}}",
 					"host": [
 						"{{app_host}}"
 					],
 					"path": [
 						"codetwo",
-						"members",
+						"member",
 						"{{existing_id}}"
 					]
 				}

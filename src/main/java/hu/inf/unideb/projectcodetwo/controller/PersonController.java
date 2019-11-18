@@ -34,4 +34,10 @@ public class PersonController {
     public ResponseDTO addNewPerson(@RequestBody PersonDTO resource) {
         return personService.addPerson(modelMapper.map(resource, Person.class));
     }
+
+    @PutMapping(value = "member/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseDTO update(@PathVariable( "id" ) Long id, @RequestBody PersonDTO resource) {
+        return personService.updatePerson(id, modelMapper.map(resource, Person.class));
+    }
 }
