@@ -75,7 +75,7 @@ function bindMenu(){
         $("#fakeBookSubmit").click();
     });
 
-    $("#bookForm").on("click", function (e) {
+    $("#bookForm").on("submit", function (e) {
         addBook();
         return false;
     });
