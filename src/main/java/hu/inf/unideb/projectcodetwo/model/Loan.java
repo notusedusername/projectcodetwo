@@ -12,12 +12,6 @@ public class Loan {
     private Long loanId;
 
     @Column
-    private Long bookID;
-
-    @Column
-    private Long personID;
-
-    @Column
     private Date loanDate;
 
     @Column
@@ -25,6 +19,12 @@ public class Loan {
 
     @Column
     private Date backDate;
+
+    @ManyToOne
+    private Book book;
+
+    @ManyToOne
+    private Person person;
 
     public Long getLoanId() {
         return loanId;
@@ -50,12 +50,6 @@ public class Loan {
         this.person = person;
     }
 
-    @ManyToOne
-    private Book book;
-
-    @ManyToOne
-    private Person person;
-
     public Loan() {
     }
 
@@ -67,21 +61,6 @@ public class Loan {
         this.loanId = id;
     }
 
-    public Long getBookID() {
-        return bookID;
-    }
-
-    public void setBookID(Long bookID) {
-        this.bookID = bookID;
-    }
-
-    public Long getPersonID() {
-        return personID;
-    }
-
-    public void setPersonID(Long personID) {
-        this.personID = personID;
-    }
 
     public Date getLoanDate() {
         return loanDate;
@@ -109,8 +88,6 @@ public class Loan {
 
     public Loan(Long id, Long bookID, Long personID, Date loanDate, Date deadLine, Date backDate) {
         this.loanId = id;
-        this.bookID = bookID;
-        this.personID = personID;
         this.loanDate = loanDate;
         this.deadLine = deadLine;
         this.backDate = backDate;

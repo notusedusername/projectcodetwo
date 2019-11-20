@@ -5,8 +5,6 @@ import java.sql.Date;
 public class LoanDTO {
 
     private Long loanId;
-    private Long bookID;
-    private Long personID;
     private Date loanDate;
     private Date deadLine;
     private Date backDate;
@@ -48,22 +46,6 @@ public class LoanDTO {
         this.loanId = id;
     }
 
-    public Long getBookID() {
-        return bookID;
-    }
-
-    public void setBookID(Long bookID) {
-        this.bookID = bookID;
-    }
-
-    public Long getPersonID() {
-        return personID;
-    }
-
-    public void setPersonID(Long personID) {
-        this.personID = personID;
-    }
-
     public Date getLoanDate() {
         return loanDate;
     }
@@ -90,8 +72,6 @@ public class LoanDTO {
 
     public LoanDTO(Long id, Long bookID, Long personID, Date loanDate, Date deadLine, Date backDate) {
         this.loanId = id;
-        this.bookID = bookID;
-        this.personID = personID;
         this.loanDate = loanDate;
         this.deadLine = deadLine;
         this.backDate = backDate;
