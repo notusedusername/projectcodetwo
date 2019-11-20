@@ -1,6 +1,10 @@
 package hu.inf.unideb.projectcodetwo.dto;
 
 
+import hu.inf.unideb.projectcodetwo.model.Loan;
+
+import java.util.Set;
+
 public class BookDTO {
 
     private Long bookId;
@@ -8,6 +12,7 @@ public class BookDTO {
     private String title;
     private String publisher;
     private Long yearOfPublication;
+    private Set<Loan> loans;
 
     public BookDTO() {
     }

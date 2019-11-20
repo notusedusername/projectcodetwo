@@ -27,6 +27,10 @@ public class Person {
     @Column
     private String adress;
 
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name="personId")
+    private Set<Loan> loans;
+
     public Person(Long id, String firstName, String lastName, Date birthDate, String adress) {
         this.personId = id;
         this.firstName = firstName;

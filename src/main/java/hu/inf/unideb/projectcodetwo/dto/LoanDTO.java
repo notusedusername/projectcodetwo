@@ -11,6 +11,32 @@ public class LoanDTO {
     private Date loanDate;
     private Date deadLine;
     private Date backDate;
+    private PersonDTO personDTO;
+    private BookDTO bookDTO;
+
+    public Long getLoanId() {
+        return loanId;
+    }
+
+    public void setLoanId(Long loanId) {
+        this.loanId = loanId;
+    }
+
+    public PersonDTO getPersonDTO() {
+        return personDTO;
+    }
+
+    public void setPersonDTO(PersonDTO personDTO) {
+        this.personDTO = personDTO;
+    }
+
+    public BookDTO getBookDTO() {
+        return bookDTO;
+    }
+
+    public void setBookDTO(BookDTO bookDTO) {
+        this.bookDTO = bookDTO;
+    }
 
     public LoanDTO() {
     }

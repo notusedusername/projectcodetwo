@@ -1,6 +1,7 @@
 package hu.inf.unideb.projectcodetwo.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "Book")
@@ -22,7 +23,28 @@ public class Book {
     @Column
     private Long yearOfPublication;
 
+
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name="bookId")
+    private Set<Loan> loans;
+
     public Book() {
+    }
+
+    public Long getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(Long bookId) {
+        this.bookId = bookId;
+    }
+
+    public Set<Loan> getLoans() {
+        return loans;
+    }
+
+    public void setLoans(Set<Loan> loans) {
+        this.loans = loans;
     }
 
     public Long getId() {

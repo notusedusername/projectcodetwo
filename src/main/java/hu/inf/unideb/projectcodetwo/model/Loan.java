@@ -26,6 +26,36 @@ public class Loan {
     @Column
     private Date backDate;
 
+    public Long getLoanId() {
+        return loanId;
+    }
+
+    public void setLoanId(Long loanId) {
+        this.loanId = loanId;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    @ManyToOne
+    private Book book;
+
+    @ManyToOne
+    private Person person;
+
     public Loan() {
     }
 

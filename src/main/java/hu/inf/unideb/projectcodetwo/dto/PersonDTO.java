@@ -1,8 +1,7 @@
 package hu.inf.unideb.projectcodetwo.dto;
 
-
-import javax.persistence.*;
 import java.sql.Date;
+import java.util.Set;
 
 public class PersonDTO {
 
@@ -11,6 +10,8 @@ public class PersonDTO {
     private String lastName;
     private Date birthDate;
     private String adress;
+    private Set<LoanDTO> loans;
+
 
     public PersonDTO(Long id, String firstName, String lastName, Date birthDate, String adress) {
         this.personId = id;
@@ -21,6 +22,22 @@ public class PersonDTO {
     }
 
     public PersonDTO() {
+    }
+
+    public Long getPersonId() {
+        return personId;
+    }
+
+    public void setPersonId(Long personId) {
+        this.personId = personId;
+    }
+
+    public Set<LoanDTO> getLoans() {
+        return loans;
+    }
+
+    public void setLoans(Set<LoanDTO> loans) {
+        this.loans = loans;
     }
 
     public Long getId() {
