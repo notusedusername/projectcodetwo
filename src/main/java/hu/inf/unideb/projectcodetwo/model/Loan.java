@@ -1,5 +1,7 @@
 package hu.inf.unideb.projectcodetwo.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.sql.Date;
 
@@ -21,9 +23,11 @@ public class Loan {
     private Date backDate;
 
     @ManyToOne
+    @JsonBackReference
     private Book book;
 
     @ManyToOne
+    @JsonBackReference
     private Person person;
 
     public Long getLoanId() {

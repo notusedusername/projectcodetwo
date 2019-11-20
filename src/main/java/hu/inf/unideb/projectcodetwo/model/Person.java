@@ -1,6 +1,8 @@
 package hu.inf.unideb.projectcodetwo.model;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.HashSet;
@@ -11,7 +13,7 @@ import java.util.Set;
 public class Person {
 
     @Id
-    @Column(name="personId")
+    @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long personId;
 
@@ -27,8 +29,9 @@ public class Person {
     @Column
     private String adress;
 
+    @JsonManagedReference
     @OneToMany(cascade=CascadeType.ALL)
-    @JoinColumn(name="personId")
+    @JoinColumn(name="person_id")
     private Set<Loan> loans;
 
     public Person(Long id, String firstName, String lastName, Date birthDate, String adress, Set<Loan> loans) {
