@@ -9,7 +9,7 @@ public class Book {
 
     @Id
     @Column(name="bookId")
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long bookId;
 
     @Column

@@ -7,7 +7,7 @@ import java.sql.Date;
 @Entity
 public class Loan {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column
     private Long loanId;
 
