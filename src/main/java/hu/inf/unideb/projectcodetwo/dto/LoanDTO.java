@@ -38,14 +38,6 @@ public class LoanDTO {
     public LoanDTO() {
     }
 
-    public Long getId() {
-        return loanId;
-    }
-
-    public void setId(Long id) {
-        this.loanId = id;
-    }
-
     public Date getLoanDate() {
         return loanDate;
     }

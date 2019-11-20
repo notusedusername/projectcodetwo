@@ -33,14 +33,6 @@ public class BookDTO {
         this.loans = loans;
     }
 
-    public Long getId() {
-        return bookId;
-    }
-
-    public void setId(Long id) {
-        this.bookId = id;
-    }
-
     public String getAuthor() {
         return author;
     }

@@ -40,14 +40,6 @@ public class PersonDTO {
         this.loans = loans;
     }
 
-    public Long getId() {
-        return personId;
-    }
-
-    public void setId(Long id) {
-        this.personId = id;
-    }
-
     public String getFirstName() {
         return firstName;
     }
