@@ -1,6 +1,5 @@
 package hu.inf.unideb.projectcodetwo.dto;
 
-import javax.persistence.*;
 import java.sql.Date;
 
 public class LoanDTO {

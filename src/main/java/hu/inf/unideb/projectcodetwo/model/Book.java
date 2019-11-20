@@ -8,6 +8,7 @@ import java.util.Set;
 public class Book {
 
     @Id
+    @Column(name="bookId")
     @GeneratedValue
     private Long bookId;
 

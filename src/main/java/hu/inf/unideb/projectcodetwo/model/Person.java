@@ -11,7 +11,7 @@ import java.util.Set;
 public class Person {
 
     @Id
-    @Column
+    @Column(name="personId")
     @GeneratedValue
     private Long personId;
 
@@ -31,15 +31,32 @@ public class Person {
     @JoinColumn(name="personId")
     private Set<Loan> loans;
 
-    public Person(Long id, String firstName, String lastName, Date birthDate, String adress) {
+    public Person(Long id, String firstName, String lastName, Date birthDate, String adress, Set<Loan> loans) {
         this.personId = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
         this.adress = adress;
+        this.loans = loans;
     }
 
     public Person() {
+    }
+
+    public Long getPersonId() {
+        return personId;
+    }
+
+    public void setPersonId(Long personId) {
+        this.personId = personId;
+    }
+
+    public Set<Loan> getLoans() {
+        return loans;
+    }
+
+    public void setLoans(Set<Loan> loans) {
+        this.loans = loans;
     }
 
     public Long getId() {

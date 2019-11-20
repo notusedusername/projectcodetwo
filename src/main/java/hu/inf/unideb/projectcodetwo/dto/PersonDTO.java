@@ -12,13 +12,13 @@ public class PersonDTO {
     private String adress;
     private Set<LoanDTO> loans;
 
-
-    public PersonDTO(Long id, String firstName, String lastName, Date birthDate, String adress) {
-        this.personId = id;
+    public PersonDTO(Long personId, String firstName, String lastName, Date birthDate, String adress, Set<LoanDTO> loans) {
+        this.personId = personId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
         this.adress = adress;
+        this.loans = loans;
     }
 
     public PersonDTO() {
