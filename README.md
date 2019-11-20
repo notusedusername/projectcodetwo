@@ -23,7 +23,7 @@
 
 ### Dokumentáció
  
- [REST dokumentáció](https://documenter.getpostman.com/view/9456191/SW7W7W4x?version=latest)
+ [REST dokumentáció](https://documenter.getpostman.com/view/9456191/SW7aX7vQ?version=latest)
  
  [Követelményspecifikáció](/docs/követelmenySpecifikacio.md)
  
