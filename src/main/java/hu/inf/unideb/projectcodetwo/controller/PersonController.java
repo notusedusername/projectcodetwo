@@ -44,6 +44,6 @@ public class PersonController {
     @DeleteMapping(value = "member/{id}")
     @ResponseStatus(HttpStatus.OK)
     public ResponseDTO delete(@PathVariable("id") Long id) {
-        return personService.deleteBook(id);
+        return personService.deletePerson(id);
     }
 }
