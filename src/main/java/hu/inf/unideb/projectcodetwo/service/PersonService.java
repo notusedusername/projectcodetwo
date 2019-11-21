@@ -36,6 +36,7 @@ public class PersonService {
     }
 
     public ResponseDTO deletePerson(Long id) {
-        return null;
+        personRepository.deleteById(id);
+        return new ResponseDTO(id,"A tag sikeresen törölve.");
     }
 }
