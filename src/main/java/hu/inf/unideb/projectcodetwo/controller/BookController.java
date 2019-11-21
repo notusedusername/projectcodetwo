@@ -1,9 +1,11 @@
 package hu.inf.unideb.projectcodetwo.controller;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import hu.inf.unideb.projectcodetwo.dto.BookDTO;
 import hu.inf.unideb.projectcodetwo.dto.ResponseDTO;
 import hu.inf.unideb.projectcodetwo.model.Book;
 import hu.inf.unideb.projectcodetwo.service.BookService;
+import hu.inf.unideb.projectcodetwo.views.Views;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +23,7 @@ public class BookController {
     @Autowired
     private ModelMapper modelMapper;
 
+    @JsonView(Views.FromBook.class)
     @GetMapping(value ="/books")
     public @ResponseBody List<Book> fetchAll(){
         return bookService.getBooks();

@@ -1,36 +1,38 @@
 package hu.inf.unideb.projectcodetwo.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.JsonView;
+import hu.inf.unideb.projectcodetwo.views.Views;
 
 import javax.persistence.*;
 import java.sql.Date;
 
 
 @Entity
-@JsonIdentityInfo(
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "loanId")
 public class Loan {
     @Id
+    @JsonView(Views.Base.class)
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column
     private Long loanId;
 
+    @JsonView(Views.Base.class)
     @Column
     private Date loanDate;
 
+    @JsonView(Views.Base.class)
     @Column
     private Date deadLine;
 
+    @JsonView(Views.Base.class)
     @Column
     private Date backDate;
 
     @ManyToOne
+    @JsonView(Views.FromPerson.class)
     private Book book;
 
     @ManyToOne
+    @JsonView(Views.FromBook.class)
     private Person person;
 
     public Long getLoanId() {

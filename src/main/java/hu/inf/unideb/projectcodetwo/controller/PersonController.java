@@ -1,11 +1,13 @@
 package hu.inf.unideb.projectcodetwo.controller;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import hu.inf.unideb.projectcodetwo.dto.BookDTO;
 import hu.inf.unideb.projectcodetwo.dto.PersonDTO;
 import hu.inf.unideb.projectcodetwo.dto.ResponseDTO;
 import hu.inf.unideb.projectcodetwo.model.Book;
 import hu.inf.unideb.projectcodetwo.model.Person;
 import hu.inf.unideb.projectcodetwo.service.PersonService;
+import hu.inf.unideb.projectcodetwo.views.Views;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,6 +26,7 @@ public class PersonController {
     @Autowired
     private ModelMapper modelMapper;
 
+    @JsonView(Views.FromPerson.class)
     @GetMapping("/member")
     public @ResponseBody List<Person> fetchAll(){
         return personService.getPersons();

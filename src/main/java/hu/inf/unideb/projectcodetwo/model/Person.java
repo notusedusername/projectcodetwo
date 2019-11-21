@@ -1,9 +1,8 @@
 package hu.inf.unideb.projectcodetwo.model;
 
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.*;
+import hu.inf.unideb.projectcodetwo.views.Views;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -12,30 +11,33 @@ import java.util.Set;
 
 @Entity
 @Table(name = "Person")
-@JsonIdentityInfo(
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id")
 public class Person {
 
     @Id
     @Column(name="id")
+    @JsonView(Views.Base.class)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long personId;
 
+    @JsonView(Views.Base.class)
     @Column
     private String firstName;
 
+    @JsonView(Views.Base.class)
     @Column
     private String lastName;
 
+    @JsonView(Views.Base.class)
     @Column
     private Date birthDate;
 
+    @JsonView(Views.Base.class)
     @Column
     private String adress;
 
-    @javax.persistence.OrderBy("loandate ASC")
+    @javax.persistence.OrderBy("loandate DESC ")
     @OneToMany(cascade=CascadeType.ALL)
+    @JsonView(Views.FromPerson.class)
     @JoinColumn(name="person_id")
     private Set<Loan> loans;
 
