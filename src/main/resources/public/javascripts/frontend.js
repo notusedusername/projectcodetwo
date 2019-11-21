@@ -10,8 +10,8 @@ function updateBookTable($table){
     $.each(bookRecords, function (index, value) {
         $tableBody
             .append($("<tr>")
-                .append($("<td>")
-                .text(value.id))
+                .append($("<td>").addClass("td-id")
+                .text(value.bookId))
                 .append($("<td>")
                     .text(value.author))
                 .append($("<td>")
@@ -19,10 +19,46 @@ function updateBookTable($table){
                 .append($("<td>")
                     .text(value.publisher))
                 .append($("<td>")
-                    .text(value.yearOfPublication)));
+                    .text(value.yearOfPublication)).
+                append($("<td>")
+                    .append($("<button>").addClass("watchPersons btn btn-xs btn-dark")
+                    .append($("<i>").addClass("fa fa-info-circle")))));
 
     });
     bindSelections();
+    bindInfoButtons();
+}
+
+function fillMemberInfoModal(code) {
+    var $table = $("#memberSelectorTable");
+    $table.html("")
+        .append($("<thead>")
+        .append($("<th>").text("Név"))
+        .append($("<th>").text("Cím"))
+        .append($("<th>").text("Elvitel"))
+        .append($("<th>").text("Határidő"))
+        .append($("<th>").text("Visszahozás")));
+    var $tableBody = $table.append($("<tbody>"));
+    $.each(bookRecords, function (id, book) {
+        if(book.bookId === parseInt(code) && book.loans.length > 0) {
+            $.each(book.loans, function (id, loan) {
+                if (loan && loan.person) {
+                    $tableBody.append($("<tr>")
+                        .append($("<td>").text(loan.person.firstName + loan.person.lastName))
+                        .append($("<td>").text(loan.person.adress))
+                        .append($("<td>").text(loan.loanDate))
+                        .append($("<td>").text(loan.deadLine))
+                        .append($("<td>").text(loan.backDate)));
+                }
+            });
+            return false;
+        }
+        else if (book.bookId === parseInt(code)) {
+            $tableBody.append($("<tr>").text("--NINCSENEK KÖLCSÖNZÉSEK--"));
+            return false;
+        }
+    });
+
 }
 
 function performFetchBooks() {
@@ -60,7 +96,7 @@ function updateMemberTable($table){
         $tableBody
             .append($("<tr>")
                 .append($("<td>")
-                    .text(value.id))
+                    .text(value.personId))
                 .append($("<td>")
                     .text(value.firstName))
                 .append($("<td>")

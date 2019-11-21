@@ -189,6 +189,19 @@ function bindSelections() {
     });
 }
 
+function bindInfoButtons() {
+    $(".watchPersons").click(function (e) {
+        e.stopPropagation();
+        fillMemberInfoModal(getID($(this)));
+        $("#selectMemberModal").modal();
+    })
+}
+
+function getID($infobutton) {
+
+    return $infobutton.closest($("tr")).find(".td-id").text();
+}
+
 function showMemberActions(){
     $.each(oneSelectedMember, function (index, value) {
         $(value).hide();
