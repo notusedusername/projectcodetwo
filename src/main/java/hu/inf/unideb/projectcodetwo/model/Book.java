@@ -31,6 +31,7 @@ public class Book {
     @Column
     private Long yearOfPublication;
 
+    @javax.persistence.OrderBy("loandate DESC")
     @OneToMany(cascade=CascadeType.ALL)
     @JoinColumn(name="book_id")
     private Set<Loan> loans;

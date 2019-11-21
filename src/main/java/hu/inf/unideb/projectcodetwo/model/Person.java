@@ -34,6 +34,7 @@ public class Person {
     @Column
     private String adress;
 
+    @javax.persistence.OrderBy("loandate ASC")
     @OneToMany(cascade=CascadeType.ALL)
     @JoinColumn(name="person_id")
     private Set<Loan> loans;
