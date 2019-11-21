@@ -36,6 +36,7 @@ public class BookService {
     }
 
     public ResponseDTO deleteBook(Long id) {
-        return null;
+        bookRepository.deleteById(id);
+        return new ResponseDTO(id,"Könyv sikeresen törölve");
     }
 }
