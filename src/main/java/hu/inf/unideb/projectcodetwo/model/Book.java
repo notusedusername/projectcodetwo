@@ -26,7 +26,7 @@ public class Book {
     @Column
     private Long yearOfPublication;
 
-    @JsonManagedReference
+    @JsonManagedReference(value = "bookReference")
     @OneToMany(cascade=CascadeType.ALL)
     @JoinColumn(name="book_id")
     private Set<Loan> loans;

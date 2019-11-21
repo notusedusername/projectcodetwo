@@ -23,11 +23,11 @@ public class Loan {
     private Date backDate;
 
     @ManyToOne
-    @JsonBackReference
+    @JsonBackReference(value = "bookReference")
     private Book book;
 
     @ManyToOne
-    @JsonBackReference
+    @JsonBackReference(value = "personReference")
     private Person person;
 
     public Long getLoanId() {
