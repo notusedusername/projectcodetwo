@@ -1,7 +1,9 @@
 package hu.inf.unideb.projectcodetwo.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -10,6 +12,9 @@ import java.util.Set;
 
 @Entity
 @Table(name = "Person")
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id")
 public class Person {
 
     @Id
@@ -29,7 +34,6 @@ public class Person {
     @Column
     private String adress;
 
-    @JsonManagedReference
     @OneToMany(cascade=CascadeType.ALL)
     @JoinColumn(name="person_id")
     private Set<Loan> loans;
