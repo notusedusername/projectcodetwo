@@ -44,7 +44,7 @@ function fillMemberInfoModal(code) {
             $.each(book.loans, function (id, loan) {
                 if (loan && loan.person) {
                     $tableBody.append($("<tr>")
-                        .append($("<td>").text(loan.person.firstName + loan.person.lastName))
+                        .append($("<td>").text(loan.person.firstName +  " " + loan.person.lastName))
                         .append($("<td>").text(loan.person.adress))
                         .append($("<td>").text(loan.loanDate))
                         .append($("<td>").text(loan.deadLine))
