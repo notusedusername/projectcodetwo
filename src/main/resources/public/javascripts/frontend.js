@@ -134,7 +134,7 @@ function addBook() {
             $("#addBookModal").modal("hide");
         })
         .fail(function (err) {
-            $.growl.error({message: "Valami nem jó! "+ err, location: "br"});
+            $.growl.error({message: "Valami nem jó!", location: "br"});
         });
 }
 
