@@ -135,10 +135,10 @@ function bindMenu(){
 
 function bindSelections() {
     $("#books tbody tr, #members tbody tr").on("click", function () {
-        var thisID = $(this).parent().parent().parent().attr("id");
+        var thisID = $(this).closest("table").attr("id");
         if($(this).css("background-color") == active){
             $(this).css("background-color", passive);
-            if(thisID == "books"){
+            if(thisID == "booksTable"){
                 selectedBookCount--;
                 showBookActions();
             }
@@ -149,7 +149,7 @@ function bindSelections() {
         }
         else{
             $(this).css("background-color", active);
-            if(thisID == "books"){
+            if(thisID == "booksTable"){
                 selectedBookCount++;
                 showBookActions();
             }
