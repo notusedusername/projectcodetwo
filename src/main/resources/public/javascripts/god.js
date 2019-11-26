@@ -1,11 +1,8 @@
-var active = "rgb(0, 123, 255)";
-var passive = "rgb(52,58,64)";
-
 var selectedBookCount = 0;
 var selectedMemberCount = 0;
 
-var allBooksColor = active;
-var allMembersColor = active;
+var allBooksSelected = false;
+var allMembersSelected = false;
 
 var oneSelectedBook = ["#selectAllBook", "#startRentFromBook", "#addBook", "#editSelectedBook", "#deleteSelectedBook" ];
 var nullSelectedBook = ["#selectAllBook",  "#addBook"];
@@ -136,8 +133,8 @@ function bindMenu(){
 function bindSelections() {
     $("#books tbody tr, #members tbody tr").on("click", function () {
         var thisID = $(this).closest("table").attr("id");
-        if($(this).css("background-color") == active){
-            $(this).css("background-color", passive);
+        if($(this).hasClass("selected")){
+            $(this).removeClass("selected");
             if(thisID == "booksTable"){
                 selectedBookCount--;
                 showBookActions();
@@ -148,7 +145,7 @@ function bindSelections() {
             }
         }
         else{
-            $(this).css("background-color", active);
+            $(this).addClass("selected");
             if(thisID == "booksTable"){
                 selectedBookCount++;
                 showBookActions();
@@ -161,29 +158,31 @@ function bindSelections() {
     });
 
     $("#selectAllBook").on("click", function () {
-        $("#books tbody tr").css("background-color", allBooksColor);
-        if(allBooksColor == active){
-            allBooksColor = passive;
-            selectedBookCount = -1;
+        if(allBooksSelected){
+            $("#books tbody tr").removeClass("selected");
+            allBooksSelected = false;
+            selectedBookCount = 0;
             showBookActions();
         }
         else {
-            allBooksColor = active;
-            selectedBookCount = 0;
+            $("#books tbody tr").addClass("selected");
+            allBooksSelected = true;
+            selectedBookCount = -1;
             showBookActions();
         }
     });
 
     $("#selectAllMember").on("click", function () {
-        $("#members tbody tr").css("background-color", allMembersColor);
-        if(allMembersColor == active){
-            allMembersColor = passive;
-            selectedMemberCount = -1;
+        if(allMembersSelected){
+            allMembersColor = false;
+            $("#members tbody tr").removeClass("selected");
+            selectedMemberCount = 0;
             showMemberActions();
         }
         else {
-            allMembersColor = active;
-            selectedMemberCount = 0;
+            allMembersColor = true;
+            selectedMemberCount = -1;
+            $("#members tbody tr").addClass("selected");
             showMemberActions();
         }
     });

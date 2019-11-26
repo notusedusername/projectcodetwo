@@ -141,3 +141,7 @@ h1, h4, label  {
 tr {
     border-radius: 1px;
 }
+
+tr.selected {
+    background-color: rgb(0, 123, 255);
+}
