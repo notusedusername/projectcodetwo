@@ -103,7 +103,11 @@ function bindMenu(){
     });
 
     $("#deleteSelectedMember").on("click", function () {
-        alert("Törlöm a kiválasztott tagot!");
+        $("#deletePersonModal").modal();
+    });
+
+    $("#deletePersonSubmit").on("click",function () {
+        deletePerson();
     });
 
     $("#deleteSelectedBook").on("click", function () {
