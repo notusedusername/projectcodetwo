@@ -217,11 +217,21 @@ function updatePerson() {
 function updateBook() {
 
 }
-
 function performDeleteBook() {
-    
+    var defered = jQuery.Deferred();
+    var jqxhr = $.ajax( {
+        url: host+context+"/member"+"$(\".selected td-id\").text()",
+        processData: false,
+        method: "DELETE"
+    } )
+        .done(function(data) {
+            defered.resolve(data);
+        })
+        .fail(function(err) {
+            defered.reject(err)
+        });
+    return defered.promise();
 }
-
 function deleteBook() {
 
 }
@@ -243,5 +253,5 @@ function performDeletePerson() {
 }
 
 function deletePerson() {
-    
+
 }
