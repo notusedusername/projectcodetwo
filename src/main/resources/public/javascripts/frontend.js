@@ -266,7 +266,7 @@ function deletePerson() {
         .done(function (data) {
             $.growl.notice({message: data.message, location: "br"});
             fetchMembers();
-            $("#deleteMemberModal").modal("hide");
+            $("#deletePersonModal").modal("hide");
         })
         .fail(function (err) {
             $.growl.error({message: "Valami nem jó! ", location: "br"});
