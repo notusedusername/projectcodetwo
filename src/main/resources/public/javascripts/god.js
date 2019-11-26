@@ -98,11 +98,17 @@ function bindMenu(){
 
     $("#editSelectedBook").on("click", function () {
         $("#editBookModal").modal();
+        fillUpdateBook();
     });
 
     $("#editBookSubmit").on("click", function () {
         $("#fakeEditBookSubmit").click();
     });
+
+    $("#bookeditForm").on("submit", function() {
+        editBook();
+        return false;
+    })
 
     $("#bookeditForm").on("submit", function () {
        return false;
