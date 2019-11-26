@@ -209,3 +209,19 @@ function addPerson() {
             $.growl.error({message: "Valami nem jó! ", location: "br"});
         });
 }
+
+function updatePerson() {
+
+}
+
+function updateBook() {
+
+}
+
+function deleteBook() {
+
+}
+
+function deletePerson() {
+
+}
