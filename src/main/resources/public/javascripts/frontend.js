@@ -218,10 +218,30 @@ function updateBook() {
 
 }
 
+function performDeleteBook() {
+    
+}
+
 function deleteBook() {
 
 }
 
-function deletePerson() {
+function performDeletePerson() {
+    var defered = jQuery.Deferred();
+    var jqxhr = $.ajax( {
+        url: host+context+"/member",
+        processData: false,
+        method: "DELETE"
+    } )
+        .done(function(data) {
+            defered.resolve(data);
+        })
+        .fail(function(err) {
+            defered.reject(err)
+        });
+    return defered.promise();
+}
 
+function deletePerson() {
+    
 }
