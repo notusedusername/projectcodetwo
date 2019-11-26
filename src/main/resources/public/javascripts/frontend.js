@@ -295,19 +295,38 @@ function editBook() {
             $.growl.error({message: "Valami nem jó!", location: "br"});
         });
 }
-
 function performDeleteBook() {
-    
+    var defered = jQuery.Deferred();
+    var jqxhr = $.ajax( {
+        url: host+context+"/books/" + $("#booksTable .selected .td-id").text(),
+        processData: false,
+        method: "DELETE"
+    } )
+        .done(function(data) {
+            defered.resolve(data);
+        })
+        .fail(function(err) {
+            defered.reject(err)
+        });
+    return defered.promise();
 }
 
 function deleteBook() {
-
+    performDeleteBook()
+        .done(function (data) {
+            $.growl.notice({message: data.message, location: "br"});
+            fetchBooks();
+            $("#deleteBookModal").modal("hide");
+        })
+        .fail(function (err) {
+            $.growl.error({message: "Valami nem jó! ", location: "br"});
+        });
 }
 
 function performDeletePerson() {
     var defered = jQuery.Deferred();
     var jqxhr = $.ajax( {
-        url: host+context+"/member",
+        url: host+context+"/member/" + $("#membersTable .selected .td-id").text(),
         processData: false,
         method: "DELETE"
     } )
@@ -321,5 +340,13 @@ function performDeletePerson() {
 }
 
 function deletePerson() {
-    
+    performDeletePerson()
+        .done(function (data) {
+            $.growl.notice({message: data.message, location: "br"});
+            fetchMembers();
+            $("#deleteMemberModal").modal("hide");
+        })
+        .fail(function (err) {
+            $.growl.error({message: "Valami nem jó! ", location: "br"});
+        });
 }
