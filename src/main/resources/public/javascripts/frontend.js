@@ -12,13 +12,13 @@ function updateBookTable($table){
             .append($("<tr>")
                 .append($("<td>").addClass("td-id")
                 .text(value.bookId))
-                .append($("<td>")
+                .append($("<td>").addClass("td-author")
                     .text(value.author))
-                .append($("<td>")
+                .append($("<td>").addClass("td-title")
                     .text(value.title))
-                .append($("<td>")
+                .append($("<td>").addClass("td-publisher")
                     .text(value.publisher))
-                .append($("<td>")
+                .append($("<td>").addClass("td-year")
                     .text(value.yearOfPublication)).
                 append($("<td>")
                     .append($("<button>").addClass("watchPersons btn btn-xs btn-dark")
@@ -95,15 +95,15 @@ function updateMemberTable($table){
     $.each(memberRecords, function (index, value) {
         $tableBody
             .append($("<tr>")
-                .append($("<td>")
+                .append($("<td>").addClass("td-id")
                     .text(value.personId))
-                .append($("<td>")
+                .append($("<td>").addClass("td-firstName")
                     .text(value.firstName))
-                .append($("<td>")
+                .append($("<td>").addClass("td-lastName")
                     .text(value.lastName))
-                .append($("<td>")
+                .append($("<td>").addClass("td-birthDate")
                     .text(value.birthDate))
-                .append($("<td>")
+                .append($("<td>").addClass("td-adress")
                     .text(value.adress)));
 
     });
