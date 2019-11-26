@@ -111,7 +111,11 @@ function bindMenu(){
     });
 
     $("#deleteSelectedBook").on("click", function () {
-       alert("Törlöm a kiválasztott könyvet!");
+        $("#deleteBookModal").modal();
+    });
+
+    $("#deleteBookSubmit").on("click",function () {
+        deleteBook();
     });
 
     $("#startRentFromMember").on("click", function () {

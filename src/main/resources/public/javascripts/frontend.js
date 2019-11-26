@@ -220,7 +220,7 @@ function updateBook() {
 function performDeleteBook() {
     var defered = jQuery.Deferred();
     var jqxhr = $.ajax( {
-        url: host+context+"/member"+"$(\".selected td-id\").text()",
+        url: host+context+"/books/" + $("#booksTable .selected .td-id").text(),
         processData: false,
         method: "DELETE"
     } )
@@ -234,7 +234,15 @@ function performDeleteBook() {
 }
 
 function deleteBook() {
-
+    performDeleteBook()
+        .done(function (data) {
+            $.growl.notice({message: data.message, location: "br"});
+            fetchBooks();
+            $("#deleteBookModal").modal("hide");
+        })
+        .fail(function (err) {
+            $.growl.error({message: "Valami nem jó! ", location: "br"});
+        });
 }
 
 function performDeletePerson() {
