@@ -210,12 +210,90 @@ function addPerson() {
         });
 }
 
-function updatePerson() {
+function fillUpdatePerson() {
+    $("#memberEditForm input[name=newMemberFirstName]").val($("#membersTable .selected .td-firstName").text());
+    $("#memberEditForm input[name=newMemberLastName]").val($("#membersTable .selected .td-lastName").text());
+    $("#memberEditForm input[name=newMemberBirthDate]").val($("#membersTable .selected .td-birthDate").text());
+    $("#memberEditForm input[name=newMemberAddress]").val($("#membersTable .selected  .td-adress").text());
+}
 
+function fillUpdateBook() {
+    $("#bookeditForm input[name=newAuthor]").val($("#booksTable .selected .td-author").text());
+    $("#bookeditForm input[name=newTitle]").val($("#booksTable .selected .td-title").text());
+    $("#bookeditForm input[name=newPublisher]").val($("#booksTable .selected .td-publisher").text());
+    $("#bookeditForm input[name=newPublishingDate]").val($("#booksTable .selected .td-year").text());
+}
+
+function updatePerson() {
+    var defered = jQuery.Deferred();
+    var jqxhr = $.ajax( {
+        url: host+context+"/member/"+$("#membersTable .selected .td-id").text(),
+        processData: false,
+        contentType: 'application/json',
+        data: JSON.stringify({
+            "firstName": $("#memberEditForm input[name=newMemberFirstName]").val(),
+            "lastName": $("#memberEditForm input[name=newMemberLastName]").val(),
+            "birthDate": $("#memberEditForm input[name=newMemberBirthDate]").val(),
+            "adress": $("#memberEditForm input[name=newMemberAddress]").val()
+        }),
+        method: "PUT"
+    } )
+        .done(function(data) {
+            defered.resolve(data);
+        })
+        .fail(function(err) {
+            defered.reject(err)
+        });
+    return defered.promise();
+}
+
+function editMember() {
+    updatePerson()
+        .done(function (data) {
+            $.growl.notice({message: data.message, location: "br"});
+            book = data;
+            fetchMembers();
+            $("#editMemberModal").modal("hide");
+        })
+        .fail(function (err) {
+            $.growl.error({message: "Valami nem jó! ", location: "br"});
+        });
 }
 
 function updateBook() {
+    var defered = jQuery.Deferred();
+    var jqxhr = $.ajax( {
+        url: host+context+"/books/"+$("#booksTable .selected .td-id").text(),
+        processData: false,
+        contentType: 'application/json',
+        data: JSON.stringify({
+            "title": $("#bookeditForm input[name=newTitle]").val(),
+            "author": $("#bookeditForm input[name=newAuthor]").val(),
+            "publisher": $("#bookeditForm input[name=newPublisher]").val(),
+            "yearOfPublication": $("#bookeditForm input[name=newPublishingDate]").val()
+        }),
+        method: "PUT"
+    } )
+        .done(function(data) {
+            defered.resolve(data);
+        })
+        .fail(function(err) {
+            defered.reject(err)
+        });
+    return defered.promise();
+}
 
+function editBook() {
+    updateBook()
+        .done(function (data) {
+            $.growl.notice({message: data.message, location: "br"});
+            book = data;
+            fetchBooks();
+            $("#editBookModal").modal("hide");
+        })
+        .fail(function (err) {
+            $.growl.error({message: "Valami nem jó!", location: "br"});
+        });
 }
 function performDeleteBook() {
     var defered = jQuery.Deferred();

@@ -1,6 +1,3 @@
-var selectedBookCount = 0;
-var selectedMemberCount = 0;
-
 var allBooksSelected = false;
 var allMembersSelected = false;
 
@@ -84,19 +81,31 @@ function bindMenu(){
 
     $("#editSelectedMember").on("click", function () {
        $("#editMemberModal").modal();
+       fillUpdatePerson();
     });
 
     $("#editMemberSubmit").on("click", function () {
         $("#fakeEditMemberSubmit").click();
     });
 
+    $("#memberEditForm").on("submit", function() {
+        editMember();
+        return false;
+    });
+
     $("#editSelectedBook").on("click", function () {
         $("#editBookModal").modal();
+        fillUpdateBook();
     });
 
     $("#editBookSubmit").on("click", function () {
         $("#fakeEditBookSubmit").click();
     });
+
+    $("#bookeditForm").on("submit", function() {
+        editBook();
+        return false;
+    })
 
     $("#bookeditForm").on("submit", function () {
        return false;
@@ -139,27 +148,29 @@ function bindMenu(){
 }
 
 function bindSelections() {
+    allBooksSelected = false;
+    allMembersSelected = false;
+
+    showMemberActions();
+    showBookActions();
+
     $("#books tbody tr, #members tbody tr").on("click", function () {
         var thisID = $(this).closest("table").attr("id");
         if($(this).hasClass("selected")){
             $(this).removeClass("selected");
             if(thisID == "booksTable"){
-                selectedBookCount--;
                 showBookActions();
             }
             else {
-                selectedMemberCount--;
                 showMemberActions();
             }
         }
         else{
             $(this).addClass("selected");
             if(thisID == "booksTable"){
-                selectedBookCount++;
                 showBookActions();
             }
             else {
-                selectedMemberCount++;
                 showMemberActions();
             }
         }
@@ -169,28 +180,24 @@ function bindSelections() {
         if(allBooksSelected){
             $("#books tbody tr").removeClass("selected");
             allBooksSelected = false;
-            selectedBookCount = 0;
             showBookActions();
         }
         else {
             $("#books tbody tr").addClass("selected");
             allBooksSelected = true;
-            selectedBookCount = -1;
             showBookActions();
         }
     });
 
     $("#selectAllMember").on("click", function () {
         if(allMembersSelected){
-            allMembersColor = false;
             $("#members tbody tr").removeClass("selected");
-            selectedMemberCount = 0;
+            allMembersSelected = false;
             showMemberActions();
         }
         else {
-            allMembersColor = true;
-            selectedMemberCount = -1;
             $("#members tbody tr").addClass("selected");
+            allMembersSelected = true;
             showMemberActions();
         }
     });
@@ -213,12 +220,12 @@ function showMemberActions(){
     $.each(oneSelectedMember, function (index, value) {
         $(value).hide();
     });
-    if(selectedMemberCount == 0){
+    if($("#membersTable .selected").length == 0){
         $.each(nullSelectedMember, function (index, value) {
            $(value).show();
         });
     }
-    else if (selectedMemberCount == 1){
+    else if ($("#membersTable .selected").length == 1){
         $.each(oneSelectedMember, function (index, value) {
             $(value).show();
         });
@@ -234,12 +241,12 @@ function showBookActions() {
     $.each(oneSelectedBook, function (index, value) {
         $(value).hide();
     });
-    if(selectedBookCount == 0){
+    if($("#booksTable .selected").length == 0){
         $.each(nullSelectedBook, function (index, value) {
             $(value).show();
         });
     }
-    else if (selectedBookCount == 1){
+    else if ($("#booksTable .selected").length == 1){
         $.each(oneSelectedBook, function (index, value) {
             $(value).show();
         });
