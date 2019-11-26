@@ -210,8 +210,47 @@ function addPerson() {
         });
 }
 
-function updatePerson() {
+function fillUpdatePerson() {
+    $("#memberEditForm input[name=newMemberFirstName]").val($("#membersTable .selected .td-firstName").text());
+    $("#memberEditForm input[name=newMemberLastName]").val($("#membersTable .selected .td-lastName").text());
+    $("#memberEditForm input[name=newMemberBirthDate]").val($("#membersTable .selected .td-birthDate").text());
+    $("#memberEditForm input[name=newMemberAddress]").val($("#membersTable .selected  .td-adress").text());
+}
 
+function updatePerson() {
+    var defered = jQuery.Deferred();
+    var jqxhr = $.ajax( {
+        url: host+context+"/member/"+$("#membersTable .selected .td-id").text(),
+        processData: false,
+        contentType: 'application/json',
+        data: JSON.stringify({
+            "firstName": $("#memberEditForm input[name=newMemberFirstName]").val(),
+            "lastName": $("#memberEditForm input[name=newMemberLastName]").val(),
+            "birthDate": $("#memberEditForm input[name=newMemberBirthDate]").val(),
+            "adress": $("#memberEditForm input[name=newMemberAddress]").val()
+        }),
+        method: "PUT"
+    } )
+        .done(function(data) {
+            defered.resolve(data);
+        })
+        .fail(function(err) {
+            defered.reject(err)
+        });
+    return defered.promise();
+}
+
+function editMember() {
+    updatePerson()
+        .done(function (data) {
+            $.growl.notice({message: data.message, location: "br"});
+            book = data;
+            fetchMembers();
+            $("#editMemberModal").modal("hide");
+        })
+        .fail(function (err) {
+            $.growl.error({message: "Valami nem jó! ", location: "br"});
+        });
 }
 
 function updateBook() {

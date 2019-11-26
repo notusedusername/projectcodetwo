@@ -84,10 +84,16 @@ function bindMenu(){
 
     $("#editSelectedMember").on("click", function () {
        $("#editMemberModal").modal();
+       fillUpdatePerson();
     });
 
     $("#editMemberSubmit").on("click", function () {
         $("#fakeEditMemberSubmit").click();
+    });
+
+    $("#memberEditForm").on("submit", function() {
+        editMember();
+        return false;
     });
 
     $("#editSelectedBook").on("click", function () {
