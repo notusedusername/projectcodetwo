@@ -1,5 +1,6 @@
 package hu.inf.unideb.projectcodetwo.service;
 
+import hu.inf.unideb.projectcodetwo.dto.BookList;
 import hu.inf.unideb.projectcodetwo.dto.ResponseDTO;
 
 import hu.inf.unideb.projectcodetwo.model.Book;
@@ -15,8 +16,11 @@ public class BookService {
     @Autowired
     BookRepository bookRepository;
 
-    public List<Book> getBooks() {
-        return bookRepository.findAll();
+    public BookList getBooks() {
+        BookList bookList = new BookList();
+        bookList.setData(bookRepository.findAll());
+        bookList.setCount(bookRepository.count());
+        return bookList;
     }
 
     public ResponseDTO addBook(Book resource) {

@@ -2,6 +2,7 @@ package hu.inf.unideb.projectcodetwo.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import hu.inf.unideb.projectcodetwo.dto.BookDTO;
+import hu.inf.unideb.projectcodetwo.dto.BookList;
 import hu.inf.unideb.projectcodetwo.dto.ResponseDTO;
 import hu.inf.unideb.projectcodetwo.model.Book;
 import hu.inf.unideb.projectcodetwo.service.BookService;
@@ -23,9 +24,9 @@ public class BookController {
     @Autowired
     private ModelMapper modelMapper;
 
-    @JsonView(Views.FromBook.class)
     @GetMapping(value ="/books")
-    public @ResponseBody List<Book> fetchAll(){
+    public @ResponseBody
+    BookList fetchAll(){
         return bookService.getBooks();
     }
 
