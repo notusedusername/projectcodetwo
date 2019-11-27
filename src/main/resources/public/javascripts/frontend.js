@@ -81,7 +81,7 @@ function fetchBooks() {
     performFetchBooks()
         .done(function (data) {
             $.growl.notice({message: "Adatbázis frissítve", location: "br"});
-            bookRecords = data;
+            bookRecords = data.data;
             updateBookTable($("#booksTable"));
         })
         .fail(function (err) {
