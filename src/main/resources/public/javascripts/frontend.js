@@ -4,6 +4,9 @@ var context = "/codetwo";
 var bookRecords;
 var memberRecords;
 
+var pageNumBooks=0;
+var pageNumPerson;
+
 function updateBookTable($table){
     var $tableBody = $table.children("tbody");
     $tableBody.html("");
@@ -61,10 +64,25 @@ function fillMemberInfoModal(code) {
 
 }
 
+function loadBooksTable() {
+    pageNumBooks=0;
+    fetchBooks();
+}
+
+function nextPageBooks() {
+    pageNumBooks += 1;
+    fetchBooks();
+}
+
+function prevPageBooks() {
+    pageNumBooks -= 1;
+    fetchBooks();
+}
+
 function performFetchBooks() {
     var defered = jQuery.Deferred();
     var jqxhr = $.ajax( {
-        url: host+context+"/books",
+        url: host+context+"/books?page="+pageNumBooks,
         method: "GET"
     } )
         .done(function(data) {
@@ -141,7 +159,7 @@ function fetchMembers() {
 function performAddBook() {
     var defered = jQuery.Deferred();
     var jqxhr = $.ajax( {
-        url: host+context+"/books",
+        url: host+context+"/books?page=0",
         processData: false,
         contentType: 'application/json',
         data: JSON.stringify({
@@ -263,7 +281,7 @@ function editMember() {
 function updateBook() {
     var defered = jQuery.Deferred();
     var jqxhr = $.ajax( {
-        url: host+context+"/books/"+$("#booksTable .selected .td-id").text(),
+        url: host+context+"/books?page=0/"+$("#booksTable .selected .td-id").text(),
         processData: false,
         contentType: 'application/json',
         data: JSON.stringify({
@@ -298,7 +316,7 @@ function editBook() {
 function performDeleteBook() {
     var defered = jQuery.Deferred();
     var jqxhr = $.ajax( {
-        url: host+context+"/books/" + $("#booksTable .selected .td-id").text(),
+        url: host+context+"/books?page=0/" + $("#booksTable .selected .td-id").text(),
         processData: false,
         method: "DELETE"
     } )

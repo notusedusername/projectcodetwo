@@ -6,6 +6,7 @@ import hu.inf.unideb.projectcodetwo.dto.ResponseDTO;
 import hu.inf.unideb.projectcodetwo.model.Book;
 import hu.inf.unideb.projectcodetwo.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,9 +17,10 @@ public class BookService {
     @Autowired
     BookRepository bookRepository;
 
-    public BookList getBooks() {
+    public BookList getBooks(String page) {
         BookList bookList = new BookList();
-        bookList.setData(bookRepository.findAll());
+        int i = Integer.parseInt(page);
+        bookList.setData(bookRepository.findAll(PageRequest.of(i, 10)).getContent());
         bookList.setCount(bookRepository.count());
         return bookList;
     }

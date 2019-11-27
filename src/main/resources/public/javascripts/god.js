@@ -49,9 +49,22 @@ function bindMenu(){
     $("#bookmenu").parent().on("click", function () {
         hideAll();
         $("#books").show();
-        fetchBooks();
+        loadBooksTable();
         showBookActions();
+    });
 
+    $("#prevPageBtnBooks").parent().on("click", function () {
+        hideAll();
+        $("#books").show();
+        prevPageBooks();
+        showBookActions();
+    });
+
+    $("#nextPageBtnBooks").parent().on("click", function () {
+        hideAll();
+        $("#books").show();
+        nextPageBooks();
+        showBookActions();
     });
 
     $("#addBook").on("click", function () {

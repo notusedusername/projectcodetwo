@@ -26,8 +26,8 @@ public class BookController {
 
     @GetMapping(value ="/books")
     public @ResponseBody
-    BookList fetchAll(){
-        return bookService.getBooks();
+    BookList fetchAll(@RequestParam String page){
+        return bookService.getBooks(page);
     }
 
     @PostMapping(value = "/books", consumes = "application/json", produces = "application/json")
