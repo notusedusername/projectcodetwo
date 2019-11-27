@@ -159,7 +159,7 @@ function fetchMembers() {
 function performAddBook() {
     var defered = jQuery.Deferred();
     var jqxhr = $.ajax( {
-        url: host+context+"/books?page=0",
+        url: host+context+"/books",
         processData: false,
         contentType: 'application/json',
         data: JSON.stringify({
@@ -281,7 +281,7 @@ function editMember() {
 function updateBook() {
     var defered = jQuery.Deferred();
     var jqxhr = $.ajax( {
-        url: host+context+"/books?page=0/"+$("#booksTable .selected .td-id").text(),
+        url: host+context+"/books/"+$("#booksTable .selected .td-id").text(),
         processData: false,
         contentType: 'application/json',
         data: JSON.stringify({
@@ -316,7 +316,7 @@ function editBook() {
 function performDeleteBook() {
     var defered = jQuery.Deferred();
     var jqxhr = $.ajax( {
-        url: host+context+"/books?page=0/" + $("#booksTable .selected .td-id").text(),
+        url: host+context+"/books/" + $("#booksTable .selected .td-id").text(),
         processData: false,
         method: "DELETE"
     } )

@@ -53,14 +53,14 @@ function bindMenu(){
         showBookActions();
     });
 
-    $("#prevPageBtnBooks").parent().on("click", function () {
+    $("#prevPageBtnBooks").on("click", function () {
         hideAll();
         $("#books").show();
         prevPageBooks();
         showBookActions();
     });
 
-    $("#nextPageBtnBooks").parent().on("click", function () {
+    $("#nextPageBtnBooks").on("click", function () {
         hideAll();
         $("#books").show();
         nextPageBooks();
