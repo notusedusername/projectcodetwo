@@ -3,6 +3,7 @@ package hu.inf.unideb.projectcodetwo.controller;
 import com.fasterxml.jackson.annotation.JsonView;
 import hu.inf.unideb.projectcodetwo.dto.BookDTO;
 import hu.inf.unideb.projectcodetwo.dto.PersonDTO;
+import hu.inf.unideb.projectcodetwo.dto.PersonList;
 import hu.inf.unideb.projectcodetwo.dto.ResponseDTO;
 import hu.inf.unideb.projectcodetwo.model.Book;
 import hu.inf.unideb.projectcodetwo.model.Person;
@@ -26,10 +27,10 @@ public class PersonController {
     @Autowired
     private ModelMapper modelMapper;
 
-    @JsonView(Views.FromPerson.class)
     @GetMapping("/member")
-    public @ResponseBody List<Person> fetchAll(){
-        return personService.getPersons();
+    public @ResponseBody
+    PersonList fetchAll(@RequestParam String page){
+        return personService.getPersons(page);
     }
 
     @PostMapping(value = "/member", consumes = "application/json", produces = "application/json")

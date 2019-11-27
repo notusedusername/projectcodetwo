@@ -35,9 +35,22 @@ function bindMenu(){
     $("#membermenu").parent().on("click", function () {
         hideAll();
         $("#members").show();
-        fetchMembers();
+        loadMembersTable();
         showMemberActions();
+    });
 
+    $("#nextPageBtnMembers").on("click", function () {
+        hideAll();
+        $("#members").show();
+        nextPageMembers();
+        showMemberActions();
+    });
+
+    $("#prevPageBtnMembers").on("click", function () {
+        hideAll();
+        $("#members").show();
+        prevPageMembers();
+        showMemberActions();
     });
 
     $("#rentmenu").parent().on("click", function () {

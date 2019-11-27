@@ -5,7 +5,7 @@ var bookRecords;
 var memberRecords;
 
 var pageNumBooks=0;
-var pageNumPerson;
+var pageNumPerson=0;
 
 function updateBookTable($table){
     var $tableBody = $table.children("tbody");
@@ -69,14 +69,29 @@ function loadBooksTable() {
     fetchBooks();
 }
 
+function loadMembersTable() {
+    pageNumPerson = 0;
+    fetchMembers();
+}
+
 function nextPageBooks() {
     pageNumBooks += 1;
     fetchBooks();
 }
 
+function nextPageMembers() {
+    pageNumPerson += 1;
+    fetchMembers();
+}
+
 function prevPageBooks() {
     pageNumBooks -= 1;
     fetchBooks();
+}
+
+function prevPageMembers() {
+    pageNumPerson -= 1;
+    fetchMembers();
 }
 
 function performFetchBooks() {
@@ -131,7 +146,7 @@ function updateMemberTable($table){
 function performFetchMembers() {
     var defered = jQuery.Deferred();
     var jqxhr = $.ajax( {
-        url: host+context+"/member",
+        url: host+context+"/member?page="+pageNumPerson,
         method: "GET"
     } )
         .done(function(data) {
@@ -148,7 +163,7 @@ function fetchMembers() {
     performFetchMembers()
         .done(function (data) {
             $.growl.notice({message: "Adatbázis frissítve", location: "br"});
-            memberRecords = data;
+            memberRecords = data.data;
             updateMemberTable($("#membersTable"));
         })
         .fail(function (err) {

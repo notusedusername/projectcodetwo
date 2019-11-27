@@ -1,10 +1,13 @@
 package hu.inf.unideb.projectcodetwo.service;
 
+import hu.inf.unideb.projectcodetwo.dto.BookList;
 import hu.inf.unideb.projectcodetwo.dto.PersonDTO;
+import hu.inf.unideb.projectcodetwo.dto.PersonList;
 import hu.inf.unideb.projectcodetwo.dto.ResponseDTO;
 import hu.inf.unideb.projectcodetwo.model.Person;
 import hu.inf.unideb.projectcodetwo.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,8 +18,12 @@ public class PersonService {
     @Autowired
     PersonRepository personRepository;
 
-    public List<Person> getPersons() {
-        return personRepository.findAll();
+    public PersonList getPersons(String page) {
+        PersonList personList = new PersonList();
+        int i = Integer.parseInt(page);
+        personList.setData(personRepository.findAll(PageRequest.of(i, 10)).getContent());
+        personList.setCount(personRepository.count());
+        return personList;
     }
 
     public ResponseDTO addPerson(Person resource) {
