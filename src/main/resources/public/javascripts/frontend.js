@@ -90,6 +90,16 @@ function lastPageMembers() {
     }
 }
 
+function lastPageBooks() {
+    if (maxElementBooks%10 === 0) {
+        pageNumBooks = (maxElementBooks/10)-1;
+        fetchBooks();
+    } else {
+        pageNumBooks = (maxElementBooks/10) | 0;
+        fetchBooks();
+    }
+}
+
 function nextPageBooks() {
     if(maxElementBooks%10 === 0) {
         maxPageNumBooks = maxElementBooks/10;

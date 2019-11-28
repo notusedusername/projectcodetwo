@@ -82,9 +82,9 @@ function bindMenu(){
 
     $("#firstPageBtnBooks").on("click", function () {
         hideAll();
-        $("#members").show();
+        $("#books").show();
         loadBooksTable();
-        showMemberActions();
+        showBookActions();
     });
 
     $("#prevPageBtnBooks").on("click", function () {
@@ -98,6 +98,13 @@ function bindMenu(){
         hideAll();
         $("#books").show();
         nextPageBooks();
+        showBookActions();
+    });
+
+    $("#lastPageBtnBooks").on("click", function () {
+        hideAll();
+        $("#books").show();
+        lastPageBooks();
         showBookActions();
     });
 
