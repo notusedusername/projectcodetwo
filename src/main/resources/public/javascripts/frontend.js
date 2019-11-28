@@ -239,7 +239,7 @@ function addBook() {
         .done(function (data) {
             $.growl.notice({message: "Új könyv hozzáadva!", location: "br"});
             book = data;
-            fetchBooks();
+            loadBooksTable();
             $("#addBookModal").modal("hide");
         })
         .fail(function (err) {
@@ -275,7 +275,7 @@ function addPerson() {
         .done(function (data) {
             $.growl.notice({message: data.message, location: "br"});
             book = data;
-            fetchMembers();
+            loadMembersTable();
             $("#addMemberModal").modal("hide");
         })
         .fail(function (err) {
@@ -325,7 +325,7 @@ function editMember() {
         .done(function (data) {
             $.growl.notice({message: data.message, location: "br"});
             book = data;
-            fetchMembers();
+            loadMembersTable();
             $("#editMemberModal").modal("hide");
         })
         .fail(function (err) {
@@ -361,7 +361,7 @@ function editBook() {
         .done(function (data) {
             $.growl.notice({message: data.message, location: "br"});
             book = data;
-            fetchBooks();
+            loadBooksTable();
             $("#editBookModal").modal("hide");
         })
         .fail(function (err) {
@@ -388,7 +388,7 @@ function deleteBook() {
     performDeleteBook()
         .done(function (data) {
             $.growl.notice({message: data.message, location: "br"});
-            fetchBooks();
+            loadBooksTable();
             $("#deleteBookModal").modal("hide");
         })
         .fail(function (err) {
@@ -416,7 +416,7 @@ function deletePerson() {
     performDeletePerson()
         .done(function (data) {
             $.growl.notice({message: data.message, location: "br"});
-            fetchMembers();
+            loadMembersTable();
             $("#deletePersonModal").modal("hide");
         })
         .fail(function (err) {
