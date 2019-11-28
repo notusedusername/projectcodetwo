@@ -39,6 +39,13 @@ function bindMenu(){
         showMemberActions();
     });
 
+    $("#firstPageBtnMembers").on("click", function () {
+        hideAll();
+        $("#members").show();
+        loadMembersTable();
+        showMemberActions();
+    });
+
     $("#nextPageBtnMembers").on("click", function () {
         hideAll();
         $("#members").show();
