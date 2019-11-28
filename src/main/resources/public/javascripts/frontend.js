@@ -138,12 +138,11 @@ function performFetchBooks() {
 function fetchBooks() {
     performFetchBooks()
         .done(function (data) {
-            $.growl.notice({message: "Adatbázis frissítve", location: "br"});
             bookRecords = data.data;
             updateBookTable($("#booksTable"));
         })
         .fail(function (err) {
-            $.growl.error({message: "Valami nem jó! "+ err, location: "br"});
+            $.growl.error({ title: "HIBA!", message: err.responseJSON.message, location: "br"});
         });
 }
 
@@ -187,13 +186,12 @@ function performFetchMembers() {
 function fetchMembers() {
     performFetchMembers()
         .done(function (data) {
-            $.growl.notice({message: "Adatbázis frissítve", location: "br"});
             memberRecords = data.data;
             maxElementPerson = data.count;
             updateMemberTable($("#membersTable"));
         })
         .fail(function (err) {
-            $.growl.error({message: "Valami nem jó! "+ err, location: "br"});
+            $.growl.error({ title: "HIBA!", message: err.responseJSON.message, location: "br"});
         });
 }
 
@@ -229,7 +227,7 @@ function addBook() {
             $("#addBookModal").modal("hide");
         })
         .fail(function (err) {
-            $.growl.error({message: "Valami nem jó!", location: "br"});
+            $.growl.error({ title: "HIBA!", message: err.responseJSON.message, location: "br"});
         });
 }
 
@@ -265,7 +263,7 @@ function addPerson() {
             $("#addMemberModal").modal("hide");
         })
         .fail(function (err) {
-            $.growl.error({message: "Valami nem jó! ", location: "br"});
+            $.growl.error({ title: "HIBA!", message: err.responseJSON.message, location: "br"});
         });
 }
 
@@ -315,7 +313,7 @@ function editMember() {
             $("#editMemberModal").modal("hide");
         })
         .fail(function (err) {
-            $.growl.error({message: "Valami nem jó! ", location: "br"});
+            $.growl.error({ title: "HIBA!", message: err.responseJSON.message, location: "br"});
         });
 }
 
@@ -351,7 +349,7 @@ function editBook() {
             $("#editBookModal").modal("hide");
         })
         .fail(function (err) {
-            $.growl.error({message: "Valami nem jó!", location: "br"});
+            $.growl.error({ title: "HIBA!", message: err.responseJSON.message, location: "br"});
         });
 }
 function performDeleteBook() {
@@ -378,7 +376,7 @@ function deleteBook() {
             $("#deleteBookModal").modal("hide");
         })
         .fail(function (err) {
-            $.growl.error({message: "Valami nem jó! ", location: "br"});
+            $.growl.error({ title: "HIBA!", message: err.responseJSON.message, location: "br"});
         });
 }
 
@@ -406,6 +404,6 @@ function deletePerson() {
             $("#deletePersonModal").modal("hide");
         })
         .fail(function (err) {
-            $.growl.error({message: "Valami nem jó! ", location: "br"});
+            $.growl.error({ title: "HIBA!", message: err.responseJSON.message, location: "br"});
         });
 }
