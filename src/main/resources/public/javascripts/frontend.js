@@ -80,6 +80,16 @@ function loadMembersTable() {
     fetchMembers();
 }
 
+function lastPageMembers() {
+    if (maxElementPerson%10 === 0) {
+        pageNumPerson = (maxElementPerson/10)-1;
+        fetchMembers();
+    } else {
+        pageNumPerson = (maxElementPerson/10) | 0;
+        fetchMembers();
+    }
+}
+
 function nextPageBooks() {
     if(maxElementBooks%10 === 0) {
         maxPageNumBooks = maxElementBooks/10;
@@ -113,7 +123,7 @@ function nextPageMembers() {
         maxPageNumPerson = maxElementPerson/10;
         if (pageNumPerson === maxPageNumPerson+1){
             fetchMembers();
-        } else if (pageNumPerson < maxPageNumPerson+1){
+        } else if (pageNumPerson < maxPageNumPerson-1){
             pageNumPerson += 1;
             fetchMembers();
         }

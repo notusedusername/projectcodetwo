@@ -46,6 +46,13 @@ function bindMenu(){
         showMemberActions();
     });
 
+    $("#lastPageBtnMembers").on("click", function () {
+        hideAll();
+        $("#members").show();
+        lastPageMembers();
+        showMemberActions();
+    });
+
     $("#nextPageBtnMembers").on("click", function () {
         hideAll();
         $("#members").show();
