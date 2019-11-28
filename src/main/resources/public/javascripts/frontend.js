@@ -7,6 +7,12 @@ var memberRecords;
 var pageNumBooks=0;
 var pageNumPerson=0;
 
+var maxElementPerson;
+var maxElementBooks;
+
+var maxPageNumPerson;
+var maxPageNumBooks;
+
 function updateBookTable($table){
     var $tableBody = $table.children("tbody");
     $tableBody.html("");
@@ -80,17 +86,36 @@ function nextPageBooks() {
 }
 
 function nextPageMembers() {
-    pageNumPerson += 1;
-    fetchMembers();
+    if(maxElementPerson%10 === 0) {
+        maxPageNumPerson = maxElementPerson/10;
+        if (pageNumPerson === maxPageNumPerson) {
+            fetchMembers();
+        } else if (pageNumPerson < maxPageNumPerson-1){
+            pageNumPerson += 1;
+            fetchMembers();
+        }
+    } else if (maxElementPerson%10 !== 0) {
+        maxPageNumPerson = maxElementPerson/10;
+        if (pageNumPerson === maxPageNumPerson+1){
+            fetchMembers();
+        } else if (pageNumPerson < maxPageNumPerson+1){
+            pageNumPerson += 1;
+            fetchMembers();
+        }
+    }
 }
 
 function prevPageBooks() {
-    pageNumBooks -= 1;
+    if(pageNumBooks !== 0) {
+        pageNumBooks -= 1;
+    }
     fetchBooks();
 }
 
 function prevPageMembers() {
-    pageNumPerson -= 1;
+    if(pageNumPerson!==0){
+        pageNumPerson -= 1;
+    }
     fetchMembers();
 }
 
@@ -164,6 +189,7 @@ function fetchMembers() {
         .done(function (data) {
             $.growl.notice({message: "Adatbázis frissítve", location: "br"});
             memberRecords = data.data;
+            maxElementPerson = data.count;
             updateMemberTable($("#membersTable"));
         })
         .fail(function (err) {

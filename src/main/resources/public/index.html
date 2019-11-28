@@ -160,12 +160,17 @@
                     <button class="btn btn-dark delete" type="button" id="deleteSelectedMember" data-toggle="tooltip" data-placement="top" title="Kiválasztott tag(ok) törlése ">
                         <i class="fas fa-trash-alt" aria-hidden="true"></i>
                     </button>
-                    <button class="btn btn-dark delete" type="button" id="prevPageBtnMembers" data-toggle="tooltip" data-placement="top" title="Következő oldal.">
-                        <<
-                    </button>
-                    <button class="btn btn-dark delete" type="button" id="nextPageBtnMembers" data-toggle="tooltip" data-placement="top" title="Következő oldal.">
-                        >>
-                    </button>
+                    <div id="pageNumMembers" class="col-sm-4" style="display: inline; color: white; text-align: center; padding-top: 6px; font-weight: bold;">
+
+                    </div>
+                    <div class="pager" style="display: inline; float: right;">
+                        <button class="btn btn-dark delete" type="button" id="prevPageBtnMembers" data-toggle="tooltip" data-placement="top" title="Előző oldal.">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="btn btn-dark delete" type="button" id="nextPageBtnMembers" data-toggle="tooltip" data-placement="top" title="Következő oldal.">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
                 </form>
                 <table id="membersTable" class="table table-md table-dark">
                     <thead>
@@ -202,12 +207,17 @@
                     <button class="btn btn-dark delete" type="button" id="deleteSelectedBook" data-toggle="tooltip" data-placement="top" title="Kiválasztott(ak) törlése">
                         <i class="fas fa-trash-alt" aria-hidden="true"></i>
                     </button>
-                    <button class="btn btn-dark delete" type="button" id="prevPageBtnBooks" data-toggle="tooltip" data-placement="top" title="Következő oldal.">
-                        <<
-                    </button>
-                    <button class="btn btn-dark delete" type="button" id="nextPageBtnBooks" data-toggle="tooltip" data-placement="top" title="Következő oldal.">
-                        >>
-                    </button>
+                    <div id="pageNumBooks" class="col-sm-4" style="display: inline; color: white; text-align: center; padding-top: 6px; font-weight: bold;">
+
+                    </div>
+                    <div class="pager" style="display: inline; float: right;">
+                        <button class="btn btn-dark delete" type="button" id="prevPageBtnBooks" data-toggle="tooltip" data-placement="top" title="Előző oldal.">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="btn btn-dark delete" type="button" id="nextPageBtnBooks" data-toggle="tooltip" data-placement="top" title="Következő oldal.">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
                 </form>
                     <table id="booksTable" class="table table-md table-dark">
                     <thead>
