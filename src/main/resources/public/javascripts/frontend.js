@@ -81,8 +81,23 @@ function loadMembersTable() {
 }
 
 function nextPageBooks() {
-    pageNumBooks += 1;
-    fetchBooks();
+    if(maxElementBooks%10 === 0) {
+        maxPageNumBooks = maxElementBooks/10;
+        if (pageNumBooks === maxPageNumBooks) {
+            fetchBooks();
+        } else if (pageNumBooks < maxPageNumBooks-1){
+            pageNumBooks += 1;
+            fetchBooks();
+        }
+    } else if (maxElementBooks%10 !== 0) {
+        maxPageNumBooks = maxElementBooks/10;
+        if (pageNumBooks === maxPageNumBooks+1){
+            fetchBooks();
+        } else if (pageNumBooks < maxPageNumBooks-1){
+            pageNumBooks += 1;
+            fetchBooks();
+        }
+    }
 }
 
 function nextPageMembers() {
@@ -139,6 +154,7 @@ function fetchBooks() {
     performFetchBooks()
         .done(function (data) {
             bookRecords = data.data;
+            maxElementBooks = data.count;
             updateBookTable($("#booksTable"));
         })
         .fail(function (err) {
