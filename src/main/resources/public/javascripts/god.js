@@ -46,10 +46,10 @@ function bindMenu(){
         showMemberActions();
     });
 
-    $("#lastPageBtnMembers").on("click", function () {
+    $("#prevPageBtnMembers").on("click", function () {
         hideAll();
         $("#members").show();
-        lastPageMembers();
+        prevPageMembers();
         showMemberActions();
     });
 
@@ -60,10 +60,10 @@ function bindMenu(){
         showMemberActions();
     });
 
-    $("#prevPageBtnMembers").on("click", function () {
+    $("#lastPageBtnMembers").on("click", function () {
         hideAll();
         $("#members").show();
-        prevPageMembers();
+        lastPageMembers();
         showMemberActions();
     });
 
@@ -78,6 +78,13 @@ function bindMenu(){
         $("#books").show();
         loadBooksTable();
         showBookActions();
+    });
+
+    $("#firstPageBtnBooks").on("click", function () {
+        hideAll();
+        $("#members").show();
+        loadBooksTable();
+        showMemberActions();
     });
 
     $("#prevPageBtnBooks").on("click", function () {
