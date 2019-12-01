@@ -30,6 +30,11 @@ public class BookController {
         return bookService.getBooks(page);
     }
 
+    @GetMapping(value="/bookcount")
+    public @ResponseBody long getCount(){
+        return bookService.getCount();
+    }
+
     @PostMapping(value = "/books", consumes = "application/json", produces = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseDTO addNewBook(@RequestBody BookDTO resource) {

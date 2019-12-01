@@ -33,6 +33,11 @@ public class PersonController {
         return personService.getPersons(page);
     }
 
+    @GetMapping("/membercount")
+    public @ResponseBody long count(){
+        return personService.count();
+    }
+
     @PostMapping(value = "/member", consumes = "application/json", produces = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseDTO addNewPerson(@RequestBody PersonDTO resource) {
