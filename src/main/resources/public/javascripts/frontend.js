@@ -80,6 +80,11 @@ function loadMembersTable() {
     fetchMembers();
 }
 
+function loadMembersTableLoan() {
+    pageNumPerson = 0;
+    loanMemberSelector();
+}
+
 function lastPageMembers() {
     if (maxElementPerson%10 === 0) {
         pageNumPerson = (maxElementPerson/10)-1;
@@ -89,6 +94,18 @@ function lastPageMembers() {
         fetchMembers();
     }
 }
+
+
+function lastPageMembersLoan() {
+    if (maxElementPerson%10 === 0) {
+        pageNumPerson = (maxElementPerson/10)-1;
+        loanMemberSelector();
+    } else {
+        pageNumPerson = (maxElementPerson/10) | 0;
+        loanMemberSelector();
+    }
+}
+
 
 function lastPageBooks() {
     if (maxElementBooks%10 === 0) {
@@ -140,6 +157,26 @@ function nextPageMembers() {
     }
 }
 
+function nextPageMembersLoan() {
+    if(maxElementPerson%10 === 0) {
+        maxPageNumPerson = maxElementPerson/10;
+        if (pageNumPerson === maxPageNumPerson) {
+            loanMemberSelector();
+        } else if (pageNumPerson < maxPageNumPerson-1){
+            pageNumPerson += 1;
+            loanMemberSelector();
+        }
+    } else if (maxElementPerson%10 !== 0) {
+        maxPageNumPerson = maxElementPerson/10;
+        if (pageNumPerson === maxPageNumPerson+1){
+            loanMemberSelector();
+        } else if (pageNumPerson < maxPageNumPerson-1){
+            pageNumPerson += 1;
+            loanMemberSelector();
+        }
+    }
+}
+
 function prevPageBooks() {
     if(pageNumBooks !== 0) {
         pageNumBooks -= 1;
@@ -152,6 +189,13 @@ function prevPageMembers() {
         pageNumPerson -= 1;
     }
     fetchMembers();
+}
+
+function prevPageMembersLoan() {
+    if(pageNumPerson!==0){
+        pageNumPerson -= 1;
+    }
+    loanMemberSelector();
 }
 
 function performFetchBooks() {
@@ -475,6 +519,29 @@ function deletePerson() {
             loadMembersTable();
             $("#deletePersonModal").modal("hide");
         })
+        .fail(function (err) {
+            $.growl.error({ title: "HIBA!", message: err.responseJSON.message, location: "br"});
+        });
+}
+
+function loanMemberSelector () {
+    performFetchMembers().done(function(data) {
+        memberRecords = data.data;
+        maxElementPerson = data.count;
+        var $table = $("#memberSelectorTable");
+        $table.html("")
+            .append($("<thead>")
+                .append($("<th>").text("Név"))
+                .append($("<th>").text("Lakcím"))
+                .append($("<th>").text("Sületési Dátum")));
+        var $tableBody = $table.append($("<tbody>"));
+        $.each(memberRecords, function (id, person) {
+            $tableBody.append($("<tr>")
+                .append($("<td>").text(person.firstName + " " + person.lastName))
+                .append($("<td>").text(person.adress))
+                .append($("<td>").text(person.birthDate)));
+        });
+    })
         .fail(function (err) {
             $.growl.error({ title: "HIBA!", message: err.responseJSON.message, location: "br"});
         });

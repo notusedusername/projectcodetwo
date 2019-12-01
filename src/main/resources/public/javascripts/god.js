@@ -67,6 +67,30 @@ function bindMenu(){
         showMemberActions();
     });
 
+    $("#firstPageBtnMembers2").on("click", function () {
+        hideAll();
+        $("#rent").show();
+        loadMembersTableLoan();
+    });
+
+    $("#prevPageBtnMembers2").on("click", function () {
+        hideAll();
+        $("#rent").show();
+        prevPageMembersLoan();
+    });
+
+    $("#nextPageBtnMembers2").on("click", function () {
+        hideAll();
+        $("#rent").show();
+        nextPageMembersLoan();
+    });
+
+    $("#lastPageBtnMembers2").on("click", function () {
+        hideAll();
+        $("#rent").show();
+        lastPageMembersLoan();
+    });
+
     $("#rentmenu").parent().on("click", function () {
         hideAll();
         $("#rent").show();
@@ -197,6 +221,7 @@ function bindMenu(){
 
     $("#selectMember").on("click", function () {
        $("#selectMemberModal").modal();
+        loanMemberSelector();
     });
 
 }
