@@ -8,12 +8,26 @@ import hu.inf.unideb.projectcodetwo.repository.LoanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 @Service
 public class LoanService {
     @Autowired
     LoanRepository loanRepository;
 
-    public ResponseDTO putb(String persondId, String bookId) {
+    public ResponseDTO putb(String personId, String bookId) {
+        long longPersonId;
+        long longBookId;
+        try {
+            longPersonId = Long.parseLong(personId);
+            longBookId = Long.parseLong(bookId);
+        } catch (Exception e) {
+            return new ResponseDTO(new Long(0), "Nem érvényes azonositó.");
+
+        }
+        java.sql.Date sqlDate =new  java.sql.Date(new Date().getTime());
+        loanRepository.putBackbook(bookId,personId,sqlDate);
+
         return null;
     }
 
