@@ -197,10 +197,46 @@ function updateMemberTable($table){
                 .append($("<td>").addClass("td-birthDate")
                     .text(value.birthDate))
                 .append($("<td>").addClass("td-adress")
-                    .text(value.adress)));
+                    .text(value.adress))
+                .append($("<td>")
+                    .append($("<button>").addClass("watchBooks btn btn-xs btn-dark")
+                        .append($("<i>").addClass("fa fa-info-circle")))));
 
     });
     bindSelections();
+    bindInfoButtons();
+}
+
+function fillBooksInfoModal(code) {
+    var $table = $("#bookSelectorTable");
+    $table.html("")
+        .append($("<thead>")
+            .append($("<th>").text("Író"))
+            .append($("<th>").text("Cím"))
+            .append($("<th>").text("Elvitel"))
+            .append($("<th>").text("Határidő"))
+            .append($("<th>").text("Visszahozás")));
+    var $tableBody = $table.append($("<tbody>"));
+    $.each(memberRecords, function (id, person) {
+        if(person.personId === parseInt(code) && person.loans.length > 0) {
+            $.each(person.loans, function (id, loan) {
+                if (loan && loan.book) {
+                    $tableBody.append($("<tr>")
+                        .append($("<td>").text(loan.book.author))
+                        .append($("<td>").text(loan.book.title))
+                        .append($("<td>").text(loan.loanDate))
+                        .append($("<td>").text(loan.deadLine))
+                        .append($("<td>").text(loan.backDate)));
+                }
+            });
+            return false;
+        }
+        else if (person.personId === parseInt(code)) {
+            $tableBody.append($("<tr>").text("--NINCSENEK KÖLCSÖNZÉSEK--"));
+            return false;
+        }
+    });
+
 }
 
 function performFetchMembers() {

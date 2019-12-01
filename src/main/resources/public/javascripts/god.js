@@ -262,7 +262,13 @@ function bindInfoButtons() {
         e.stopPropagation();
         fillMemberInfoModal(getID($(this)));
         $("#selectMemberModal").modal();
-    })
+    });
+
+    $(".watchBooks").click(function (e) {
+        e.stopPropagation();
+        fillBooksInfoModal(getID($(this)));
+        $("#selectBookModal").modal();
+    });
 }
 
 function getID($infobutton) {
