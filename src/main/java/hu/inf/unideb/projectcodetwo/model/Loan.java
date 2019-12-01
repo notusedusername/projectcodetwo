@@ -27,11 +27,11 @@ public class Loan {
     @Column
     private Date backDate;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JsonView(Views.FromPerson.class)
     private Book book;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JsonView(Views.FromBook.class)
     private Person person;
 
@@ -86,10 +86,11 @@ public class Loan {
         this.backDate = backDate;
     }
 
-    public Loan(Long id, Long bookID, Long personID, Date loanDate, Date deadLine, Date backDate) {
-        this.loanId = id;
+    public Loan(Date loanDate, Date deadLine, Date backDate, Person person, Book book) {
         this.loanDate = loanDate;
         this.deadLine = deadLine;
         this.backDate = backDate;
+        this.person = person;
+        this.book = book;
     }
 }

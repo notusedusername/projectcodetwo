@@ -50,6 +50,10 @@ public class Person {
         this.loans = loans;
     }
 
+    public Person(Long id) {
+        this.personId = id;
+    }
+
     public Person() {
     }
 
