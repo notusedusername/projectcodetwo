@@ -19,7 +19,7 @@ public class LoanController {
 
     @PostMapping(value = "/getbook", produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseDTO rentBook(@RequestParam String personId, String bookId) {
+    public ResponseDTO rentBook(@RequestParam String personId, @RequestParam String bookId) {
         return loanService.rent(personId, bookId);
     }
 
