@@ -570,7 +570,7 @@ function loanMemberSelector () {
     performFetchMembers().done(function(data) {
         memberRecords = data.data;
         maxElementPerson = data.count;
-        var $table = $("#memberSelectorTable");
+        var $table = $("#memberSelectorTableLoan");
         $table.html("")
             .append($("<thead>")
                 .append($("<th>").text("Név"))
@@ -593,7 +593,7 @@ function loanBookSelector () {
     performFetchBooks().done(function(data) {
         bookRecords = data.data;
         maxElementBooks = data.count;
-        var $table = $("#bookSelectorTable");
+        var $table = $("#bookSelectorTableLoan");
         $table.html("")
             .append($("<thead>")
                 .append($("<th>").text("Író"))

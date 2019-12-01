@@ -241,12 +241,12 @@ function bindMenu(){
     });
 
     $("#selectBook").on("click", function () {
-        $("#selectBookModal").modal();
+        $("#selectBookModalLoan").modal();
         loanBookSelector();
     });
 
     $("#selectMember").on("click", function () {
-       $("#selectMemberModal").modal();
+        $("#selectMemberModalLoan").modal();
         loanMemberSelector();
     });
 
