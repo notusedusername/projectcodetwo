@@ -46,4 +46,13 @@ public class PersonService {
         personRepository.deleteById(id);
         return new ResponseDTO(id,"A tag sikeresen törölve.");
     }
+
+//    public PersonList findFilteredPerson(String firstName, String lastName, String page) {
+//        PersonList personList = new PersonList();
+//        int i = Integer.parseInt(page);
+//        personList.setData(personRepository.findByLastNameLikeAndFirstNameLike(firstName, lastName,PageRequest.of(i, 10)).getContent());
+//        personList.setCount(personRepository.count());
+//        return personList;
+//    }
+
 }
