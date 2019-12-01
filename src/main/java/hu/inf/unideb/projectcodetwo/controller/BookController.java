@@ -24,7 +24,6 @@ public class BookController {
     @Autowired
     private ModelMapper modelMapper;
 
-    @JsonView(Views.FromBook.class)
     @GetMapping(value ="/books")
     public @ResponseBody
     BookList fetchAll(@RequestParam String page){

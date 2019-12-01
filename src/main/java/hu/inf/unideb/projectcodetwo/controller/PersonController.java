@@ -27,7 +27,6 @@ public class PersonController {
     @Autowired
     private ModelMapper modelMapper;
 
-    @JsonView(Views.FromPerson.class)
     @GetMapping("/member")
     public @ResponseBody
     PersonList fetchAll(@RequestParam String page){
