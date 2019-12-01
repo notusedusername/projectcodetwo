@@ -250,6 +250,16 @@ function bindMenu(){
         loanMemberSelector();
     });
 
+    $("#takeBook").on("click", function (e) {
+        e.preventDefault();
+        takeBook($("input[name=memberField]").val(),$("input[name=bookField]").val() );
+    });
+
+    $("#putBackBook").on("click", function (e) {
+        e.preventDefault();
+        putBackBook($("input[name=memberField]").val(),$("input[name=bookField]").val() );
+    });
+
 }
 
 function bindSelections() {

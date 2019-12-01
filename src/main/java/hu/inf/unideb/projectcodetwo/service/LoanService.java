@@ -27,7 +27,7 @@ public class LoanService {
 
         }
         java.sql.Date sqlDate =new  java.sql.Date(new Date().getTime());
-        loanRepository.putBackbook(bookId,personId,sqlDate);
+        loanRepository.putBackbook(longBookId,longPersonId,sqlDate);
 
         return null;
     }

@@ -13,6 +13,51 @@ var maxElementBooks;
 var maxPageNumPerson;
 var maxPageNumBooks;
 
+function takeBook(pid, bid){
+    performtake(pid, bid).done(function(data){
+        $.growl.notice({ title: "NOICE!", message: data.responseJSON.message, location: "br"});
+    })
+}
+
+function performtake(pid, bid){
+    var defered = jQuery.Deferred();
+    var jqxhr = $.ajax( {
+        url: host+context+"/getbook?bookId="+bid + "&personId="+pid,
+        method: "POST"
+    } )
+        .done(function(data) {
+            defered.resolve(data);
+        })
+        .fail(function(err) {
+            defered.reject(err)
+        });
+    return defered.promise();
+}
+
+function putBackBook(pid, bid){
+    performpb(pid, bid).done(function(data){
+        $.growl.notice({ title: "NOICE!", message: data.responseJSON.message, location: "br"});
+    })
+}
+
+function performpb(pid, bid){
+    var defered = jQuery.Deferred();
+    var jqxhr = $.ajax( {
+        url: host+context+"/putback?bookId="+bid + "&personId="+pid,
+        method: "POST"
+    } )
+        .done(function(data) {
+            defered.resolve(data);
+        })
+        .fail(function(err) {
+            defered.reject(err)
+        });
+    return defered.promise();
+}
+
+
+
+
 function getPersonCount(){
     performgetPC().done(function(data){
         maxElementPerson = data;
