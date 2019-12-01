@@ -16,6 +16,12 @@ public class LoanController {
     @Autowired
     private LoanService loanService;
 
+    @PostMapping(value = "/putback", produces = "application/json")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseDTO putback(@RequestParam String personId,@RequestParam String bookId  ) {
+        return loanService.putb( personId, bookId);
+
+    }
 
     @PostMapping(value = "/getbook", produces = "application/json")
     @ResponseStatus(HttpStatus.OK)

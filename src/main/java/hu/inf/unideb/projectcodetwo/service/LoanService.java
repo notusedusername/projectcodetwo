@@ -6,10 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class LoanService {
 
+
+
+public class LoanService {
     @Autowired
     LoanRepository loanRepository;
+
+    public ResponseDTO putb(String persondId, String bookId) {
+        return null;
+    }
+
+
+
 
 
     public ResponseDTO rent(String personId, String bookId) {
