@@ -13,6 +13,48 @@ var maxElementBooks;
 var maxPageNumPerson;
 var maxPageNumBooks;
 
+function getPersonCount(){
+    performgetPC().done(function(data){
+        maxElementPerson = data;
+    })
+}
+
+function performgetPC(){
+    var defered = jQuery.Deferred();
+    var jqxhr = $.ajax( {
+        url: host+context+"/bookcount",
+        method: "GET"
+    } )
+        .done(function(data) {
+            defered.resolve(data);
+        })
+        .fail(function(err) {
+            defered.reject(err)
+        });
+    return defered.promise();
+}
+
+function getBookCount(){
+    performgetPC().done(function(data){
+        maxElementBooks = data;
+    })
+}
+
+function performgetBC(){
+    var defered = jQuery.Deferred();
+    var jqxhr = $.ajax( {
+        url: host+context+"/membercount",
+        method: "GET"
+    } )
+        .done(function(data) {
+            defered.resolve(data);
+        })
+        .fail(function(err) {
+            defered.reject(err)
+        });
+    return defered.promise();
+}
+
 function updateBookTable($table){
     var $tableBody = $table.children("tbody");
     $tableBody.html("");
@@ -260,7 +302,7 @@ function fetchBooks() {
     performFetchBooks()
         .done(function (data) {
             bookRecords = data.data;
-            maxElementBooks = data.count;
+             getBookCount();
             updateBookTable($("#booksTable"));
         })
         .fail(function (err) {
@@ -345,7 +387,7 @@ function fetchMembers() {
     performFetchMembers()
         .done(function (data) {
             memberRecords = data.data;
-            maxElementPerson = data.count;
+             getPersonCount();
             updateMemberTable($("#membersTable"));
         })
         .fail(function (err) {
@@ -569,7 +611,7 @@ function deletePerson() {
 function loanMemberSelector () {
     performFetchMembers().done(function(data) {
         memberRecords = data.data;
-        maxElementPerson = data.count;
+        getPersonCount();
         var $table = $("#memberSelectorTableLoan");
         $table.html("")
             .append($("<thead>")
@@ -595,7 +637,7 @@ function loanMemberSelector () {
 function loanBookSelector () {
     performFetchBooks().done(function(data) {
         bookRecords = data.data;
-        maxElementBooks = data.count;
+         getBookCount();
         var $table = $("#bookSelectorTableLoan");
         $table.html("")
             .append($("<thead>")
