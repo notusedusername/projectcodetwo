@@ -308,6 +308,25 @@ function bindSelections() {
     });
 }
 
+function bindSelectionsLoan() {
+    $(" #memberSelectorTableLoan tbody tr").on("click", function () {
+        var $thisID = $(this).find("td:first");
+
+            $("#rent input[name=memberField]").val($thisID.text());
+            $("#selectMemberModalLoan").modal("hide");
+
+    });
+
+    $("#bookSelectorTableLoan tbody tr").on("click", function () {
+        var $thisID = $(this).find("td:first");
+
+        $("#rent input[name=bookField]").val($thisID.text());
+        $("#selectBookModalLoan").modal("hide");
+
+    });
+}
+
+
 function bindInfoButtons() {
     $(".watchPersons").click(function (e) {
         e.stopPropagation();

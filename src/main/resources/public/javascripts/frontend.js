@@ -573,16 +573,19 @@ function loanMemberSelector () {
         var $table = $("#memberSelectorTableLoan");
         $table.html("")
             .append($("<thead>")
+                .append($("<th>").text("ID"))
                 .append($("<th>").text("Név"))
                 .append($("<th>").text("Lakcím"))
                 .append($("<th>").text("Születési Dátum")));
         var $tableBody = $table.append($("<tbody>"));
         $.each(memberRecords, function (id, person) {
             $tableBody.append($("<tr>")
+                .append($("<td>").text(person.personId))
                 .append($("<td>").text(person.firstName + " " + person.lastName))
                 .append($("<td>").text(person.adress))
                 .append($("<td>").text(person.birthDate)));
         });
+        bindSelectionsLoan();
     })
         .fail(function (err) {
             $.growl.error({ title: "HIBA!", message: err.responseJSON.message, location: "br"});
@@ -596,16 +599,19 @@ function loanBookSelector () {
         var $table = $("#bookSelectorTableLoan");
         $table.html("")
             .append($("<thead>")
+                .append($("<th>").text("ID"))
                 .append($("<th>").text("Író"))
                 .append($("<th>").text("Cím"))
                 .append($("<th>").text("Kiadás Dátum")));
         var $tableBody = $table.append($("<tbody>"));
         $.each(bookRecords, function (id, book) {
             $tableBody.append($("<tr>")
+                .append($("<td>").text(book.bookId))
                 .append($("<td>").text(book.author))
                 .append($("<td>").text(book.title))
                 .append($("<td>").text(book.yearOfPublication)));
         });
+        bindSelectionsLoan();
     })
         .fail(function (err) {
             $.growl.error({ title: "HIBA!", message: err.responseJSON.message, location: "br"});
