@@ -105,4 +105,8 @@ public class Book {
         this.publisher = publisher;
         this.yearOfPublication = yearOfPublication;
     }
+
+    public Book(Long id) {
+        this.bookId = id;
+    }
 }

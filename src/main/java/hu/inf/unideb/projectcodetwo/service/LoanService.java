@@ -5,8 +5,14 @@ import hu.inf.unideb.projectcodetwo.model.Book;
 import hu.inf.unideb.projectcodetwo.model.Loan;
 import hu.inf.unideb.projectcodetwo.model.Person;
 import hu.inf.unideb.projectcodetwo.repository.LoanRepository;
+import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+
+import javax.persistence.EntityManager;
+import java.util.Calendar;
+import java.util.Date;
 
 @Service
 public class LoanService {
@@ -31,15 +37,16 @@ public class LoanService {
             return new ResponseDTO(new Long(0),"Nem érvényes azonosító.");
         }
 
-        Person person = new Person();
-        person.setId(longPersonId);
+        Book book = new Book(longBookId);
+        Person person = new Person(longPersonId);
+        Date loanDate = new Date();
+        Date deadLine = DateUtils.addMonths(loanDate, 1);
+        java.sql.Date sqlLoanDate = new java.sql.Date(loanDate.getTime());
+        java.sql.Date sqlDeadLine = new java.sql.Date(deadLine.getTime());
 
-        Book book = new Book();
-        book.setId(longBookId);
+        Loan loan = new Loan(sqlLoanDate, sqlDeadLine,null,person,book);
 
-        Loan loan = new Loan();
-        loan.setPerson(person);
-        return null;
+        return new ResponseDTO(loanRepository.save(loan).getLoanId(),"Sikeresen hozzáadva.");
     }
 
 }
