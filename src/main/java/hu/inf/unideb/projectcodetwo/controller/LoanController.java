@@ -1,10 +1,11 @@
 package hu.inf.unideb.projectcodetwo.controller;
 
 
+
 import hu.inf.unideb.projectcodetwo.dto.LoanDTO;
-import hu.inf.unideb.projectcodetwo.dto.PersonDTO;
 import hu.inf.unideb.projectcodetwo.dto.ResponseDTO;
-import hu.inf.unideb.projectcodetwo.model.Person;
+import hu.inf.unideb.projectcodetwo.service.LoanService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,16 +13,16 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/codetwo", produces="application/json")
 public class LoanController {
 
-    @PostMapping(value = "/member", consumes = "application/json", produces = "application/json")
-    @ResponseStatus(HttpStatus.CREATED)
-    public ResponseDTO addNewPerson(@RequestBody LoanDTO resource) {
-        return personService.addPerson(modelMapper.map(resource, Person.class));
+    @Autowired
+    private LoanService loanService;
+
+
+    @PostMapping(value = "/getbook", produces = "application/json")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseDTO rentBook(@RequestParam String personId, String bookId) {
+        return loanService.rent(personId, bookId);
     }
 
-    @PostMapping(value = "/member", consumes = "application/json", produces = "application/json")
-    @ResponseStatus(HttpStatus.CREATED)
-    public ResponseDTO addNewPerson(@RequestBody LoanDTO resource) {
-        return personService.addPerson(modelMapper.map(resource, Person.class));
-    }
+
 
 }
