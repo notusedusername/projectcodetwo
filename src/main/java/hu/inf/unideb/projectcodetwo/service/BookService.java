@@ -21,7 +21,6 @@ public class BookService {
         BookList bookList = new BookList();
         int i = Integer.parseInt(page);
         bookList.setData(bookRepository.findAll(PageRequest.of(i, 10)).getContent());
-        bookList.setCount(bookRepository.count());
         return bookList;
     }
 
@@ -44,5 +43,10 @@ public class BookService {
     public ResponseDTO deleteBook(Long id) {
         bookRepository.deleteById(id);
         return new ResponseDTO(id,"Könyv sikeresen törölve");
+    }
+
+    public long getCount() {
+        System.out.println(bookRepository.count());
+        return bookRepository.count();
     }
 }

@@ -1,10 +1,46 @@
 {
 	"info": {
-		"_postman_id": "686b776a-ce32-49a3-bd44-9f02bec86adb",
+		"_postman_id": "1b1f0e85-90b8-4189-9104-a0eb09be9d4a",
 		"name": "TRYHARD",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "Get book count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{app_host}}/codetwo/bookcount",
+					"host": [
+						"{{app_host}}"
+					],
+					"path": [
+						"codetwo",
+						"bookcount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get member count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{app_host}}/codetwo/membercount",
+					"host": [
+						"{{app_host}}"
+					],
+					"path": [
+						"codetwo",
+						"membercount"
+					]
+				}
+			},
+			"response": []
+		},
 		{
 			"name": "Fetch all books",
 			"event": [
@@ -26,13 +62,19 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{app_host}}/codetwo/books",
+					"raw": "{{app_host}}/codetwo/books?page=0",
 					"host": [
 						"{{app_host}}"
 					],
 					"path": [
 						"codetwo",
 						"books"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						}
 					]
 				}
 			},
@@ -59,13 +101,19 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{app_host}}/codetwo/member",
+					"raw": "{{app_host}}/codetwo/member?page=0",
 					"host": [
 						"{{app_host}}"
 					],
 					"path": [
 						"codetwo",
 						"member"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						}
 					]
 				}
 			},
@@ -203,13 +251,23 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{app_host}}/codetwo/putback",
+					"raw": "{{app_host}}/codetwo/putback?bookId=1&personid=1",
 					"host": [
 						"{{app_host}}"
 					],
 					"path": [
 						"codetwo",
 						"putback"
+					],
+					"query": [
+						{
+							"key": "bookId",
+							"value": "1"
+						},
+						{
+							"key": "personid",
+							"value": "1"
+						}
 					]
 				}
 			},
@@ -323,12 +381,12 @@
 						"id": "de95b6c1-6eae-42f1-ba97-e11431bc54af",
 						"exec": [
 							"pm.test(\"Status code is 201\", function () {",
-							"    pm.response.to.have.status(201);",
+							"    pm.response.to.have.status(200);",
 							"});",
 							"",
 							"pm.test(\"Check the response\", function() {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.result.code).to.eql(\"Tag sikeresen frissítve.\");",
+							"    pm.expect(jsonData.message).to.eql(\"Tag sikeresen frissítve.\");",
 							"});",
 							""
 						],

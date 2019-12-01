@@ -24,10 +24,16 @@ public class BookController {
     @Autowired
     private ModelMapper modelMapper;
 
+    @JsonView(Views.FromBook.class)
     @GetMapping(value ="/books")
     public @ResponseBody
     BookList fetchAll(@RequestParam String page){
         return bookService.getBooks(page);
+    }
+
+    @GetMapping(value="/bookcount")
+    public @ResponseBody long getCount(){
+        return bookService.getCount();
     }
 
     @PostMapping(value = "/books", consumes = "application/json", produces = "application/json")
