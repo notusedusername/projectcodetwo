@@ -132,6 +132,31 @@ function bindMenu(){
         showBookActions();
     });
 
+    $("#firstPageBtnBooks2").on("click", function () {
+        hideAll();
+        $("#rent").show();
+        loadBooksTableLoan();
+    });
+
+    $("#prevPageBtnBooks2").on("click", function () {
+        hideAll();
+        $("#rent").show();
+        prevPageBooksLoan();
+    });
+
+    $("#nextPageBtnBooks2").on("click", function () {
+        hideAll();
+        $("#rent").show();
+        nextPageBooksLoan();
+    });
+
+    $("#lastPageBtnBooks2").on("click", function () {
+        hideAll();
+        $("#rent").show();
+        lastPageBooksLoan();
+    });
+
+
     $("#addBook").on("click", function () {
         $('#addBookModal').modal();
     });
@@ -217,6 +242,7 @@ function bindMenu(){
 
     $("#selectBook").on("click", function () {
         $("#selectBookModal").modal();
+        loanBookSelector();
     });
 
     $("#selectMember").on("click", function () {
