@@ -144,7 +144,7 @@ function fillMemberInfoModal(code) {
                         .append($("<td>").text(loan.person.adress))
                         .append($("<td>").text(loan.loanDate))
                         .append($("<td>").text(loan.deadLine))
-                        .append($("<td>").text(loan.backDate)));
+                        .append($("<td>").text(loan.backDate == null ? "Kölcsönzi" : loan.backDate)));
                 }
             });
             return false;
@@ -399,7 +399,7 @@ function fillBooksInfoModal(code) {
                         .append($("<td>").text(loan.book.title))
                         .append($("<td>").text(loan.loanDate))
                         .append($("<td>").text(loan.deadLine))
-                        .append($("<td>").text(loan.backDate)));
+                        .append($("<td>").text(loan.backDate == null ? "Kölcsönzi" : loan.backDate)));
                 }
             });
             return false;
