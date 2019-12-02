@@ -15,7 +15,7 @@ var maxPageNumBooks;
 
 function takeBook(pid, bid){
     performtake(pid, bid).done(function(data){
-        $.growl.notice({ title: "NOICE!", message: data.responseJSON.message, location: "br"});
+        $.growl.notice({ message: data.message, location: "br"});
     })
 }
 
@@ -36,7 +36,7 @@ function performtake(pid, bid){
 
 function putBackBook(pid, bid){
     performpb(pid, bid).done(function(data){
-        $.growl.notice({ title: "NOICE!", message: data.responseJSON.message, location: "br"});
+        $.growl.notice({ message: data.message, location: "br"});
     })
 }
 

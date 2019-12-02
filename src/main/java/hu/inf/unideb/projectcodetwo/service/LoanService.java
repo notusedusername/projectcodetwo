@@ -27,9 +27,12 @@ public class LoanService {
 
         }
         java.sql.Date sqlDate =new  java.sql.Date(new Date().getTime());
-        loanRepository.putBackbook(longBookId,longPersonId,sqlDate);
-
-        return null;
+        if(loanRepository.putBackbook(longBookId,longPersonId,sqlDate) > 0){
+            return new ResponseDTO(new Long(0), "Visszahozva");
+        }
+        else {
+            return new ResponseDTO(new Long(0), "Nincs ilyen kölcsönzés");
+        }
     }
 
 
@@ -53,9 +56,13 @@ public class LoanService {
         java.sql.Date sqlLoanDate = new java.sql.Date(loanDate.getTime());
         java.sql.Date sqlDeadLine = new java.sql.Date(deadLine.getTime());
 
-        Loan loan = new Loan(sqlLoanDate, sqlDeadLine,null,person,book);
-
-        return new ResponseDTO(loanRepository.save(loan).getLoanId(),"Sikeresen hozzáadva.");
+        if(loanRepository.checkLoan(longBookId, longPersonId) == 0) {
+            Loan loan = new Loan(sqlLoanDate, sqlDeadLine, null, person, book);
+            return new ResponseDTO(loanRepository.save(loan).getLoanId(), "Sikeresen hozzáadva.");
+        }
+        else {
+            return new ResponseDTO(new Long(0), "Már ki van kölcsönözve");
+        }
     }
 
 }

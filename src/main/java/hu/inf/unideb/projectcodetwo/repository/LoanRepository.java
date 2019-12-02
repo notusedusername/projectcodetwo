@@ -16,6 +16,8 @@ import java.sql.Date;
 public interface LoanRepository extends PagingAndSortingRepository<Loan, Long> {
     @Modifying
     @Query("update  Loan l set l.backDate = :date where l.backDate is null and l.book.bookId = :bid and l.person.personId = :pid")
+    int putBackbook(@Param("bid")Long bookId, @Param("pid")Long personId, @Param("date")Date sqlDate);
 
- void putBackbook(@Param("bid")Long bookId, @Param("pid")Long personId, @Param("date")Date sqlDate);
+    @Query("select count(loanId) FROM Loan l WHERE l.backDate is null and l.book.bookId = :bid and l.person.personId = :pid")
+    int checkLoan(@Param("bid") Long bookId, @Param("pid") Long personId);
 }
