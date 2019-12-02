@@ -41,12 +41,16 @@ public class BookService {
     }
 
     public ResponseDTO deleteBook(Long id) {
-        bookRepository.deleteById(id);
-        return new ResponseDTO(id,"Könyv sikeresen törölve");
+        if( bookRepository.existsById(id) ){
+            bookRepository.deleteById(id);
+            return new ResponseDTO(id, "Könyv sikeresen törölve");
+        }
+        else {
+            return new ResponseDTO(id, "Nincs könyv ilyen azonosítóval!");
+        }
     }
 
     public long getCount() {
-        System.out.println(bookRepository.count());
         return bookRepository.count();
     }
 }

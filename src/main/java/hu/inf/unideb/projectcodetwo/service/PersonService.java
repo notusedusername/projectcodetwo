@@ -42,8 +42,13 @@ public class PersonService {
     }
 
     public ResponseDTO deletePerson(Long id) {
-        personRepository.deleteById(id);
-        return new ResponseDTO(id,"A tag sikeresen törölve.");
+        if( personRepository.existsById(id) ){
+            personRepository.deleteById(id);
+            return new ResponseDTO(id,"A tag sikeresen törölve.");
+        }
+        else {
+            return new ResponseDTO(id, "Nincs tag ilyen azonosítóval!");
+        }
     }
 
     public long count() {
