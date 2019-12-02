@@ -464,7 +464,7 @@
 							"",
 							"pm.test(\"Check the response\", function() {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.code).to.eql(\"Nincs tag ilyen azonosítóval!\");",
+							"    pm.expect(jsonData.message).to.eql(\"Nincs tag ilyen azonosítóval!\");",
 							"});",
 							""
 						],
@@ -484,16 +484,16 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstName\": \"test_firstname2\",\n    \"lastName\": \"test_lastname2\",\n    \"birthDate\": \"1234.12.23\",\n    \"adress\": \"test_adress2\"\n}"
+					"raw": "{\n    \"firstName\": \"test_firstname2\",\n    \"lastName\": \"test_lastname2\",\n    \"birthDate\": \"1234-12-23\",\n    \"adress\": \"test_adress2\"\n}"
 				},
 				"url": {
-					"raw": "{{app_host}}/codetwo/members/{{unexisting_id}}",
+					"raw": "{{app_host}}/codetwo/member/{{unexisting_id}}",
 					"host": [
 						"{{app_host}}"
 					],
 					"path": [
 						"codetwo",
-						"members",
+						"member",
 						"{{unexisting_id}}"
 					]
 				}
