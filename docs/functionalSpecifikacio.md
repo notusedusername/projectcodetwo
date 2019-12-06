@@ -3,7 +3,7 @@
 
 
 
-## Bevezetés
+## 1. Bevezetés
 
 Egy kisvárosi könyvkölcsönző viszonylag nagy forgalommal jár, a helyiek
 inkább kölcsönzik a könyveiket vásárlás helyett. A hely kifejezetten
@@ -17,7 +17,7 @@ megoldást nyújthasson, és hasznos eszköz legyen a kölcsönző mindennapjaib
 A könyvtári tagok most már képesek legyenek online webes kereten belül is elintézni
 a kölcsönzésüket vagy regisztrációjukat is akár.
 
-## Használati esetek
+## 2. Használati esetek
 
 
 A Követelmény specifikáció 'Követelménylista' című bekezdése alapján az
@@ -66,7 +66,7 @@ egyes pontok kifejtésére kerül sor ebben a fejezetben.
   
   * A szoftverben az egyik legfontosabb „funkció” az nem más mint ,hogy egyszerű 
      könnyen kezelhető és átlátható legyen a felhasználók számára.
-## Jelenlegi helyzet
+## 3. Jelenlegi helyzet
 
 A mostani analóg, vagyis papír és ceruzán alapuló könyvtár megérett arra a szintre,
 hogy modernizálja magát és belépjen a huszadik századba. Ez által meggyorsítva
@@ -78,7 +78,7 @@ vissza hozatala. Ezek a folyamatok eddig hosszú perceket vettek el mind a köny
 és mind a tag idejéből. Ami a mostani világban már tarthatatlan. Így kényszerből is
 muszáj megváltozni a könyvtárnak a jelenlegi rendszert.
 
-## A rendszernek NEM célja
+### 3.1. A rendszernek NEM célja
 
  * A tagok számára felületet biztosítani a kölcsönzéseik listázására, vagy
     bármilyen kölcsönzőbeli adatuk elérésére.
@@ -90,7 +90,7 @@ muszáj megváltozni a könyvtárnak a jelenlegi rendszert.
  
  * A GDPR előírásainak megfelelni.
 
-## Jelenlegi üzleti folyamatok modellje
+## 4. Jelenlegi üzleti folyamatok modellje
 
 A tagok és a könyvek listáját egy relációs adatbázis váltja ki, amelyben ezek az
 adatok tökéletesen tárolhatóak, és különböző szűrőkkel gyorsan lekérdezhetőek.
@@ -115,7 +115,7 @@ a kölcsönző nevét és a könyv azonosítóját, ezt a rendszer eltárolja, m
  adatbázisban. A 'Tag törlése' és a 'Könyv törlése' menüpontok használhatók tételek törlésére az
  adatbázisból. A 'Kilépés' menüponttal zárható be a program.
 
-## Igényelt üzleti folyamatok
+## 5. Igényelt üzleti folyamatok
 
 A program alapvetően egy főmenűből, és a menüből nyitható funkció képernyőkből
 áll. A főmenüből elérhető az összes funkció, valamint a kilépési lehetőség.
@@ -141,7 +141,7 @@ A módosítás papíron sokkal körülményesebb, de a rendszerben csak ki kell 
 módosítandó rekordot, és átírni a módosítani kívánt értéket.
 A törlés nagyon hasonló folyamat a módosításhoz, viszont itt a kijelölt rekord minden
 értékét nullra állítjuk, az azonosítóján kívül.
-## Képernyőtervek
+## 6. Képernyőtervek
 
 A prototípus alapján a kliens számára is megfelelő designt próbáltunk
 megalkotni, amely megkönnyíti a használatot, de a megjelenése igényes,

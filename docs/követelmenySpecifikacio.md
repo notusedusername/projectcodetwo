@@ -1,7 +1,7 @@
 # TRYHARD
 # Követelményspecifikáció
 
-## Bevezetés
+## 1. Bevezetés
 
 Egy kisvárosi könyvkölcsönző viszonylag nagy forgalommal jár, a helyiek inkább 
 kölcsönzik a könyveiket vásárlás helyett. A hely kifejezetten könyvtár hangulatú,
@@ -17,7 +17,7 @@ akár otthonról is elérve és még sok más hasznos funkció, a kliensek megre
 elsőnek a legfontosabb funkciók fejlesztése fog megtörténni, majd a visszajelzések alapján 
 priorizáljuk a további featureöket a felhasználói igények alapján.
 
-## Jelenlegi helyzet
+## 2. Jelenlegi helyzet
 
 A könyvtárunk több száz taggal rendelkezik és a látszám folyamatosan növekszik. Emellett
 a kikölcsönözhető könyveink száma is hétről-hétre gyarapodik. A gyors növekedésnek viszont
@@ -35,7 +35,7 @@ könyv kikölcsönzés.
 Ezek a feladatok a klasszikus papír ceruza módszerrel kivitelezhetőek kis
 létszám esetén, viszont nagy létszám esetén nem.
 
-## Vágyálom rendszer
+## 3. Vágyálom rendszer
 
 Amikor rájöttünk arra ,hogy az elavult papír, ceruza alapú adminisztráció nem a
 legjobb megoldás a könyvtárunk részére elkezdtünk gondolkodni ,hogy mi lehetne a
@@ -44,7 +44,7 @@ döntöttünk. Szeretnénk egy olyan webes alkalmazást amellyel el tudjuk látn
 a feladatokat amiket a Jelenlegi helyzet bekezdés alatt felsoroltunk és szeretnénk
 ha ezeknek a feladatoknak a végrehajtásának az ideje jelentősen csökkenne. 
 
-## Jelenlegi üzleti folyamatok
+## 4. Jelenlegi üzleti folyamatok
 
 A könyvtárunkban jelenleg minden üzleti folyamatot papír segítségével adminisztrálunk.
 A könyvtárban tagsággal rendelkező ügyfeleink könyvtári tag kártya segítségével tudja
@@ -67,7 +67,7 @@ időre kölcsönzött ki és ad egy lapot a könyvtári tagnak is amelyen a viss
 szerepel. Amikor a könyvtári tag visszahozza a könyvet, a könyvtáros feljegyzi ,hogy a
 könyvet határidő előtt visszahozta az a ki kikölcsönözte majd visszarakja a könyvespolcra.
 
-## Igényelt üzleti folyamatok modellje
+## 5. Igényelt üzleti folyamatok modellje
 
 Könyvtár szeretné kiküszöbölni a jelenlegi analóg rendszer általi nehézségeket
 így, mint minden kisebb-nagyobb cég ők is követik digitalizációt.Igényeik szerint
@@ -79,7 +79,7 @@ egy adott könyvről több adat tárolására is, hogy éppen kinél van, meddig
 hogy mikor esedékes a könyvtárba való vissza hozatala. Emellett igen fontos lenne a 
 könnyű kezelhetőség és egyben átláthatóság a felhasználók számára.
 
-## Követelménylista
+## 6. Követelménylista
 
 * Egy rendszer mely nyílvántartja a forgalomban lévő könyveket.
 * A rendszer képes legyen egy adott elemről több adatot is tárolni.

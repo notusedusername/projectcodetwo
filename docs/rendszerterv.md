@@ -1,7 +1,7 @@
 ﻿# TRYHARD  
 ## Rendszerterv  
 
-### Bevezetés 
+### 1. Bevezetés 
 
 A rendszerterv elkészítésének célja az ,hogy a program fejlesztőinek pontos, részletes 
 és szaknyelvet tartalmazó leírás legyen a kezében ami kitér a  rendszerrel kapcsolatos összes fontos szakmai kérdésre.
@@ -28,7 +28,7 @@ le kódolását. Erről bővében a Fejlesztő eszközök menüpontban térünk
 A digitalizálás hatására sokall átláthatóbb kezelhetőbb és biztonságosabb lesz 
 az új rendszer a régihez képest.
    
-### A rendszer célja 
+### 2. A rendszer célja 
 
 A rendszer célja ,hogy a könyvtár elavult adminisztrációs módszereit felváltsa
 ez a 21. századi, webes felületen futó és adatbázissal rendelkező alkalmazás
@@ -36,9 +36,9 @@ amivel a könyvtár adminisztrációs munkája gyorsabb, hatékonyabb és átlá
 lesz. A programot használó könyvtári dolgozónak nagyon sok ideje fel fog szabadulni
 a program gyorsasága miatt ,így foglalkozhat más teendőkkel is.
 
-### A projekt tervezete 
+### 3. A projekt tervezete 
 
-### A rendszer felépítése 
+#### 3.1. A rendszer felépítése 
 
 Az adatbázis kapcsolathoz szükséges egy adatbázis connection osztály,  
 amely létrehozza, fenntartja, és zárja az adatbáziskapcsolatot.  
@@ -53,7 +53,7 @@ esetén csak az egyik része károsodjon a rendszernek.
 A program controller részének megvalósítását Java programozási nyelven terveztük el.
 A projekthez továbbá felhasználtuk a Maven nevű projekt menedzsment eszköztárat is.
 
-###  Projektmunkások és felelősségeik 
+#### 3.2. Projektmunkások és felelősségeik 
 A projektet készítő négy személy teljesen egyenjogú szerepkörökkel rendelkezik.
 Mind négyük kiveszi a részét a munka minden egyes fázisából és részéből. Mindnyájan
 egyenrangú fejlesztői a programnak.
@@ -65,13 +65,13 @@ Szabó Ákos  | szoftverfejlesztő
 Tóth Norbert    | szoftverfejlesztő
 Varga Mátyás    | szoftverfejlesztő
 
-### Ütemterv   
+### 4. Ütemterv   
 
-### Mérföldkövek
+#### 4.1. Mérföldkövek
 
 A program elkészítésének fő mérföldkövei:  
 
-#### Sprint I.
+##### 4.1.1. Sprint I.
 
 - A Trelloban való regisztráció illetve a használatának elkezdése  
 - A git repository elkészítése  
@@ -81,50 +81,50 @@ A program elkészítésének fő mérföldkövei:
 - A rendszerterv elkészítése
 - A program prototípus UI-jának elkészítése
 
-#### Sprint II.
+##### 4.1.2.Sprint II.
   
 - A rendszer tesztjeinek felállítása  
 - A program adatbázisának elkészítése  
 - A program controllerének elkészítése  
 - A program tesztelése a minimális funkciókkal
 
-#### További sprintek
+##### 4.1.3. További sprintek
 
 - A program biztonságának növelése, felkészítés az internetes használatra
 - A felhasználó visszajelzések beletervezése a projektbe
 - A kisebb üzleti értékkel rendelkező kényelmi feature-ök fejlesztése
    
 
-###  Üzleti szereplők  
+### 5. Üzleti szereplők  
 
 A programot az éppen munkaidőben jelenlévő könyvtáros fogja használni.  
 A könyvtár összes alkalmazottjának, akik ebben a munkakörben dolgoznak  
 megvan a végzettsége és a tudása ahoz ,hogy TRYHARD csapat által készített  
 programot magabiztosan képes legyen használni.  
 
-###  Üzleti entitások  
+#### 5.1. Üzleti entitások  
 
 Az üzletben résztvevő entitások:  
 - A programot használó könyvtári alkalmazott  
 - A könyvtárban regisztrált tagok  
 - A könyvtárban még nem regisztrált, de majd regisztráló tagok
 
-### Követelmények
+### 6. Követelmények
 
-### Funkcionális követelmények 
+#### 6.1.Funkcionális követelmények 
 
 - Könnyen és egyszerűen kezelhető rendszer.
 - Jól átlátható adatbázis kezelés.
 - Egyszerű adatbázis lekérdezések lebonyolítása.
 - Könnyed adatfelvétel és módosítás.
 
-###  Nem funkcionális követelmények
+#### 6.2. Nem funkcionális követelmények
 
 - Esztétikus felhasználói felület.
 - Látás károsultak számára is megfelelő színvilág és betűméretek használata.
 - Clean code-nak való megfelelés.
 
-### Funkcionális terv   
+### 7. Funkcionális terv   
 A progrem célja a könyvtári munka felgyorsítása. A könyvtárban dolgozó személyzet
 munkájának megkönnyebbítése. A jelenlegi analóg adminisztrációs módszer teljes felcserélése
 digitális formára. A korábbi módszer minden 'funkciójának' átültetése számítógépes környezetbe.
@@ -135,7 +135,7 @@ Ezek a 'funkciók' nem mások, mint:
  - Bizonyos esetekben tagság megvonása.
  - Amortizáció esetén könyvek kivonása a nyílvántartésból.
 
-### Rendszerszereplők  
+### 8. Rendszerszereplők  
 
 A rendszerben két féle entitás csoportot külömböztetünk meg.
 
@@ -151,17 +151,13 @@ A Könyvtárosok csoportjának sokkal több joga lesz, sőt a tagok nem is haszn
 a programot. Nekik kell lebonyolítani a kapcsolattartást is a tagokkal.
 Feladatuk kiterjed a tagok értesítésére elmaradás esetén.
 
-### Rendszerhasználati esetek és lefutásai
+### 9. Rendszerhasználati esetek és lefutásai
 
 ![Kolcsonzes](kolcsonzes.png)
 
 ![Folyamatok](folyamatok.png)
 
-### Menü-hierarchiák 
-
-### Fizikai környezet  
-
-#### Hardver és hálózati topológia
+####  9.1. Hardver és hálózati topológia
 
 A felhasználói gépeknek el kell érniük a szerverként üzemelő központi gépet,
 amely kiszolgálja a kéréseket, így a szoftver telepítése csak itt szükséges.
@@ -176,9 +172,7 @@ A cél platformunk a kölcsönző tulajdonában lévő számítógépek melyeke
 operációs rendszer futtatnak (Ubuntu 18.04-et).
 A megvalósítás miatt a program alkalmas más operációs rendszer alatti futtatásra is.
 
-#### Fizikai alrendszerek  
-
-### Fejlesztő eszközök  
+### 10. Fejlesztő eszközök  
 
 A projekt során használt fejlszetői eszközök:  
 - Java 11
@@ -186,13 +180,13 @@ A projekt során használt fejlszetői eszközök:
 - SQL  
 - JavaScript
 
-### Keretrendszer   
+### 11. Keretrendszer   
 
 - JQuery
 - Bootstrap 4
 - Spring Boot
 
-### Architekturális terv   
+### 12. Architekturális terv   
 
  rendszert felépítő alrendszerek
 (szoftver komponensek) lényegében a Java ,Sql ,Mavan használata Java FX keretén belüli
@@ -223,20 +217,17 @@ Architektúra elemek:
   -   referencia modell leképezése szoftver
       elemekre
    - pl. ISO OSI architektúra  
-   
-### Az alkalmazás rétegei, fő komponensei, ezek kapcsolatai
 
-
-### Rendszer bővíthetősége  
+#### 12.1. Rendszer bővíthetősége  
 
 A rendszert teljesen objektum orientált szemlélet szerint fogjuk megírni
 vagyis a rendszer bizonyos szinten bővítésre alkalmas lesz.
 
-### Biztonsági funkciók 
+#### 12.2. Biztonsági funkciók 
 
 A programunkba nem tervezünk biztonsági funkciókat implementálni.
 
-### Adatbázis terv  
+#### 12.3. Adatbázis terv  
 
 A program adatbázisát 3 fő táblára osztottuk:
 
@@ -261,7 +252,7 @@ Tag:
 - Vezetéknév
 - Születési dátum
 
-#### Logikai adatmodell  
+#### 12.4. Logikai adatmodell  
 
 ![DBdiagram](dbdiagram.png)
 
@@ -275,7 +266,7 @@ Könyv           | Kölcsönzés                            |Tag
    Kiado VARCHAR   |Hatarido DATE                          |   Lakcim VARCHAR                    
    KiadasEve DATE  |VisszahozasDatum DATE                  |            
 
-### Implementációs terv
+### 13. Implementációs terv
 
 A tervezési folyamatban célszerű az általános logikai felépítést mindig valamilyen 
 grafikus reprezentációval
@@ -287,7 +278,7 @@ esetdiagramokat (use case), az adatbázis tervezésnél az adatbázis diagramot,
 tervezésnél az
 osztálydiagramot és objektumdiagramot valamint a szekvenciadiagramot, aktivitásdiagramot
 használhatjuk.
-### Perzisztencia-osztályok 
+#### 13.1. Perzisztencia-osztályok 
 
 A perzisztencia megvalósításáért a Hibernate objektum-relációs leképezést
 megvalósító programkönyvtár felel.
@@ -295,7 +286,7 @@ Perzisztencia osztályok:
    -DBUtils
    -HibernateUtils
    
-### Üzleti logika osztályai  
+#### 13.2. Üzleti logika osztályai  
 Az üzleti logika a háromrétegű adatkezelő alkalmazások középső rétege, amely meghatározza 
 az alkalmazás működésének logikáját.
 A háromrétegű architektúra az alkalmazást három különálló rétegre osztja fel. E rétegek 
@@ -310,7 +301,7 @@ megjelenítése. Biztosítja a felhasználó hozzáférését az ügyviteli logi
 Sohasem kerül közvetlen kapcsolatba az adatbázissal, és nem végez semmilyen műveletet az 
 adatokon.
 
-### Tesztterv  
+### 14. Tesztterv  
 
 Kód|Leírás|  
 ----|---  
