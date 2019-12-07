@@ -23,7 +23,9 @@
 
 ### Dokumentáció
  
- [REST dokumentáció](https://documenter.getpostman.com/view/9456191/SW7aX7vQ?version=latest)
+ [REST dokumentáció](https://documenter.getpostman.com/view/9456191/SWE56ysM)
+ 
+ [Tesztjegyzőkönyv](/docs/tesztelesiJegyzokonyv.md)
  
  [Követelményspecifikáció](/docs/követelmenySpecifikacio.md)
  
