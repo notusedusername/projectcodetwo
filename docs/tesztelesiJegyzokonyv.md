@@ -21,5 +21,6 @@ T-12 | A könyv hozzáadása gombbal hozzá lehet egy könyvet adni a könyveink
 T-13 | A tag "Összes kijelölése" gombbal kijelöli az összes tagot ami táblában szerepel | Sikeres | Mátyás
 T-14 | A tag "Összes kijelölése" gombbal kijelölt tagokat egyszere lehet törölni.| Sikeres | Mátyás
 T-15 | A tag lakcim mellet lévő iformációs gomb rákatitásra elöhöza a kölcsönzöt könyvek meű pontja alatt lévő Író,Cím,Elvitel,Határidő és Visszahozás rekordokat .| Sikeres | Mátyás
-T-16 | .| Sikeres | Mátyás
+T-16 | A könyveink cimű oldalon Könyv, azonosító, Szerző, Cím ,Kiadó, Kiadási év pontok allat sikeresen megjelenik az adatbázisban tárólt értékek.| Sikeres | Mátyás
+T-17 | A tagjaink  | Sikeres | Mátyás
 
