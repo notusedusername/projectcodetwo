@@ -15,3 +15,6 @@ T-07 | A https://notusedusername.github.io/projectcodetwo/-en belül elérhető 
 T-07 | A https://notusedusername.github.io/projectcodetwo/-en belül a "ITT KIPRÓBÁLHATOD A DEMÓNKAT!" link visszadob a projekt főoldalára  | Sikeres | Kristóf
 T-08 | A Könyveink menüpont alatt ha kiválasztunk egy könyvet előjön a "Kölcsönzés", "Módositás", "Törlés" lehetőség | Sikeres | Kristóf
 T-09 | A Tagjaink menüpont alatt ha kiválasztunk egy könyvet előjön a "Kölcsönzés", "Módositás", "Törlés" lehetőség | Sikeres | Kristóf
+T-10 | Könyv törlése gomb kitörli a kiválasztott könyvet | Sikeres | Kristóf
+T-11 | A könyv módosítása gombal lehet módosítani a könyv adatait | Sikeres | Kristóf
+T-12 | A könyv hozzáadása gombbal hozzá lehet egy könyvet adni a könyveink listájához | Sikeres | Kristóf
