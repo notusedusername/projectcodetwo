@@ -10,4 +10,8 @@ T-02 | A kölcsönzés menüpont alatt található könyvek és tagok mezők mel
 T-03 | A beúszó ablakokon található táblázatok-ban szereplő rekordokra kattintva az bekerül a kölcsönző tag mezőbe vagy pedig a könyv mezőbe. | Sikeres | Ákos
 T-04 | Ugyan ezeken az ablakokon található léptető gombok megváltoztatják a táblázat tartalmát (mindig 10 rekordot cserélnek kivéve ha az utolsó 10-darabot nem lehet feltölteni teljesen, ekkor a maradék 10-zel nem osztható rekordokat mutatja a táblázat | Sikeres | Ákos
 T-05 | A kiválasztás után a kölcsönzés menüpontban található "Kivesz" és "Visszahoz" gombok segítségével hozzárendelődik a kiválasztott könyv a taghoz illetve visszahozáskor bekerül a rendszerbe a visszahozás dátuma. | Sikeres | Ákos
-T-06 | 
+T-06 | A navbaron belül a TRYHARD-ra kattintva előjön a "Csapat" illetve a "Dokumentáció" rész | Sikeres | Kristóf
+T-07 | A https://notusedusername.github.io/projectcodetwo/-en belül elérhető az összes dokumentáció. | Sikeres | Kristóf
+T-07 | A https://notusedusername.github.io/projectcodetwo/-en belül a "ITT KIPRÓBÁLHATOD A DEMÓNKAT!" link visszadob a projekt főoldalára  | Sikeres | Kristóf
+T-08 | A Könyveink menüpont alatt ha kiválasztunk egy könyvet előjön a "Kölcsönzés", "Módositás", "Törlés" lehetőség | Sikeres | Kristóf
+T-09 | A Tagjaink menüpont alatt ha kiválasztunk egy könyvet előjön a "Kölcsönzés", "Módositás", "Törlés" lehetőség | Sikeres | Kristóf
