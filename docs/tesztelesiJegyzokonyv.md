@@ -18,3 +18,5 @@ T-09 | A Tagjaink menüpont alatt ha kiválasztunk egy könyvet előjön a "Köl
 T-10 | Könyv törlése gomb kitörli a kiválasztott könyvet | Sikeres | Kristóf
 T-11 | A könyv módosítása gombal lehet módosítani a könyv adatait | Sikeres | Kristóf
 T-12 | A könyv hozzáadása gombbal hozzá lehet egy könyvet adni a könyveink listájához | Sikeres | Kristóf
+T-13 | A tag "Összes kijelölése" gombbal kijelöli az összes tagot ami táblában szerepel | Sikeres | Mátyás
+T-14 | A tag "Összes kijelölése" gombbal kijelölt tagot egyszere lehet törölni.| Sikeres | Mátyás
