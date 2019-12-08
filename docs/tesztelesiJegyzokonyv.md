@@ -20,3 +20,6 @@ T-11 | A könyv módosítása gombal lehet módosítani a könyv adatait | Siker
 T-12 | A könyv hozzáadása gombbal hozzá lehet egy könyvet adni a könyveink listájához | Sikeres | Kristóf
 T-13 | A tag "Összes kijelölése" gombbal kijelöli az összes tagot ami táblában szerepel | Sikeres | Mátyás
 T-14 | A tag "Összes kijelölése" gombbal kijelölt tagokat egyszere lehet törölni.| Sikeres | Mátyás
+T-15 | A tag lakcim mellet lévő iformációs gomb rákatitásra elöhöza a kölcsönzöt könyvek meű pontja alatt lévő Író,Cím,Elvitel,Határidő és Visszahozás rekordokat .| Sikeres | Mátyás
+T-16 | .| Sikeres | Mátyás
+
